@@ -1,0 +1,4 @@
+target/
+Cargo.lock
+proto/StarRail.proto
+*.old
