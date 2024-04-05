@@ -94,3 +94,50 @@ pub async fn on_send_msg_cs_req(
 ) -> Result<()> {
     commands::invoke(session, body).await
 }
+
+pub async fn on_get_player_detail_info_cs_req(
+    session: &PlayerSession,
+    body: &GetPlayerDetailInfoCsReq,
+) -> Result<()> {
+    session.send(
+        CMD_GET_PLAYER_DETAIL_INFO_SC_RSP,
+        match body.uid {
+            0 => GetPlayerDetailInfoScRsp {
+                retcode: 0,
+                iikiicbkejc: Some(Fkplcibblhf {
+                    uid: body.uid,
+                    signature: "POLSKA GUROM 🇵🇱".to_owned(),
+                    level: 69,
+                    is_banned: false,
+                    nickname: "AlphaServer".to_owned(),
+                    platform_type: PlatformType::Pc.into(),
+                    gjlfhjlijon: 200101,
+                    world_level: 6,
+                    ailinangjne: "test1".to_owned(),
+                    ldfiofjhjja: "test2".to_owned(),
+                    ..Default::default()
+                })
+            },
+            2137 => GetPlayerDetailInfoScRsp {
+                retcode: 0,
+                iikiicbkejc: Some(Fkplcibblhf {
+                    uid: body.uid,
+                    signature: "🦼".to_owned(),
+                    level: 70,
+                    is_banned: false,
+                    nickname: "Alpha".to_owned(),
+                    platform_type: PlatformType::Pc.into(),
+                    // gjlfhjlijon: 200101,
+                    world_level: 6,
+                    ailinangjne: "test1".to_owned(),
+                    ldfiofjhjja: "test2".to_owned(),
+                    ..Default::default()
+                })
+            },
+            _ => GetPlayerDetailInfoScRsp {
+                retcode: Retcode::RetServerInternalError as u32,
+                iikiicbkejc: Option::None
+            }
+        }
+    ).await
+}

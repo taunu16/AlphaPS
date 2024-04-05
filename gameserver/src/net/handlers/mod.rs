@@ -123,5 +123,9 @@ dummy! {
     GetVideoVersionKey,
     GetCurBattleInfo,
     GetPhoneData,
-    PlayerLoginFinish
+    PlayerLoginFinish,
+    //profile
+    GetAssistHistory,
+    GetFriendDevelopmentInfo,
+    GetFriendBattleRecordDetail
 }

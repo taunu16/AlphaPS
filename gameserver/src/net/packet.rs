@@ -499,7 +499,7 @@ trait_handler! {
     // GetFriendApplyListInfoCsReq 2902;
     // GetFriendRecommendListInfoCsReq 2937;
     // GetPlatformPlayerInfoScRsp 2989;
-    // GetPlayerDetailInfoCsReq 2962;
+    GetPlayerDetailInfoCsReq 2962;
     // GetAssistListCsReq 2961;
     // GetFriendRecommendListInfoScRsp 2939;
     // GetPlatformPlayerInfoCsReq 2965;

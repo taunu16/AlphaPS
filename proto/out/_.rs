@@ -6533,13 +6533,13 @@ pub struct GetFriendListInfoScRsp {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct Mkohepaockm {
+pub struct GetPlayerDetailInfoCsReq { //Mkohepaockm
     #[prost(uint32, tag = "14")]
     pub uid: u32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct Ekediceldll {
+pub struct GetPlayerDetailInfoScRsp { //Ekediceldll
     #[prost(message, optional, tag = "14")]
     pub iikiicbkejc: ::core::option::Option<Fkplcibblhf>,
     #[prost(uint32, tag = "15")]
