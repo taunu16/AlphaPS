@@ -1,5 +1,5 @@
 [workspace]
-members = [ "gameserver", "proto", "sdkserver"]
+members = ["gameserver", "proto", "sdkserver", "xtask"]
 resolver = "2"
 
 [workspace.package]
