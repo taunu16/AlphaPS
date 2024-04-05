@@ -51,7 +51,11 @@ impl PlayerInfo {
         }
     }
 
-    pub async fn sync_lineup(&self, session: &PlayerSession) -> Result<()> {
+    pub async fn sync_lineup(&self, session: &PlayerSession, lineup: LineupInfo) -> Result<()> {
+        let mut avatar_list = lineup.avatar_list;
+        avatar_list.sort_by(|a, b| a.slot.partial_cmp(&b.slot).unwrap());
+        globals.save_lineup(avatar_list.iter().map(|a| a.id).collect());
+
         session
             .send(
                 CMD_SYNC_LINEUP_NOTIFY,

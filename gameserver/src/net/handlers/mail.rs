@@ -140,7 +140,7 @@ pub async fn on_use_item_cs_req(
 
     safe_unwrap_result!(player_info.inventory.take_item(session, body.use_item_id, 1).await);
     if sync_reasons.is_empty() {
-        safe_unwrap_result!(player_info.sync_lineup(session).await);
+        safe_unwrap_result!(player_info.sync_lineup(session, player_info.lineup.clone()).await);
     } else {
         safe_unwrap_result!(player_info.sync_lineup_reason(session, sync_reasons).await);
     }

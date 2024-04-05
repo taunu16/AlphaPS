@@ -238,7 +238,7 @@ async fn process(args: Vec<&str>, session: &PlayerSession, player_info: &mut Ato
                 i += 1;
             }
 
-            safe_unwrap_result!(player_info.sync_lineup(session).await);
+            safe_unwrap_result!(player_info.sync_lineup(session, player_info.lineup.clone()).await);
             return send_message!("Lineup set");
         },
         "scene" => {

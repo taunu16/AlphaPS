@@ -28,11 +28,9 @@ pub async fn on_get_hero_basic_type_info_cs_req(
             GetHeroBasicTypeInfoScRsp {
                 retcode: 0,
                 gender: Gender::Man.into(),
-                cur_basic_type: 8005,
-                // cur_basic_type: HeroBasicType::BoyWarrior.into(),
+                cur_basic_type: HeroBasicType::BoyShaman.into(),
                 basic_type_info_list: vec![HeroBasicTypeInfo {
-                    // basic_type: HeroBasicType::BoyWarrior.into(),
-                    basic_type: 8005,
+                    basic_type: HeroBasicType::BoyShaman.into(),
                     ..Default::default()
                 }],
                 ..Default::default()

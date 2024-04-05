@@ -1,4 +1,5 @@
 use super::*;
+use crate::game::globals;
 
 pub async fn on_get_all_lineup_data_cs_req(
     session: &PlayerSession,
@@ -82,7 +83,7 @@ pub async fn on_join_lineup_cs_req(session: &PlayerSession, body: &JoinLineupCsR
         .avatar_list
         .push(lineup_avatar(body.base_avatar_id, body.slot));
 
-    player_info.sync_lineup(session).await?;
+    player_info.sync_lineup(session, player_info.lineup.clone()).await?;
     session
         .send(CMD_JOIN_LINEUP_SC_RSP, JoinLineupScRsp::default())
         .await
@@ -103,7 +104,7 @@ pub async fn on_replace_lineup_cs_req(
     }
     player_info.lineup.leader_slot = body.leader_slot;
 
-    player_info.sync_lineup(session).await?;
+    player_info.sync_lineup(session, player_info.lineup.clone()).await?;
     session
         .send(CMD_REPLACE_LINEUP_SC_RSP, ReplaceLineupScRsp::default())
         .await
@@ -116,7 +117,7 @@ pub async fn on_quit_lineup_cs_req(session: &PlayerSession, body: &QuitLineupCsR
         .avatar_list
         .retain(|avatar| avatar.id != body.base_avatar_id);
 
-    player_info.sync_lineup(session).await?;
+    player_info.sync_lineup(session, player_info.lineup.clone()).await?;
     session
         .send(
             CMD_QUIT_LINEUP_SC_RSP,
@@ -144,4 +145,3 @@ fn lineup_avatar(id: u32, slot: u32) -> LineupAvatar {
         avatar_type: 3,
     }
 }
-
