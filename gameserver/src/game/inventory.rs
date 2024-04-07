@@ -528,7 +528,7 @@ impl Relic {
             main_affix_id: self.main_affix_id, 
             unique_id: self.unique_id, 
             imhlbinfhlh: self.avatar,
-            sub_affix_list: self.minor_affixes.iter().map(|a| proto::RelicAffix {affix_id: a.id, step: 2 * a.step, cnt: a.step, ..Default::default()}).collect(),
+            sub_affix_list: self.minor_affixes.iter().map(|a| a.to_proto()).collect(),
             ..Default::default() 
         }
     }
@@ -539,7 +539,7 @@ impl Relic {
             level: self.level,
             main_affix_id: self.main_affix_id,
             unique_id: self.unique_id,
-            sub_affix_list: self.minor_affixes.iter().map(|a| proto::RelicAffix {affix_id: a.id, step: 2 * a.step, cnt: a.step, ..Default::default()}).collect(),
+            sub_affix_list: self.minor_affixes.iter().map(|a| a.to_proto()).collect(),
             ..Default::default() 
         }
     }
@@ -548,5 +548,17 @@ impl Relic {
 #[derive(Clone, Serialize, Deserialize, Default, Debug)]
 pub struct RelicAffix {
     pub id: u32,
-    pub step: u32
+    pub step: u32,
+    pub cnt: u32
+}
+
+impl RelicAffix {
+    pub fn to_proto(&self) -> proto::RelicAffix {
+        proto::RelicAffix {
+            affix_id: self.id, 
+            step: self.step, 
+            cnt: self.cnt, 
+            ..Default::default()
+        }
+    }
 }

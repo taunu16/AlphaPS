@@ -2,7 +2,7 @@ use proto::CMD_PLAYER_SYNC_SC_NOTIFY;
 use serde::{Serialize, Deserialize};
 use std::collections::HashMap;
 
-use crate::{game::inventory, net::PlayerSession, util::load_json};
+use crate::{game::{globals, inventory}, net::PlayerSession, util::load_json};
 
 #[derive(Serialize, Deserialize)]
 pub struct ToolsJson {
@@ -103,7 +103,8 @@ pub async fn import(session: &PlayerSession, inventory: &mut inventory::Inventor
         unique_id: relic.internal_uid,
         minor_affixes: relic.sub_affixes.iter().map(|aff| inventory::RelicAffix {
             id: aff.sub_affix_id,
-            step: aff.step
+            step: aff.step,
+            cnt: aff.count
         }).collect()
     }).collect();
 
@@ -119,7 +120,13 @@ pub async fn import(session: &PlayerSession, inventory: &mut inventory::Inventor
 
     inventory.save_data();
 
-    println!("{:#?}", inventory);
+    //monsters
+
+    let globalsm = &mut globals.borrow_mut();
+    globalsm.monster_wave_list = data.battle_config.monsters.iter().map(|a|a.iter().map(|mon| mon.monster_id).collect()).collect();
+    globalsm.monster_levels = data.battle_config.monsters.iter().map(|a|a.first().map(|mon| mon.level).unwrap_or(80)).collect();
+    globalsm.stage_id = data.battle_config.stage_id;
+    globalsm.save();
 
     return session.send(CMD_PLAYER_SYNC_SC_NOTIFY, proto::PlayerSyncScNotify {
         equipment_list: inventory.lightcones_to_proto(),

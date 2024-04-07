@@ -12,6 +12,13 @@ pub struct GetFriendListInfoCsReq {}
 
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+pub struct GetMainMissionCustomValueCsReq {
+    #[prost(bytes = "vec", tag = "2")]
+    pub bytes: ::prost::alloc::vec::Vec<u8>,
+}
+
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
 pub struct PlayerBasicInfo {
     #[prost(string, tag = "1")]
     pub nickname: ::prost::alloc::string::String,

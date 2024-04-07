@@ -78,3 +78,16 @@ pub async fn on_interact_prop_cs_req(
 }
 
 //GetMainMissionCustomValueCsReq
+pub async fn on_get_main_mission_custom_value_cs_req(
+    session: &PlayerSession,
+    body: &GetMainMissionCustomValueCsReq
+) -> Result<()> {println!("{:?}", body);
+    session.send(
+        CMD_GET_MAIN_MISSION_CUSTOM_VALUE_SC_RSP,
+        Cbhcalibgde {
+            retcode: 0,
+            hkoojcehdbp: vec![],
+            jghfbnmofdp: vec![]
+        }
+    ).await
+}

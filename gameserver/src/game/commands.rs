@@ -110,7 +110,7 @@ pub async fn invoke(
             }
 
             let mut affix = affix.clone();
-            affix.push(inventory::RelicAffix { id: parse_u32!(args[0]), step: parse_u32!(args[0]) });
+            affix.push(inventory::RelicAffix { id: parse_u32!(args[0]), step: parse_u32!(args[0])*2, cnt: parse_u32!(args[0]) });
             player_info.command_system.state = CMDSystemState::RelicBuilder(affix.clone(), false);
             Ok(())
         }
@@ -154,6 +154,10 @@ async fn process(args: Vec<&str>, session: &PlayerSession, player_info: &mut Ato
         "give" => {
             safe_unwrap_result!(inventory.add_item(session, parse_u32!(args[1]), parse_u32_def!(args.get(2), "1")).await);
             return send_message!("Gave {} of {}", parse_u32_def!(args.get(2), "1"), parse_u32!(args[1]));
+        },
+        "take" => {
+            safe_unwrap_result!(inventory.take_item(session, parse_u32!(args[1]), parse_u32_def!(args.get(2), "1")).await);
+            return send_message!("Taken {} of {}", parse_u32_def!(args.get(2), "1"), parse_u32!(args[1]));
         },
         "givel" => {
             return inventory.add_lightcone(session, parse_u32!(args[1]), parse_u32_def!(args.get(2), "1"), parse_u32_def!(args.get(3), "1"), parse_u32_def!(args.get(3), "0")).await;

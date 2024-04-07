@@ -1,3 +1,5 @@
+use std::collections::HashMap;
+
 use crate::util;
 
 use super::*;
@@ -58,4 +60,57 @@ pub async fn on_player_heart_beat_cs_req(
             },
         )
         .await
+}
+
+pub async fn on_phbnokkhgkd(
+    session: &PlayerSession,
+    _body: &Phbnokkhgkd,
+) -> Result<()> {
+    let mut elements = HashMap::new();
+
+    for i in vec![101u32, 102, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14] {
+        elements.insert(i, Bbjejalfhen {
+            gfehjonbcmn: Nhnehbekhhj::PageUnlocked as i32,
+            hajfkgdcglb: Pefolbeomfh::PageDescCollapse as i32,
+            oockdmpidlg: vec![
+                Gbofekdfncl {
+                    item_id: 223000,
+                    unique_id: 223000,
+                    ohchcpejldh: 10,
+                    pnaebbacmlm: 10,
+                    pddanmnadaf: 10,
+                    lblemehjiek: 10,
+                    ..Default::default()
+                }
+            ],
+            egigfgpjddg: if i < 9 || i > 100 {i} else {i+1},
+            idgckihophm: if i == 101 {1} else if i == 102 {2} else {i+2}
+        });
+    }
+
+    session.send(
+        CMD_TRAVEL_BROCHURE_GET_DATA_SC_RSP,
+        Ipogaccpagm {
+            retcode: 0,
+            impheidipgc: 0,
+            biaghopnodp: elements,
+            moippddaohm: HashMap::from([
+                (101u32, 101u32),
+                (1u32, 1u32),
+                (2u32, 2u32),
+                (3u32, 3u32),
+                (4u32, 4u32),
+                (5u32, 5u32),
+                (6u32, 6u32),
+                (7u32, 7u32),
+                (8u32, 8u32),
+                (9u32, 10u32),
+                (10u32, 11u32),
+                (11u32, 12u32),
+                (12u32, 13u32),
+                (13u32, 14u32),
+                (14u32, 15u32),
+            ])
+        }
+    ).await
 }

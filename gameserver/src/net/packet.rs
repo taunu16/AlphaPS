@@ -75,10 +75,10 @@ macro_rules! trait_handler {
                     return Ok(());
                 }
                 match cmd_type {
-                    CMD_GET_MAIN_MISSION_CUSTOM_VALUE_CS_REQ => {
-                        println!("{}: {}", cmd_type, rbase64::encode(&payload));
-                        Ok(())
-                    }
+                    // CMD_TRAVEL_BROCHURE_SET_CUSTOM_VALUE_CS_REQ => {
+                    //     println!("{}: {}", cmd_type, rbase64::encode(&payload));
+                    //     Ok(())
+                    // }
                     CMD_PLAYER_HEART_BEAT_CS_REQ => {
                         on_player_heart_beat_cs_req(session, &PlayerHeartBeatCsReq::decode(&mut &payload[..])?).await
                     }
@@ -765,7 +765,7 @@ trait_handler! {
     // AcceptMainMissionScRsp 1297;
     // FinishTalkMissionScRsp 1288;
     // FinishCosumeItemMissionCsReq 1296;
-    // GetMainMissionCustomValueCsReq 1224;
+    GetMainMissionCustomValueCsReq 1224;
     // MonopolyGetRegionProgressCsReq 7040;
     // MonopolyGetDailyInitItemCsReq 7031;
     // DailyFirstEnterMonopolyActivityScRsp 7006;
@@ -1355,7 +1355,7 @@ trait_handler! {
     // TrainRefreshTimeNotify 3702;
     // TravelBrochureUpdatePasterPosCsReq 6445;
     // TravelBrochureApplyPasterListCsReq 6416;
-    // TravelBrochureGetDataCsReq 6434;
+    Phbnokkhgkd 6434; //TravelBrochureGetDataCsReq
     // TravelBrochureSetPageDescStatusScRsp 6442;
     // TravelBrochureSelectMessageScRsp 6409;
     // TravelBrochurePageResetScRsp 6439;
