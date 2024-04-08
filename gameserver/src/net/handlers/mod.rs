@@ -122,10 +122,13 @@ dummy! {
     GetSecretKeyInfo,
     GetVideoVersionKey,
     GetCurBattleInfo,
-    GetPhoneData,
+    // GetPhoneData,
     PlayerLoginFinish,
     //profile
     GetAssistHistory,
     GetFriendDevelopmentInfo,
-    GetFriendBattleRecordDetail
+    GetFriendBattleRecordDetail,
+    //assists
+    // GetFriendAssistList,
+    // GetLineupAvatarData
 }

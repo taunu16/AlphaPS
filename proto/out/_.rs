@@ -1,5 +1,9 @@
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+pub struct GetAssistListCsReq{}
+
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
 pub struct SceneCastSkillCostMpCsReq {}
 
 #[allow(clippy::derive_partial_eq_without_eq)]
@@ -135,7 +139,7 @@ pub struct Edcfbagkign {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct Mlppfodcabi { //SimpleInfo
+pub struct Mlppfodcabi {
     #[prost(uint64, tag = "1")]
     pub ghlhiopphkg: u64,
     #[prost(enumeration = "ReplayType", tag = "2")]
@@ -11052,10 +11056,10 @@ pub struct Elojkpkiaig {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct Cholnfndcfb {}
+pub struct GetPhoneDataCsReq {} //Cholnfndcfb
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct Dbmjmcnohcf {
+pub struct GetPhoneDataScRsp {
     #[prost(uint32, tag = "4")]
     pub ccmpnpbeipj: u32,
     #[prost(uint32, repeated, tag = "6")]
@@ -11091,13 +11095,13 @@ pub struct Klieoiafmda {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct Cnnegfihlcm {
+pub struct SelectPhoneThemeCsReq { //Cnnegfihlcm
     #[prost(uint32, tag = "1")]
     pub bganhiddedd: u32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct Ngpmcbbmmbm {
+pub struct SelectPhoneThemeScRsp {
     #[prost(uint32, tag = "7")]
     pub retcode: u32,
     #[prost(uint32, tag = "2")]

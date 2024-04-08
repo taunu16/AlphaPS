@@ -125,6 +125,9 @@ pub async fn on_use_item_cs_req(
             CMD_USE_ITEM_SC_RSP,
             UseItemScRsp {
                 retcode: 0,
+                use_item_id: body.use_item_id,
+                return_data: Option::None,
+                oipebhlkhpe: body.oipebhlkhpe,
                 ..Default::default()
             }
         ).await;

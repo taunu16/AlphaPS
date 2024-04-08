@@ -62,6 +62,7 @@ pub async fn on_player_heart_beat_cs_req(
         .await
 }
 
+//travel broshure
 pub async fn on_phbnokkhgkd(
     session: &PlayerSession,
     _body: &Phbnokkhgkd,
@@ -84,7 +85,7 @@ pub async fn on_phbnokkhgkd(
                 }
             ],
             egigfgpjddg: if i < 9 || i > 100 {i} else {i+1},
-            idgckihophm: if i == 101 {1} else if i == 102 {2} else {i+2}
+            idgckihophm: if i < 9 || i > 100 {i} else {i+1}//if i == 101 {1} else if i == 102 {2} else {i+2}
         });
     }
 
@@ -111,6 +112,42 @@ pub async fn on_phbnokkhgkd(
                 (13u32, 14u32),
                 (14u32, 15u32),
             ])
+        }
+    ).await
+}
+
+pub async fn on_get_phone_data_cs_req(
+    session: &PlayerSession,
+    _body: &GetPhoneDataCsReq,
+) -> Result<()> {
+    let mut data = vec![];
+    let mut data2 = vec![];
+    for i in 0..6u32 {
+        data.push(221000 + i);
+        data2.push(220000 + i);
+    }
+    session.send(
+        CMD_GET_PHONE_DATA_SC_RSP,
+        GetPhoneDataScRsp {
+            epoicbnlbgn: data2.clone(),
+            paciklpabdl: data,
+            ccmpnpbeipj: 221000,
+            eacdbinnkjg: 220000,
+            retcode: 0
+        }
+    ).await
+}
+
+pub async fn on_select_phone_theme_cs_req(
+    session: &PlayerSession,
+    body: &SelectPhoneThemeCsReq,
+) -> Result<()> {
+    session.send(
+        CMD_SELECT_PHONE_THEME_SC_RSP,
+        SelectPhoneThemeScRsp {
+            ccmpnpbeipj: body.bganhiddedd,
+            inhdnclkmjg: body.bganhiddedd,
+            retcode: 0
         }
     ).await
 }

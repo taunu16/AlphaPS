@@ -75,7 +75,7 @@ macro_rules! trait_handler {
                     return Ok(());
                 }
                 match cmd_type {
-                    // CMD_TRAVEL_BROCHURE_SET_CUSTOM_VALUE_CS_REQ => {
+                    // CMD_GET_ASSIST_LIST_CS_REQ => {
                     //     println!("{}: {}", cmd_type, rbase64::encode(&payload));
                     //     Ok(())
                     // }
@@ -500,7 +500,7 @@ trait_handler! {
     // GetFriendRecommendListInfoCsReq 2937;
     // GetPlatformPlayerInfoScRsp 2989;
     GetPlayerDetailInfoCsReq 2962;
-    // GetAssistListCsReq 2961;
+    GetAssistListCsReq 2961;
     // GetFriendRecommendListInfoScRsp 2939;
     // GetPlatformPlayerInfoCsReq 2965;
     GetFriendListInfoCsReq 2934;
@@ -896,10 +896,10 @@ trait_handler! {
     // SelectPhoneThemeScRsp 5119;
     // GetPhoneDataScRsp 5148;
     // SelectChatBubbleScRsp 5188;
-    // SelectPhoneThemeCsReq 5109;
+    SelectPhoneThemeCsReq 5109;
     // UnlockChatBubbleScNotify 5102;
     // SelectChatBubbleCsReq 5162;
-    // GetPhoneDataCsReq 5134;
+    GetPhoneDataCsReq 5134;
     // UnlockPhoneThemeScNotify 5143;
     // PlayerLogoutCsReq 62;
     PlayerGetTokenCsReq 2;
