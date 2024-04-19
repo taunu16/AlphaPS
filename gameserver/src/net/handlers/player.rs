@@ -67,11 +67,30 @@ pub async fn on_phbnokkhgkd(
     session: &PlayerSession,
     _body: &Phbnokkhgkd,
 ) -> Result<()> {
+    let ids = HashMap::from([
+        (12, 1300),
+        (1, 101),
+        (2, 200),
+        (3, 300),
+        (4, 402),
+        (101, 0),
+        (5, 502),
+        (102, 0),
+        (6, 600),
+        (7, 702),
+        (8, 800),
+        (9, 1001),
+        (10, 1101),
+        (11, 1202),
+
+        (13, 1401),
+        (14, 1501),
+    ]);
     let mut elements = HashMap::new();
 
     for i in vec![101u32, 102, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14] {
         elements.insert(i, Bbjejalfhen {
-            gfehjonbcmn: Nhnehbekhhj::PageUnlocked as i32,
+            gfehjonbcmn: Nhnehbekhhj::PageInteracted as i32,
             hajfkgdcglb: Pefolbeomfh::PageDescCollapse as i32,
             oockdmpidlg: vec![
                 Gbofekdfncl {
@@ -84,8 +103,8 @@ pub async fn on_phbnokkhgkd(
                     ..Default::default()
                 }
             ],
-            egigfgpjddg: if i < 9 || i > 100 {i} else {i+1},
-            idgckihophm: if i < 9 || i > 100 {i} else {i+1}//if i == 101 {1} else if i == 102 {2} else {i+2}
+            egigfgpjddg: *ids.get(&i).unwrap_or(&0),
+            idgckihophm: i
         });
     }
 
@@ -93,24 +112,37 @@ pub async fn on_phbnokkhgkd(
         CMD_TRAVEL_BROCHURE_GET_DATA_SC_RSP,
         Ipogaccpagm {
             retcode: 0,
-            impheidipgc: 0,
+            impheidipgc: 2,
             biaghopnodp: elements,
             moippddaohm: HashMap::from([
-                (101u32, 101u32),
-                (1u32, 1u32),
-                (2u32, 2u32),
-                (3u32, 3u32),
-                (4u32, 4u32),
-                (5u32, 5u32),
-                (6u32, 6u32),
-                (7u32, 7u32),
-                (8u32, 8u32),
-                (9u32, 10u32),
-                (10u32, 11u32),
-                (11u32, 12u32),
-                (12u32, 13u32),
-                (13u32, 14u32),
-                (14u32, 15u32),
+                (223001u32, 1u32),
+                (223005u32, 1u32),
+                (223200u32, 1u32),
+                (223714u32, 1u32),
+                (223332u32, 1u32),
+                (223274u32, 1u32),
+                (223023u32, 1u32),
+                (223152u32, 1u32),
+                (223409u32, 1u32),
+                (223731u32, 1u32),
+                (223155u32, 1u32),
+                (223732u32, 1u32),
+                (223733u32, 1u32),
+                (223734u32, 1u32),
+                (223350u32, 1u32),
+                (223735u32, 1u32),
+                (223352u32, 1u32),
+                (223353u32, 1u32),
+                (223356u32, 1u32),
+                (223106u32, 1u32),
+                (223431u32, 1u32),
+                (223432u32, 1u32),
+                (223370u32, 1u32),
+                (223434u32, 1u32),
+                (223184u32, 1u32),
+                (223504u32, 1u32),
+                (223254u32, 1u32),
+                (223255u32, 1u32),
             ])
         }
     ).await
@@ -147,6 +179,20 @@ pub async fn on_select_phone_theme_cs_req(
         SelectPhoneThemeScRsp {
             ccmpnpbeipj: body.bganhiddedd,
             inhdnclkmjg: body.bganhiddedd,
+            retcode: 0
+        }
+    ).await
+}
+
+pub async fn on_select_chat_bubble_cs_req(
+    session: &PlayerSession,
+    body: &SelectChatBubbleCsReq,
+) -> Result<()> {
+    session.send(
+        CMD_SELECT_CHAT_BUBBLE_SC_RSP,
+        SelectChatBubbleScRsp {
+            eacdbinnkjg: body.minhcfcflbd,
+            gcknobhoooa: body.minhcfcflbd,
             retcode: 0
         }
     ).await

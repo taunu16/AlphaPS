@@ -51,6 +51,12 @@ impl PlayerInfo {
         }
     }
 
+    pub fn fix_trailblazer(&mut self) {
+        if let Some(tb) = self.lineup.avatar_list.iter_mut().find(|a| a.id.to_string().starts_with("8")) {
+            tb.id = 8005;
+        }
+    }
+
     pub async fn sync_lineup(&self, session: &PlayerSession, lineup: LineupInfo) -> Result<()> {
         let mut avatar_list = lineup.avatar_list;
         avatar_list.sort_by(|a, b| a.slot.partial_cmp(&b.slot).unwrap());

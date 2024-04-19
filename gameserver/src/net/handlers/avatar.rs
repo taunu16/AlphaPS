@@ -121,6 +121,12 @@ pub async fn on_scene_cast_skill_cs_req(
             CMD_SCENE_CAST_SKILL_SC_RSP,
             SceneCastSkillScRsp {
                 retcode: 0,
+                elgjckaejld: body.elgjckaejld,
+                pbgpinglheg: vec![
+                    Kaijnnbaieb {
+                        ..Default::default()
+                    }
+                ],
                 ..Default::default()
             }
         ).await

@@ -75,7 +75,7 @@ macro_rules! trait_handler {
                     return Ok(());
                 }
                 match cmd_type {
-                    // CMD_GET_ASSIST_LIST_CS_REQ => {
+                    // CMD_GET_FIRST_TALK_NPC_CS_REQ => {
                     //     println!("{}: {}", cmd_type, rbase64::encode(&payload));
                     //     Ok(())
                     // }
@@ -204,8 +204,8 @@ trait_handler! {
     // TakePrestigeRewardScRsp 4768;
     // GetUpdatedArchiveDataScRsp 2388;
     // GetArchiveDataScRsp 2348;
-    // GetArchiveDataCsReq 2334;
-    // GetUpdatedArchiveDataCsReq 2362;
+    GetArchiveDataCsReq 2334;
+    GetUpdatedArchiveDataCsReq 2362;
     // UnlockSkilltreeScRsp 309;
     DressRelicAvatarCsReq 359;
     // TakeOffRelicScRsp 337;
@@ -520,7 +520,7 @@ trait_handler! {
     // GetFriendChallengeDetailScRsp 2993;
     // SearchPlayerScRsp 2928;
     // GetFriendChallengeLineupCsReq 2944;
-    // SetAssistCsReq 2991;
+    SetAssistCsReq 2991;
     // GetAssistListScRsp 2918;
     // GetPlayerDetailInfoScRsp 2988;
     // SetForbidOtherApplyFriendScRsp 2955;
@@ -717,7 +717,7 @@ trait_handler! {
     // UpdateMovieRacingDataScRsp 4156;
     // TriggerVoiceCsReq 4196;
     // SecurityReportCsReq 4145;
-    Igocjbeekjp 4133; //SubmitOrigamiItemCsReq
+    SubmitOrigamiItemCsReq 4133; //SubmitOrigamiItemCsReq
     // TakePictureCsReq 4102;
     // UpdateMovieRacingDataCsReq 4185;
     // GetMovieRacingDataCsReq 4116;
@@ -898,7 +898,7 @@ trait_handler! {
     // SelectChatBubbleScRsp 5188;
     SelectPhoneThemeCsReq 5109;
     // UnlockChatBubbleScNotify 5102;
-    // SelectChatBubbleCsReq 5162;
+    SelectChatBubbleCsReq 5162;
     GetPhoneDataCsReq 5134;
     // UnlockPhoneThemeScNotify 5143;
     // PlayerLogoutCsReq 62;
@@ -1233,7 +1233,7 @@ trait_handler! {
     // StartTimedFarmElementScRsp 1460;
     GetCurSceneInfoCsReq 1419;
     // SpringRecoverSingleAvatarCsReq 1493;
-    // SceneEntityTeleportCsReq 1412;
+    SceneEntityTeleportCsReq 1412;
     // ReturnLastTownScRsp 1430;
     // EnterSectionCsReq 1441;
     // SceneCastSkillScRsp 1409;
@@ -1249,7 +1249,7 @@ trait_handler! {
     // GroupStateChangeScRsp 1421;
     // SpringRecoverCsReq 1444;
     // SetCurInteractEntityScRsp 1497;
-    // SceneCastSkillCsReq 1402;
+    SceneCastSkillCsReq 1402;
     StartCocoonStageCsReq 1408;
     GetSceneMapInfoCsReq 1470;
     // SceneEntityMoveScRsp 1448;
@@ -1315,8 +1315,8 @@ trait_handler! {
     // GetStrongChallengeActivityDataCsReq 6634;
     // StrongChallengeActivityBattleEndScNotify 6602;
     // PlayerSyncScNotify 634;
-    Ofepjkfdlaj 2134; //GetNpcTakenRewardCsReq
-    // GetFirstTalkNpcCsReq 2102;
+    GetNpcTakenRewardCsReq 2134; //GetNpcTakenRewardCsReq
+    GetFirstTalkNpcCsReq 2102;
     // FinishFirstTalkByPerformanceNpcScRsp 2106;
     // SelectInclinationTextScRsp 2129;
     // GetNpcTakenRewardScRsp 2148;

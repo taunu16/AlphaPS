@@ -1,6 +1,4 @@
-use rand::Rng;
-
-use crate::{excel::tools_res::*, logging::log_through, safe_unwrap_result};
+use crate::{excel::tools_res::*, find_by_id, safe_unwrap_result};
 
 use super::*;
 
@@ -210,106 +208,85 @@ pub async fn on_lckgkdehclb(session: &PlayerSession, request: &Lckgkdehclb) -> R
 
 // getscenemapinfocsreq
 pub async fn on_get_scene_map_info_cs_req(sesison: &PlayerSession, request: &GetSceneMapInfoCsReq) -> Result<()> {
-    let back = vec![
-        1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25,
-        26, 27, 28, 29, 30, 31, 32, 33, 34, 0, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47,
-        48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 69,
-        70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90
-    ];
+    let mut map_infos = Vec::<Fjniajephmj>::new();
 
-    let mut map_info = Fjniajephmj {
-        retcode: 0,
-        // lighten section list
-        phicefeaigb: back.clone(),
-        // maze chest
-        dcbdhkkkpgd: vec![
-            Gbiimoglajl {
-                gommoeicmjg: Kihbdaniehp::MapInfoChestTypeNormal.into(),
-                ..Default::default()
-            },
-            Gbiimoglajl {
-                gommoeicmjg: Kihbdaniehp::MapInfoChestTypePuzzle.into(),
-                ..Default::default()
-            },
-            Gbiimoglajl {
-                gommoeicmjg: Kihbdaniehp::MapInfoChestTypeChallenge.into(),
-                ..Default::default()
-            },
-        ],
-        entry_id: request.dmkkkfnkofh[0],
-        ..Default::default()
-    };
-
-    if let Some((level, enterance, _)) = GAME_RESOURCES
-        .get_level_group(request.dmkkkfnkofh[0])
-        .await
-    {
-        // add teleports
-        for teleport in &level.teleports {
-            map_info.ojlnmnehgai.push(*teleport.0);
-        }
-
-        // prop
-        for prop in &level.props {
-            let group = Gecjjlmabhp {
-                group_id: prop.group_id,
-                ..Default::default()
-            };
-            if !map_info.pmolfbcbfpe.contains(&group) {
-                map_info.pmolfbcbfpe.push(group);
-            }
-
-            map_info.cgkfbhoadpc.push(Kangcibfhee {
-                group_id: prop.group_id,
-                state: if prop.prop_state_list.contains(&PropState::CheckPointEnable) {
-                    PropState::CheckPointEnable as u32
-                } else {
-                    (prop.prop_state_list.first().unwrap_or(&PropState::Closed)).clone() as u32
+    for entry_id in &request.dmkkkfnkofh {
+        let mut map_info = Fjniajephmj {
+            retcode: 0,
+            dcbdhkkkpgd: vec![
+                Gbiimoglajl {
+                    gommoeicmjg: Kihbdaniehp::MapInfoChestTypeNormal.into(),
+                    ..Default::default()
                 },
-                ifjocipnpgd: prop.id as u32,
-            });
+                Gbiimoglajl {
+                    gommoeicmjg: Kihbdaniehp::MapInfoChestTypePuzzle.into(),
+                    ..Default::default()
+                },
+                Gbiimoglajl {
+                    gommoeicmjg: Kihbdaniehp::MapInfoChestTypeChallenge.into(),
+                    ..Default::default()
+                },
+            ],
+            entry_id: *entry_id,
+            ..Default::default()
+        };
+
+        for i in 0..100 {
+            map_info.phicefeaigb.push(i)
         }
 
-        map_info.entry_id = enterance.id;
-    } else {
-        
-        // add teleports (source: trust me bro)
-        for j in 1..100 {
-            let group = Gecjjlmabhp {
-                group_id: j,
-                ..Default::default()
-            };
-            if !map_info.pmolfbcbfpe.contains(&group) {
-                map_info.pmolfbcbfpe.push(group);
+        let group_config = GAME_RESOURCES
+            .map_entrance
+            .get(&entry_id)
+            .map(|v| {
+                GAME_RESOURCES
+                    .level_group
+                    .get(&format!("P{}_F{}", v.plane_id, v.floor_id))
+            })
+            .flatten();
+
+        if let Some(level) = group_config {
+            // add teleports
+            for teleport in &level.teleports {
+                map_info.ojlnmnehgai.push(*teleport.0)
             }
-            for i in 1..10 {
-                map_info.ojlnmnehgai.push((request.dmkkkfnkofh[0] as f32 / 100f32).floor() as u32 * 100 + i);
-                map_info.cgkfbhoadpc.push(Kangcibfhee {
-                    group_id: j,
-                    state: PropState::CheckPointEnable as u32,
-                    ifjocipnpgd: 300000 + i,
+
+            for (group_id, group) in &level.group_items {
+                map_info.pmolfbcbfpe.push(Gecjjlmabhp {
+                    group_id: *group_id,
+                    ..Default::default()
                 });
+
+                // prop
+                for prop in &group.props {
+                    map_info.cgkfbhoadpc.push(Kangcibfhee {
+                        group_id: prop.group_id,
+                        state: if prop.prop_state_list.contains(&PropState::CheckPointEnable) {
+                            PropState::CheckPointEnable as u32
+                        } else {
+                            prop.state.clone() as u32
+                        },
+                        ifjocipnpgd: prop.id as u32,
+                    });
+                }
             }
         }
-        for i in 1..10 {
-            map_info.ojlnmnehgai.push((request.dmkkkfnkofh[0] as f32 / 100f32).floor() as u32 * 100 + i);
-        }
-        map_info.ojlnmnehgai.push(1030100);
-        // for i in 0..100 {
-        //     map_info.ojlnmnehgai.push(10000 + i);
-        // }
+
+        // Debug
+        // tokio::fs::write(format!("./text-{}.txt", entry_id), format!("{:#?}", map_info)).await?;
+        map_infos.push(map_info)
     }
 
-
-    sesison.send(
-        CMD_GET_SCENE_MAP_INFO_SC_RSP,
-        Cegeebldbke {
-            retcode: 0,
-            mhefdgcamjl: vec![map_info],
-            ..Default::default()
-        },
-    )
-    .await?;
+    sesison
+        .send(
+            CMD_GET_SCENE_MAP_INFO_SC_RSP,
+            Cegeebldbke {
+                retcode: 0,
+                mhefdgcamjl: map_infos,
+                ..Default::default()
+            },
+        )
+        .await?;
 
     Ok(())
 }
@@ -359,6 +336,19 @@ pub async fn on_scene_entity_move_cs_req(session: &PlayerSession, request: &Scen
     Ok(())
 }
 
+pub async fn on_scene_entity_teleport_cs_req(
+    session: &PlayerSession, 
+    request: &SceneEntityTeleportCsReq
+) -> Result<()> {
+    session
+        .send(CMD_SCENE_ENTITY_TELEPORT_SC_RSP, SceneEntityTeleportScRsp{
+            entity_motion: request.entity_motion.clone(),
+            retcode: 0,
+            oeipegeoedk: 0
+        })
+        .await
+}
+
 async fn load_scene(
     session: &PlayerSession,
     entry_id: u32,
@@ -368,293 +358,240 @@ async fn load_scene(
     let player_info = &mut session.player_info_mut();
     let json = &GAME_RESOURCES;
 
-    if let Some((level, enterance, plane)) = json.get_level_group( entry_id).await {
-        let mut position = player_info.position.clone();
-        if let Some(teleport_id) = teleport_id {
-            if let Some(teleport) = level.teleports.get(&teleport_id) {
-                position.x = (teleport.pos_x * 1000f64) as i32;
-                position.y = (teleport.pos_y * 1000f64) as i32;
-                position.z = (teleport.pos_z * 1000f64) as i32;
-                position.rot_y = (teleport.rot_y * 1000f64) as i32;
+    let enterance = GAME_RESOURCES
+        .map_entrance
+        .get(&entry_id)
+        .ok_or_else(|| anyhow::format_err!("Map Entrance Not Found"))?;
+
+    let plane = GAME_RESOURCES
+        .maze_plane
+        .get(&enterance.plane_id)
+        .ok_or_else(|| anyhow::format_err!("Map Plane Not Found"))?;
+
+    let group_config = GAME_RESOURCES
+        .level_group
+        .get(&format!("P{}_F{}", enterance.plane_id, enterance.floor_id))
+        .ok_or_else(|| anyhow::format_err!("Group Config Not Found"))?;
+
+    let mut position = player_info.position.clone();
+    if let Some(teleport_id) = teleport_id {
+        if let Some(teleport) = group_config.teleports.get(&teleport_id) {
+            let anchor = group_config
+                .group_items
+                .get(&teleport.anchor_group_id.unwrap_or_default())
+                .map(|v| v.anchors.get(&teleport.anchor_id.unwrap_or_default()))
+                .flatten();
+            if let Some(anchor) = anchor {
+                position.x = (anchor.pos_x * 1000f64) as i32;
+                position.y = (anchor.pos_y * 1000f64) as i32;
+                position.z = (anchor.pos_z * 1000f64) as i32;
+                position.rot_y = (anchor.rot_y * 1000f64) as i32;
             }
         }
+    }
 
-        let mut scene_info = SceneInfo {
-            floor_id: enterance.floor_id as u32,
-            plane_id: enterance.plane_id as u32,
-            entry_id,
-            game_mode_type: plane
-                .as_ref()
-                .map(|v| v.plane_type)
-                .unwrap_or(enterance.entrance_type) as u32,
+    let mut scene_info = SceneInfo {
+        floor_id: enterance.floor_id as u32,
+        plane_id: enterance.plane_id as u32,
+        entry_id,
+        game_mode_type: plane.plane_type as u32,
+        pbfgagecpcd: plane.world_id,
+        ..Default::default()
+    };
 
-            // world_id: plane.map(|v| v.world_id).unwrap_or_default(),
+    let lineup_info = player_info.lineup.clone();
+    let player_pos = MotionInfo {
+        // rot
+        rot: Some(Vector {
+            x: 0,
+            y: position.rot_y,
+            z: 0,
+        }),
+        // pos
+        pos: Some(Vector {
+            x: position.x,
+            y: position.y,
+            z: position.z,
+        }),
+    };
+
+    let mut loaded_npc: Vec<u32> = vec![];
+    let mut prop_entity_id = 10;
+    let mut npc_entity_id = 10_000;
+    let mut monster_entity_id = 20_000;
+
+    for (group_id, group) in &group_config.group_items {
+        let mut group_info = Dhkacjhaoid {
+            state: 0,
+            group_id: *group_id,
             ..Default::default()
         };
 
-        let lineup_info = player_info.lineup.clone();
-        let player_pos = MotionInfo {
-            // rot
-            rot: Some(Vector {
-                x:0,
-                y: position.rot_y,
-                z: 0,
-            }),
-            // pos
-            pos: Some(Vector {
-                x: position.x,
-                y: position.y,
-                z: position.z,
-            }),
-        };
-
-        let mut entities = 0;
-
-        // LOAD PROPS
-        for prop in level.props {
-            if entities >= 500 {
-                continue;
-            }
-            entities += 1;
-
-            let mut rng = rand::thread_rng();
-
-            let prop_state = if prop.anchor_id.unwrap_or_default() > 0 {
-                8
+        // Load Props
+        for prop in &group.props {
+            let prop_state = if prop.prop_state_list.contains(&PropState::CheckPointEnable) {
+                PropState::CheckPointEnable
             } else {
-                prop.prop_state_list.first().unwrap().clone() as u32
+                prop.state.clone()
             };
-            let info = SceneEntityInfo {
+
+            prop_entity_id += 1;
+
+            let prop_position = Position {
+                x: (prop.pos_x * 1000f64) as i32,
+                y: (prop.pos_y * 1000f64) as i32,
+                z: (prop.pos_z * 1000f64) as i32,
+                rot_y: (prop.rot_y * 1000f64) as i32,
+            };
+
+            let entity_info = SceneEntityInfo {
                 inst_id: prop.id as u32,
                 group_id: prop.group_id,
-                entity_id: rng.gen(),
-                motion: Some(MotionInfo {
-                    // pos
-                    pos: Some(Vector {
-                        x: (prop.pos_x * 1000f64) as i32,
-                        y: (prop.pos_y * 1000f64) as i32,
-                        z: (prop.pos_z * 1000f64) as i32,
-                    }),
-                    // rot
-                    rot: Some(Vector {
-                        x: 0,
-                        y: (prop.rot_y * 1000f64) as i32,
-                        z: 0,
-                    }),
-                }),
+                motion: Some(prop_position.to_motion()),
                 prop: Some(ScenePropInfo {
-                    prop_id: prop.prop_id as u32,
-                    prop_state: prop_state,
+                    prop_id: prop.prop_id,
+                    prop_state: prop_state as u32,
+                    ..Default::default()
+                }),
+                entity_id: prop_entity_id,
+                ..Default::default()
+            };
+
+            group_info.entity_list.push(entity_info);
+        }
+
+        // Load NPCs
+        for npc in &group.npcs {
+            if loaded_npc.contains(&(npc.npcid as u32))
+                || player_info.inventory.avatars.iter().find(|a| a.id == npc.npcid).is_some()
+            {
+                continue;
+            }
+            npc_entity_id += 1;
+            loaded_npc.push(npc.npcid as u32);
+
+            let npc_position = Position {
+                x: (npc.pos_x * 1000f64) as i32,
+                y: (npc.pos_y * 1000f64) as i32,
+                z: (npc.pos_z * 1000f64) as i32,
+                rot_y: (npc.rot_y * 1000f64) as i32,
+            };
+
+            let info = SceneEntityInfo {
+                inst_id: npc.id as u32,
+                group_id: npc.group_id,
+                entity_id: npc_entity_id,
+                motion: Some(npc_position.to_motion()),
+                npc: Some(SceneNpcInfo {
+                    egeneneoadj: npc.npcid as u32,
                     ..Default::default()
                 }),
                 ..Default::default()
             };
 
-            // only add check
-            // if prop_state == 8 {
-            //     group_info.entity_list.push(info);
-            // }
-            if let Some(group) = scene_info
-                .chhmmbdhjpg
-                .iter_mut()
-                .find(|v| v.group_id == prop.group_id)
-            {
-                group.entity_list.push(info)
-            } else {
-                let mut group_info = Dhkacjhaoid {
-                    state: 0,
-                    group_id: prop.group_id,
-                    ..Default::default()
-                };
-                group_info.entity_list.push(info);
-                scene_info.chhmmbdhjpg.push(group_info);
-            }
+            group_info.entity_list.push(info);
         }
 
-        // LOAD MONSTERS
-        for monster in level.monsters {
-            if entities >= 500 {
-                continue;
-            }
-            entities += 1;
+        // Load Monsters
+        for monster in &group.monsters {
+            monster_entity_id += 1;
+            let monster_position = Position {
+                x: (monster.pos_x * 1000f64) as i32,
+                y: (monster.pos_y * 1000f64) as i32,
+                z: (monster.pos_z * 1000f64) as i32,
+                rot_y: (monster.rot_y * 1000f64) as i32,
+            };
 
-            let mut rng = rand::thread_rng();
+            let npc_monster = SceneNpcMonsterInfo {
+                monster_id: monster.npcmonster_id as u32,
+                event_id: monster.event_id as u32,
+                world_level: 6,
+                ..Default::default()
+            };
 
             let info = SceneEntityInfo {
                 inst_id: monster.id as u32,
                 group_id: monster.group_id,
-                entity_id: rng.gen(),
-                motion: Some(MotionInfo {
-                    // pos
-                    pos: Some(Vector {
-                        x: (monster.pos_x * 1000f64) as i32,
-                        y: (monster.pos_y * 1000f64) as i32,
-                        z: (monster.pos_z * 1000f64) as i32,
-                    }),
-                    // rot
-                    rot: Some(Vector {
-                        x: 0,
-                        y: (monster.rot_y * 1000f64) as i32,
-                        z: 0,
-                    }),
-                }),
-                npc_monster: Some(SceneNpcMonsterInfo {
-                    monster_id: monster.npcmonster_id as u32,
-                    event_id: monster.event_id as u32,
-                    world_level: 6,
-                    ..Default::default()
-                }),
+                entity_id: monster_entity_id,
+                motion: Some(monster_position.to_motion()),
+                npc_monster: Some(npc_monster),
                 ..Default::default()
             };
 
-            if let Some(group) = scene_info
-                .chhmmbdhjpg
-                .iter_mut()
-                .find(|v| v.group_id == monster.group_id)
-            {
-                group.entity_list.push(info)
-            } else {
-                let mut group_info = Dhkacjhaoid {
-                    state: 0,
-                    group_id: monster.group_id,
-                    ..Default::default()
-                };
-                group_info.entity_list.push(info);
-                scene_info.chhmmbdhjpg.push(group_info);
-            }
+            group_info.entity_list.push(info);
         }
 
-        // //Add calyx
-        // if let Some(pos) = player_pos.clone().pos {
-        //     let mut rng = rand::thread_rng();
-        //     if let Some(group) = scene_info
-        //         .chhmmbdhjpg
-        //         .iter_mut()
-        //         .find(|v| v.group_id == 19)
-        //     {
-        //         group.entity_list.push(generate_calyx!(pos, rng.gen()))
-        //     } else {
-        //         let mut group_info = Dhkacjhaoid {
-        //             state: 0,
-        //             group_id: 19,
-        //             ..Default::default()
-        //         };
-        //         group_info.entity_list.push(generate_calyx!(pos, rng.gen()));
-        //         scene_info.chhmmbdhjpg.push(group_info);
-        //     }
-        // }
+        scene_info.chhmmbdhjpg.push(group_info);
+    }
 
-        if _save {
-            session
-                .send(
-                    CMD_ENTER_SCENE_BY_SERVER_SC_NOTIFY,
-                    EnterSceneByServerScNotify {
-                        scene: Some(scene_info.clone()),
-                        lineup: Some(lineup_info),
-                        ..Default::default()
-                    },
-                )
-                .await?;
+    // load player entity
+    let mut player_group = Dhkacjhaoid {
+        state: 0,
+        group_id: 0,
+        ..Default::default()
+    };
+    for (slot, avatar_id) in player_info.lineup.avatar_list.iter().map(|av| (av.slot, av.id)) {
+        player_group.entity_list.push(SceneEntityInfo {
+            inst_id: 0,
+            entity_id: slot + 1,
+            motion: Some(MotionInfo {
+                // pos
+                pos: Some(Vector {
+                    x: player_info.position.x,
+                    y: player_info.position.y,
+                    z: player_info.position.z,
+                }),
+                // rot
+                rot: Some(Vector {
+                    x: 0,
+                    y: player_info.position.rot_y,
+                    z: 0,
+                }),
+            }),
+            actor: Some(SceneActorInfo {
+                avatar_type: AvatarType::AvatarFormalType.into(),
+                base_avatar_id: avatar_id,
+                map_layer: 0,
+                uid: 0,
+            }),
+            ..Default::default()
+        })
+    }
+    scene_info.chhmmbdhjpg.push(player_group);
 
-            session
-                .send(
-                    CMD_SCENE_ENTITY_MOVE_SC_NOTIFY,
-                    SceneEntityMoveScNotify {
-                        entity_id: 0,
-                        entry_id: entry_id,
-                        motion: Some(player_pos),
-                        ..Default::default()
-                    },
-                )
-                .await?;
-
-            player_info.position.entry_id = entry_id;
-            player_info.position.floor_id = enterance.floor_id as u32;
-            player_info.position.plane_id = enterance.plane_id as u32;
-            player_info.position.x = position.x;
-            player_info.position.y = position.y;
-            player_info.position.z = position.z;
-            player_info.position.rot_y = position.rot_y;
-            // player_info.save().await;
-        }
-
-        return Ok(scene_info);
-    } {
-        player_info.position.entry_id = entry_id;
-        player_info.position.plane_id = (entry_id as f32 / 100f32).floor() as u32;
-        player_info.position.floor_id = ((entry_id as f32 / 100f32).floor() * 1000f32).floor() as u32 + 1u32;
-
-        // let mut groups = vec![];
-
-        // for i in /*30..33*/ 1..100 {
-        //     let mut info = Dhkacjhaoid {
-        //         state: 0,
-        //         group_id: 31,
-        //         entity_list: vec![]
-        //     };
-
-        //     if let Some(teleport_id) = teleport_id {
-        //         info.entity_list.push(
-        //             SceneEntityInfo {
-        //                 group_id: 31,
-        //                 inst_id: 300001,
-        //                 entity_id: 228,
-        //                 prop: Some(ScenePropInfo {
-        //                     prop_id: 113,
-        //                     prop_state: 8,
-        //                     ..Default::default()
-        //                 }),
-        //                 motion: Some(MotionInfo {
-        //                     pos: Some(GameResources::get_custom_teleport(&teleport_id).unwrap_or_default().pos.unwrap_or_default()),
-        //                     rot: Some(Vector {
-        //                         z: 4480,
-        //                         y: 19364,
-        //                         x: -570,
-        //                     }),
-        //                 }),
-        //                 ..Default::default()
-        //             }
-        //         );
-        //     }
-
-        //     groups.push(info);
-        // }
-
-        safe_unwrap_result!(session
+    if _save {
+        session
             .send(
                 CMD_ENTER_SCENE_BY_SERVER_SC_NOTIFY,
                 EnterSceneByServerScNotify {
-                    lineup: Some(player_info.lineup.clone()),
-                    scene: Some(SceneInfo {
-                        game_mode_type: 2,
-                        entry_id: player_info.position.entry_id,
-                        plane_id: player_info.position.plane_id,
-                        floor_id: player_info.position.floor_id,
-                        // chhmmbdhjpg: groups,
-                        ..Default::default()
-                    }),
-                    bpodijpdnnk: Ffnhcbelgpd::EnterSceneReasonNone.into()
-                }
+                    scene: Some(scene_info.clone()),
+                    lineup: Some(lineup_info),
+                    ..Default::default()
+                },
             )
-            .await);
-        
-        if let Some(teleport_id) = teleport_id {
-            safe_unwrap_result!(session
-                .send(
-                    CMD_SCENE_ENTITY_MOVE_SC_NOTIFY,
-                    SceneEntityMoveScNotify {
-                        entity_id: 0,
-                        entry_id: entry_id,
-                        motion: GameResources::get_custom_teleport(&teleport_id),
-                        ..Default::default()
-                    },
-                )
-                .await);
-        }
+            .await?;
 
-        // Err(anyhow::format_err!("task failed successfuly"))
-        Ok(Default::default())
+        session
+            .send(
+                CMD_SCENE_ENTITY_MOVE_SC_NOTIFY,
+                SceneEntityMoveScNotify {
+                    entity_id: 0,
+                    motion: Some(player_pos),
+                    entry_id,
+                    ..Default::default()
+                },
+            )
+            .await?;
+
+        player_info.position.entry_id = entry_id;
+        player_info.position.floor_id = enterance.floor_id as u32;
+        player_info.position.plane_id = enterance.plane_id as u32;
+        player_info.position.x = position.x;
+        player_info.position.y = position.y;
+        player_info.position.z = position.z;
+        player_info.position.rot_y = position.rot_y;
+        // player_info.save().await
     }
 
-    //Err(anyhow::format_err!("Scene Not Found"))
+    return Ok(scene_info);
 }

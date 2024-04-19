@@ -1,4 +1,4 @@
-use crate::{game::commands, handle_error, parse_u32, parse_u32_def, safe_unwrap_result};
+use crate::game::commands;
 
 use super::*;
 
@@ -141,44 +141,3 @@ pub async fn on_get_player_detail_info_cs_req(
         }
     ).await
 }
-
-//GetAssistListCsReq
-
-pub async fn on_get_assist_list_cs_req(
-    session: &PlayerSession,
-    _body: &GetAssistListCsReq,
-) -> Result<()> {
-    session.send(
-        CMD_GET_ASSIST_LIST_SC_RSP, 
-        Hbckejbdgcn {
-            retcode: 0,
-            oligkfnjkma: 0,
-            bimojojomfc: vec![
-                Gimicolccfe {
-                    lehcnanhjdp: Some(DisplayAvatarDetailInfo {
-                        level: 5,
-                        avatar_id: 8005,
-                        relic_list: vec![],
-                        skilltree_list: vec![],
-                        promotion: 6,
-                        rank: 6,
-                        ..Default::default()
-                    }),
-                    simple_info: Some(SimpleInfo {
-                        nickname: "Acheron".to_owned(),
-                        uid: 4001,
-                        level: 69,
-                        is_banned: false,
-                        signature: "idk użyj supportu".to_owned(),
-                        platform_type: PlatformType::Pc.into(),
-                        online_status: FriendOnlineStatus::FriendOnlineStatusOnline.into(),
-                        gjlfhjlijon: 200103,
-                        ..Default::default()
-                    })
-                }
-            ]
-        }
-    ).await
-}
-
-//GetFriendAssistListCsReq

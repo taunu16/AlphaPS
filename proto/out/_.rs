@@ -8,18 +8,7 @@ pub struct SceneCastSkillCostMpCsReq {}
 
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct SubmitOrigamiItemCsReq {}
-
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GetFriendListInfoCsReq {}
-
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct GetMainMissionCustomValueCsReq {
-    #[prost(bytes = "vec", tag = "2")]
-    pub bytes: ::prost::alloc::vec::Vec<u8>,
-}
 
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -6761,7 +6750,7 @@ pub struct Dmhpmbogjco {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct Flppccanpib {
+pub struct SetAssistCsReq { //Flppccanpib
     #[prost(uint32, tag = "9")]
     pub ckondfhadld: u32,
     #[prost(uint32, tag = "10")]
@@ -6769,7 +6758,7 @@ pub struct Flppccanpib {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct Medpekoinhf {
+pub struct SetAssistScRsp { //Medpekoinhf
     #[prost(uint32, tag = "4")]
     pub uid: u32,
     #[prost(uint32, tag = "3")]
@@ -9010,13 +8999,13 @@ pub struct Pdnkgpcjkii {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct Igocjbeekjp {
+pub struct SubmitOrigamiItemCsReq {
     #[prost(uint32, tag = "10")]
     pub gbjdobijaoi: u32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct Ddlcmokabnh {
+pub struct SubmitOrigamiItemScRsp {
     #[prost(uint32, tag = "2")]
     pub retcode: u32,
     #[prost(uint32, tag = "14")]
@@ -9352,13 +9341,13 @@ pub struct Khmicibjafp {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct Ipphhkfaphd {
+pub struct GetMainMissionCustomValueCsReq { //Ipphhkfaphd
     #[prost(uint32, repeated, tag = "2")]
     pub sub_mission_id_list: ::prost::alloc::vec::Vec<u32>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct Cdjpkmddlpa {
+pub struct GetMainMissionCustomValueScRsp {
     #[prost(message, repeated, tag = "15")]
     pub mmmedgnoljo: ::prost::alloc::vec::Vec<Ebeeijpilmi>,
     #[prost(uint32, tag = "4")]
@@ -11073,13 +11062,13 @@ pub struct GetPhoneDataScRsp {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct Jeejmgndnof {
+pub struct SelectChatBubbleCsReq { //Jeejmgndnof
     #[prost(uint32, tag = "14")]
     pub minhcfcflbd: u32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct Injoakjpnam {
+pub struct SelectChatBubbleScRsp { //Injoakjpnam
     #[prost(uint32, tag = "10")]
     pub eacdbinnkjg: u32,
     #[prost(uint32, tag = "5")]
@@ -16122,17 +16111,17 @@ pub struct Gklljfjihko {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct Gfckmgmnmnm {
+pub struct SceneEntityTeleportCsReq {
     #[prost(message, optional, tag = "7")]
-    pub eicmnaljlhb: ::core::option::Option<EntityMotion>,
+    pub entity_motion: ::core::option::Option<EntityMotion>,
     #[prost(uint32, tag = "2")]
     pub entry_id: u32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct Eogjjcbdadn {
+pub struct SceneEntityTeleportScRsp {
     #[prost(message, optional, tag = "7")]
-    pub eicmnaljlhb: ::core::option::Option<EntityMotion>,
+    pub entity_motion: ::core::option::Option<EntityMotion>,
     #[prost(uint32, tag = "9")]
     pub retcode: u32,
     #[prost(uint32, tag = "1")]
@@ -17104,13 +17093,13 @@ pub struct PlayerSyncScNotify {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct Ofepjkfdlaj {
+pub struct GetNpcTakenRewardCsReq {
     #[prost(uint32, tag = "5")]
     pub egeneneoadj: u32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct Ifemohljpaj {
+pub struct GetNpcTakenRewardScRsp {
     #[prost(uint32, tag = "8")]
     pub egeneneoadj: u32,
     #[prost(uint32, tag = "3")]
@@ -17138,7 +17127,7 @@ pub struct Hcnkhckajcl {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct Nnlodkgmaie {
+pub struct GetFirstTalkNpcCsReq { //Nnlodkgmaie
     #[prost(uint32, repeated, tag = "15")]
     pub aammpfgpknj: ::prost::alloc::vec::Vec<u32>,
 }

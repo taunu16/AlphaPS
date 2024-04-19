@@ -16,7 +16,7 @@ pub async fn on_bciendaonnn(
                 apiaadfldbe: body.khjfgfhhchj.iter().map(|id| 
                     Hndfedalldc {
                         jmnkdpdjilg: *id,
-                        ..Default::default()
+                        apcaodelfcp: false
                     }
                 ).collect()
             },
@@ -25,16 +25,16 @@ pub async fn on_bciendaonnn(
 }
 
 //GetNpcTakenRewardCsReq
-pub async fn on_ofepjkfdlaj(
+pub async fn on_get_npc_taken_reward_cs_req(
     session: &PlayerSession,
-    body: &Ofepjkfdlaj,
+    body: &GetNpcTakenRewardCsReq,
 ) -> Result<()> {
     println!("{:?}", body);
 
     session
         .send(
             CMD_GET_NPC_TAKEN_REWARD_SC_RSP,
-            Ifemohljpaj {
+            GetNpcTakenRewardScRsp {
                 retcode: 0,
                 egeneneoadj: body.egeneneoadj,
                 bekdcnobfeo: vec![]
@@ -46,15 +46,15 @@ pub async fn on_ofepjkfdlaj(
 
 
 //SubmitOrigamiItemCsReq
-pub async fn on_igocjbeekjp(
+pub async fn on_submit_origami_item_cs_req(
     session: &PlayerSession,
-    body: &Igocjbeekjp,
+    body: &SubmitOrigamiItemCsReq,
 ) -> Result<()> {
     println!("{:?}", body);
     session
         .send(
             CMD_SUBMIT_ORIGAMI_ITEM_SC_RSP,
-            Ddlcmokabnh {
+            SubmitOrigamiItemScRsp {
                 retcode: 0,
                 gbjdobijaoi: body.gbjdobijaoi
             }
@@ -65,10 +65,10 @@ pub async fn on_igocjbeekjp(
 pub async fn on_interact_prop_cs_req(
     session: &PlayerSession,
     body: &InteractPropCsReq
-) -> Result<()> {
+) -> Result<()> {println!("{:?}", body);
     session
         .send(
-            CMD_INTERACT_PROP_CS_REQ,
+            CMD_INTERACT_PROP_SC_RSP,
             InteractPropScRsp {
                 retcode: 0,
                 prop_entity_id: body.prop_entity_id,
@@ -81,13 +81,32 @@ pub async fn on_interact_prop_cs_req(
 pub async fn on_get_main_mission_custom_value_cs_req(
     session: &PlayerSession,
     body: &GetMainMissionCustomValueCsReq
-) -> Result<()> {println!("{:?}", body);
+) -> Result<()> {//println!("{:?}", body);
     session.send(
         CMD_GET_MAIN_MISSION_CUSTOM_VALUE_SC_RSP,
-        Cbhcalibgde {
+        GetMainMissionCustomValueScRsp {
             retcode: 0,
-            hkoojcehdbp: vec![],
-            jghfbnmofdp: vec![]
+            mmmedgnoljo: body.sub_mission_id_list.iter().map(|a| Ebeeijpilmi {
+                id: *a,
+                status: 2,
+                miadakiaoln:vec![]
+            }).collect()
+        }
+    ).await
+}
+
+pub async fn on_get_first_talk_npc_cs_req(
+    session: &PlayerSession,
+    body: &GetFirstTalkNpcCsReq
+) -> Result<()> {
+    session.send(
+        CMD_GET_FIRST_TALK_NPC_SC_RSP,
+        Abojckcendm {
+            retcode: 0,
+            apiaadfldbe: body.aammpfgpknj.iter().map(|q| Oijcllopbih {
+                ihbalhicnej: *q,
+                ..Default::default()
+            }).collect()
         }
     ).await
 }

@@ -1,3 +1,4 @@
+mod archive;
 mod authentication;
 mod avatar;
 mod battle;
@@ -19,6 +20,7 @@ use tokio::io::AsyncWriteExt;
 use super::PlayerSession;
 use crate::net::NetPacket;
 
+pub use archive::*;
 pub use authentication::*;
 pub use avatar::*;
 pub use battle::*;
@@ -61,6 +63,8 @@ macro_rules! dummy {
                         )*
                         _ => return Err(anyhow::anyhow!("Invalid request id {req_id:?}")),
                     };
+
+                    tracing::info!("Sent dummy response: {req_id}");
 
                     let payload: Vec<u8> = NetPacket {
                         cmd_type,
@@ -129,6 +133,8 @@ dummy! {
     GetFriendDevelopmentInfo,
     GetFriendBattleRecordDetail,
     //assists
-    // GetFriendAssistList,
-    // GetLineupAvatarData
+    GetFriendAssistList,
+    // GetLineupAvatarData,
+    //other
+    FinishTalkMission,
 }
