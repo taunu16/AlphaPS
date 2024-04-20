@@ -1,6 +1,6 @@
 pub mod gateway;
 
-mod handlers;
+pub mod handlers;
 mod packet;
 mod session;
 

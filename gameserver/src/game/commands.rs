@@ -1,6 +1,7 @@
 use crate::{game::other::tools_importer, handle_error, parse_u32, parse_u32_def, safe_unwrap_result};
 use anyhow::Ok;
 use atomic_refcell::AtomicRefMut;
+use net::handlers::load_scene;
 use proto::*;
 use crate::net::*;
 use crate::*;
@@ -248,24 +249,26 @@ async fn process(args: Vec<&str>, session: &PlayerSession, player_info: &mut Ato
         "scene" => {
             let scene = parse_u32!(args[1]);
 
-            safe_unwrap_result!(session
-                .send(
-                    CMD_ENTER_SCENE_BY_SERVER_SC_NOTIFY,
-                    EnterSceneByServerScNotify {
-                        lineup: Some(player_info.lineup.clone()),
-                        scene: Some(SceneInfo {
-                            game_mode_type: 2,
-                            entry_id: scene,
-                            plane_id: (scene as f32 / 100f32).floor() as u32,
-                            floor_id: ((scene as f32 / 100f32).floor() * 1000f32).floor() as u32 + 1u32,
-                            ..Default::default()
-                        }),
-                        bpodijpdnnk: Ffnhcbelgpd::EnterSceneReasonNone.into()
-                    }
-                )
-                .await);
+            safe_unwrap_result!(load_scene(session, scene, true, args.get(2).map(|s| s.parse().unwrap()), player_info).await);
 
-                return send_message!("Teleported to {} (floor {})", scene, 1);
+            // safe_unwrap_result!(session
+            //     .send(
+            //         CMD_ENTER_SCENE_BY_SERVER_SC_NOTIFY,
+            //         EnterSceneByServerScNotify {
+            //             lineup: Some(player_info.lineup.clone()),
+            //             scene: Some(SceneInfo {
+            //                 game_mode_type: 2,
+            //                 entry_id: scene,
+            //                 plane_id: (scene as f32 / 100f32).floor() as u32,
+            //                 floor_id: ((scene as f32 / 100f32).floor() * 1000f32).floor() as u32 + 1u32,
+            //                 ..Default::default()
+            //             }),
+            //             bpodijpdnnk: Ffnhcbelgpd::EnterSceneReasonNone.into()
+            //         }
+            //     )
+            //     .await);
+
+            return send_message!("Teleported to {} (floor {})", scene, 1);
         },
         "tpx" => {
             safe_unwrap_result!(tp(session, player_info, Some(parse_i32!(args[1])), None, None).await);
@@ -282,7 +285,7 @@ async fn process(args: Vec<&str>, session: &PlayerSession, player_info: &mut Ato
 
             return send_message!("Teleported");
         },
-        "pos" => send_message!("x: {} \r\ny: {} \r\n z: {} \r\nyrot: {}", player_info.position.x, player_info.position.y, player_info.position.z, player_info.position.rot_y),
+        "pos" => send_message!("x: {} \r\ny: {} \r\n z: {} \r\nyrot: {} \r\nentryid: {}", player_info.position.x, player_info.position.y, player_info.position.z, player_info.position.rot_y, player_info.position.entry_id),
         _ => Ok(())
     }
 }

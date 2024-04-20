@@ -36,3 +36,23 @@ pub async fn on_get_updated_archive_data_cs_req(
             }
         ).await
 }
+
+pub async fn on_get_jukebox_data_cs_req(
+    session: &PlayerSession,
+    _body: &GetJukeboxDataCsReq,
+) -> Result<()> {
+    session.send(
+        CMD_GET_JUKEBOX_DATA_SC_RSP,
+        GetJukeboxDataScRsp {
+            retcode: 0,
+            pldiejopafk: 210000,
+            efnoehpidpi: session.player_info().excel_manager.background_music_config.iter().map(|(_, v)| 
+                Hehaonbniao {
+                    id: v.id,
+                    group_id: v.group_id,
+                    bbhkfblnbln: true 
+                }
+            ).collect()
+        } 
+    ).await
+}

@@ -2,7 +2,7 @@ use super::*;
 
 const ALLOWED_EVENT_TYPES: [i64; 8] = [
     20, //expeditions
-    2, //7 day checkins (they dont work but they show up)
+    2, //7 day checkins (they dont work but they show up) (update: only march one works fully)
     221, //clock park (something new; clockie event)
     220, //evolve build panel (legends of galactic baseballer)
     //older ones
@@ -57,3 +57,16 @@ pub async fn on_get_activity_schedule_config_cs_req(
         }
     ).await
 }
+
+// pub async fn on_monopoly_get_region_progress_cs_req(
+//     session: &PlayerSession,
+//     _body: &MonopolyGetRegionProgressCsReq
+// ) -> Result<()> {
+//     session.send(
+//         CMD_MONOPOLY_GET_REGION_PROGRESS_SC_RSP,
+//         MonopolyGetRegionProgressScRsp {
+//             baokagnfnab: 1000,
+//             nkbehfhlpef: 1000
+//         }
+//     ).await
+// }

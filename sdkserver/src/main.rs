@@ -1,4 +1,5 @@
 use anyhow::Result;
+use axum::http::StatusCode;
 use axum::routing::{get, post};
 use axum::Router;
 use logging::init_tracing;
@@ -39,6 +40,19 @@ async fn main() -> Result<()> {
         .route(
             auth::GRANTER_LOGIN_VERIFICATION_ENDPOINT,
             post(auth::granter_login_verification),
+        )
+        //reduce console spam + game errors in logs
+        .route(
+            "/sdk/dataUpload",
+            get(StatusCode::OK)
+        )
+        .route(
+            "/apm/dataUpload",
+            get(StatusCode::OK)
+        )
+        .route(
+            "/common/h5log/log/batch",
+            get(StatusCode::OK) 
         )
         .fallback(errors::not_found);
 

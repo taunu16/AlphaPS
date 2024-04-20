@@ -8034,10 +8034,10 @@ pub struct Hehaonbniao {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct Ojcmmhldapi {}
+pub struct GetJukeboxDataCsReq {} //Ojcmmhldapi
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct Jbefcllcddd {
+pub struct GetJukeboxDataScRsp { //Jbefcllcddd
     #[prost(uint32, tag = "3")]
     pub retcode: u32,
     #[prost(uint32, tag = "7")]
@@ -15575,7 +15575,7 @@ pub struct SceneInfo {
     #[prost(message, repeated, tag = "497")]
     pub chhmmbdhjpg: ::prost::alloc::vec::Vec<Dhkacjhaoid>,
     #[prost(uint32, repeated, tag = "9")]
-    pub phicefeaigb: ::prost::alloc::vec::Vec<u32>,
+    pub lighten_section_list: ::prost::alloc::vec::Vec<u32>,
     #[prost(message, repeated, tag = "7")]
     pub env_buff_list: ::prost::alloc::vec::Vec<BuffInfo>,
     #[prost(uint32, tag = "8")]
@@ -16205,13 +16205,13 @@ pub struct Gecjjlmabhp {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct Gbiimoglajl {
-    #[prost(enumeration = "Kihbdaniehp", tag = "3")]
-    pub gommoeicmjg: i32,
+pub struct MazeChest {
+    #[prost(enumeration = "MapInfoChestType", tag = "3")]
+    pub map_info_chest_type: i32,
     #[prost(uint32, tag = "11")]
-    pub niijpgojchd: u32,
+    pub total_amount_list: u32,
     #[prost(uint32, tag = "2")]
-    pub okchdeemhbb: u32,
+    pub unlocked_amount_list: u32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -16225,15 +16225,15 @@ pub struct Kbbeoemcdhi {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct Fjniajephmj {
+pub struct MazeMapData {
     #[prost(uint32, repeated, tag = "13")]
-    pub ojlnmnehgai: ::prost::alloc::vec::Vec<u32>,
+    pub unlocked_teleport_list: ::prost::alloc::vec::Vec<u32>,
     #[prost(message, repeated, tag = "11")]
     pub aechnhklpkp: ::prost::alloc::vec::Vec<Kbbeoemcdhi>,
     #[prost(message, repeated, tag = "15")]
     pub cgkfbhoadpc: ::prost::alloc::vec::Vec<Kangcibfhee>,
     #[prost(message, repeated, tag = "6")]
-    pub dcbdhkkkpgd: ::prost::alloc::vec::Vec<Gbiimoglajl>,
+    pub unlocked_chest_list: ::prost::alloc::vec::Vec<MazeChest>,
     #[prost(uint32, tag = "4")]
     pub retcode: u32,
     #[prost(message, repeated, tag = "2")]
@@ -16245,27 +16245,27 @@ pub struct Fjniajephmj {
     #[prost(uint32, tag = "7")]
     pub cngakkcmonh: u32,
     #[prost(uint32, repeated, tag = "10")]
-    pub phicefeaigb: ::prost::alloc::vec::Vec<u32>,
+    pub lighten_section_list: ::prost::alloc::vec::Vec<u32>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct Cegeebldbke { //getscenemapinfoscrsp
+pub struct GetSceneMapInfoScRsp { //getscenemapinfoscrsp
     #[prost(uint32, tag = "6")]
     pub entry_id: u32,
     #[prost(uint32, repeated, tag = "3")]
-    pub ojlnmnehgai: ::prost::alloc::vec::Vec<u32>,
+    pub unlocked_teleport_list: ::prost::alloc::vec::Vec<u32>,
     #[prost(message, repeated, tag = "8")]
     pub cgkfbhoadpc: ::prost::alloc::vec::Vec<Kangcibfhee>,
     #[prost(uint32, tag = "10")]
     pub kjlbpaefaff: u32,
     #[prost(message, repeated, tag = "14")]
-    pub dcbdhkkkpgd: ::prost::alloc::vec::Vec<Gbiimoglajl>,
+    pub unlocked_chest_list: ::prost::alloc::vec::Vec<MazeChest>,
     #[prost(uint32, repeated, tag = "9")]
-    pub phicefeaigb: ::prost::alloc::vec::Vec<u32>,
+    pub lighten_section_list: ::prost::alloc::vec::Vec<u32>,
     #[prost(message, repeated, tag = "13")]
     pub pmolfbcbfpe: ::prost::alloc::vec::Vec<Gecjjlmabhp>,
     #[prost(message, repeated, tag = "2")]
-    pub mhefdgcamjl: ::prost::alloc::vec::Vec<Fjniajephmj>,
+    pub map_list: ::prost::alloc::vec::Vec<MazeMapData>,
     #[prost(bool, tag = "5")]
     pub dhdoicckifl: bool,
     #[prost(uint32, tag = "4")]
@@ -16332,7 +16332,7 @@ pub struct Pokegknhbga {
     #[prost(uint32, tag = "12")]
     pub retcode: u32,
     #[prost(uint32, repeated, tag = "8")]
-    pub ojlnmnehgai: ::prost::alloc::vec::Vec<u32>,
+    pub unlocked_teleport_list: ::prost::alloc::vec::Vec<u32>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -16364,7 +16364,7 @@ pub struct Ljihfeagpcl {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct Kekgblohgpj {
+pub struct GroupStateInfo {
     #[prost(uint32, tag = "2")]
     pub oekbjnjeedf: u32,
     #[prost(uint32, tag = "5")]
@@ -16376,15 +16376,15 @@ pub struct Kekgblohgpj {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct Kopeponfokj {
+pub struct GroupStateChangeScNotify {
     #[prost(message, optional, tag = "8")]
-    pub ifhpffolnae: ::core::option::Option<Kekgblohgpj>,
+    pub group_state_info: ::core::option::Option<GroupStateInfo>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct Bmoicojomde {
     #[prost(message, optional, tag = "8")]
-    pub ifhpffolnae: ::core::option::Option<Kekgblohgpj>,
+    pub group_state_info: ::core::option::Option<GroupStateInfo>,
     #[prost(uint32, tag = "15")]
     pub retcode: u32,
 }
@@ -16392,7 +16392,7 @@ pub struct Bmoicojomde {
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct Eonjoanemal {
     #[prost(message, optional, tag = "7")]
-    pub ifhpffolnae: ::core::option::Option<Kekgblohgpj>,
+    pub group_state_info: ::core::option::Option<GroupStateInfo>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -18197,7 +18197,7 @@ pub struct Embodfebole {
     #[prost(message, optional, tag = "14")]
     pub motion: ::core::option::Option<MotionInfo>,
     #[prost(message, optional, tag = "4")]
-    pub ifhpffolnae: ::core::option::Option<Kekgblohgpj>,
+    pub group_state_info: ::core::option::Option<GroupStateInfo>,
     #[prost(bool, tag = "3")]
     pub bepbiabjink: bool,
     #[prost(uint32, tag = "11")]
@@ -33415,23 +33415,23 @@ impl Ffnhcbelgpd {
 }
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
 #[repr(i32)]
-pub enum Kihbdaniehp {
+pub enum MapInfoChestType {
     MapInfoChestTypeNone = 0,
     MapInfoChestTypeNormal = 101,
     MapInfoChestTypeChallenge = 102,
     MapInfoChestTypePuzzle = 104,
 }
-impl Kihbdaniehp {
+impl MapInfoChestType {
     /// String value of the enum field names used in the ProtoBuf definition.
     ///
     /// The values are not transformed in any way and thus are considered stable
     /// (if the ProtoBuf definition does not change) and safe for programmatic use.
     pub fn as_str_name(&self) -> &'static str {
         match self {
-            Kihbdaniehp::MapInfoChestTypeNone => "MAP_INFO_CHEST_TYPE_NONE",
-            Kihbdaniehp::MapInfoChestTypeNormal => "MAP_INFO_CHEST_TYPE_NORMAL",
-            Kihbdaniehp::MapInfoChestTypeChallenge => "MAP_INFO_CHEST_TYPE_CHALLENGE",
-            Kihbdaniehp::MapInfoChestTypePuzzle => "MAP_INFO_CHEST_TYPE_PUZZLE",
+            MapInfoChestType::MapInfoChestTypeNone => "MAP_INFO_CHEST_TYPE_NONE",
+            MapInfoChestType::MapInfoChestTypeNormal => "MAP_INFO_CHEST_TYPE_NORMAL",
+            MapInfoChestType::MapInfoChestTypeChallenge => "MAP_INFO_CHEST_TYPE_CHALLENGE",
+            MapInfoChestType::MapInfoChestTypePuzzle => "MAP_INFO_CHEST_TYPE_PUZZLE",
         }
     }
     /// Creates an enum from field names used in the ProtoBuf definition.

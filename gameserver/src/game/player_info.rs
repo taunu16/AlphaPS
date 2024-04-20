@@ -1,4 +1,6 @@
-use crate::{excel::ExcelManager, net::PlayerSession};
+use std::collections::HashMap;
+
+use crate::{excel::{tools_res::LevelProp, ExcelManager}, net::PlayerSession};
 
 use super::{commands::CommandSystem, globals, inventory::Inventory};
 use anyhow::Result;
@@ -10,7 +12,8 @@ pub struct PlayerInfo {
     pub inventory: Inventory,
     pub excel_manager: ExcelManager,
     pub command_system: CommandSystem,
-    pub position: PlayerPosition
+    pub position: PlayerPosition,
+    pub scene_prop_cache: HashMap<u32, LevelProp>
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
@@ -47,7 +50,8 @@ impl PlayerInfo {
             inventory: Inventory::new(),
             excel_manager: ExcelManager::new(),
             command_system: Default::default(),
-            position: Default::default()
+            position: Default::default(),
+            scene_prop_cache: HashMap::new()
         }
     }
 

@@ -42,7 +42,7 @@ use proto::{
     Eegmjpcijbc::*, Emhbkpkpjpa::*, Fdkapmfjgjl::*, Gaifgoihffa::*, Galijhmhgcg::*, Gdjpnkniijf::*,
     Hfjpennlffa::*, Hmnbojnkleh::*, Ieoildlcdkb::*, Kfmpmaojchm::*, Lopidcokdih::*, Lpegmiilfjm::*,
     Mbnnmfkffbo::*, Mkeclbphcol::*, Niinikapdpg::*, Pfokmnnfiap::*, Pjmghcfmmge::*, Pnjfenbhbhg::*,
-    Pnnbhogkeeh::*,
+    Pnnbhogkeeh::*, Plfdpoekndo::*
 };
 
 macro_rules! dummy {
@@ -113,7 +113,7 @@ dummy! {
     GetRogueInfo,
     GetExpeditionData,
     GetRogueDialogueEventData,
-    GetJukeboxData,
+    // GetJukeboxData,
     SyncClientResVersion,
     DailyFirstMeetPam,
     GetMuseumInfo,
@@ -139,4 +139,5 @@ dummy! {
     // GetLineupAvatarData,
     //other
     FinishTalkMission,
+    DailyFirstEnterMonopolyActivity
 }

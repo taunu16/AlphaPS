@@ -641,7 +641,7 @@ trait_handler! {
     // TrialBackGroundMusicScRsp 3143;
     // PlayBackGroundMusicCsReq 3162;
     // UnlockBackGroundMusicScRsp 3109;
-    // GetJukeboxDataCsReq 3134;
+    GetJukeboxDataCsReq 3134;
     // GetJukeboxDataScRsp 3148;
     // UnlockBackGroundMusicCsReq 3102;
     // PlayBackGroundMusicScRsp 3188;

@@ -1,53 +1,6 @@
-use crate::{excel::tools_res::*, find_by_id, safe_unwrap_result};
+use crate::{excel::tools_res::*, game::PlayerInfo};
 
 use super::*;
-
-const TELEPORTS: [u32; 368] = [2215, 2206, 2219, 1000101, 1000102, 2258, 2264, 5002, 1010101, 1010102, 1010103, 1010201, 1010202, 1010203, 1020101, 1020102, 1020103, 5004, 1020202, 1020201, 1020203, 1020204, 1030101, 1030102, 1030103, 1030104, 1030105, 1030106, 1030301, 1030201, 2231, 5005, 2000101, 2000102, 1101, 2000201, 2000202, 2000203, 2000204, 1201, 1004, 2000301, 2000302, 2000303, 1301, 1005, 2368, 2000401, 2000402, 2000403, 2000404, 1304, 2368, 2010102, 2010103, 1006, 1001, 1107, 2011101, 2011102, 2011103, 1007, 1002, 1010, 1112, 2012101, 2012102, 2012103, 2012105, 1105, 1003, 1408, 1403, 2012201, 2012202, 2012203, 1008, 1102, 2012301, 2012302, 2012303, 1009, 1401, 2013101, 2013102, 2013103, 1405, 1104, 1202, 2013201, 2013204, 2013203, 2013202, 1203, 2013205, 1103, 2013205, 1404, 2013205, 1106, 2344, 2102, 2013401, 2013402, 1302, 1204, 2013501, 2013502, 2013601, 2347, 2021101, 2021102, 2021103, 2021104, 1402, 1409, 1011, 1108, 1402, 1205, 1406, 2021201, 2021202, 2021203, 2021204, 1206, 1109, 2102, 2102, 2102, 2102, 1012, 2022101, 2022102, 2022103, 2022104, 1110, 1013, 2022201, 2022202, 2022203, 2022204, 2253, 2022301, 2022302, 2022303, 1114, 2022304, 1021, 2308, 2310, 2311, 2312, 2313, 2313, 1208, 2346, 2313, 2023101, 2023102, 2023103, 2023104, 1113, 1017, 1207, 2023201, 2023202, 2023203, 1018, 1303, 1111, 1016, 1019, 2397, 2031101, 2031102, 2031103, 2031104, 2031105, 1115, 1209, 1015, 2031201, 2031202, 2031203, 1014, 2031301, 2031302, 2031303, 2031304, 1116, 1020, 2032101, 2032102, 2032103, 2032104, 1117, 2032201, 2032202, 2032203, 2022101, 2022102, 2022103, 2022104, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2022201, 2022202, 2022203, 2022204, 2102, 2102, 2102, 2102, 2022201, 2022202, 2022203, 2022204, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2022101, 2022102, 2022103, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2314, 2315, 2316, 2349, 2320, 2318, 2319, 2317, 2350, 2321, 2322, 2351, 2323, 2324, 2325, 2352, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2102, 2219, 2220];
-
-macro_rules! generate_calyx {
-    ($pos:expr) => {
-    SceneEntityInfo {
-                group_id: 19,
-                inst_id: 300001,
-                entity_id: 228,
-                prop: Some(ScenePropInfo {
-                    prop_id: 808,
-                    prop_state: 1,
-                    ..Default::default()
-                }),
-                motion: Some(MotionInfo {
-                    pos: Some($pos),
-                    rot: Some(Vector {
-                        z: 4480,
-                        y: 19364,
-                        x: -570,
-                    }),
-                }),
-                ..Default::default()
-            }
-    };
-    ($pos:expr, $grid:expr) => {
-        SceneEntityInfo {
-                group_id: $grid,
-                inst_id: 300001,
-                entity_id: 228,
-                prop: Some(ScenePropInfo {
-                    prop_id: 808,
-                    prop_state: 1,
-                    ..Default::default()
-                }),
-                motion: Some(MotionInfo {
-                    pos: Some($pos),
-                    rot: Some(Vector {
-                        z: 4480,
-                        y: 19364,
-                        x: -570,
-                    }),
-                }),
-                ..Default::default()
-            }
-    };
-}
 
 pub async fn on_get_cur_scene_info_cs_req(
     session: &PlayerSession,
@@ -58,136 +11,11 @@ pub async fn on_get_cur_scene_info_cs_req(
             CMD_GET_CUR_SCENE_INFO_SC_RSP,
             GetCurSceneInfoScRsp {
                 retcode: 0,
-                scene: Some(SceneInfo {
-                    plane_id: 20101,
-                    floor_id: 20101001,
-                    entry_id: 2010101,
-                    game_mode_type: 2,
-                    lpehniejlmg: TELEPORTS.to_vec(),
-                    phicefeaigb: TELEPORTS.to_vec(),
-                    chhmmbdhjpg: vec![
-                        Dhkacjhaoid {
-                            state: 1,
-                            group_id: 0,
-                            entity_list: vec![SceneEntityInfo {
-                                group_id: 0,
-                                inst_id: 0,
-                                entity_id: 0,
-                                actor: Some(SceneActorInfo {
-                                    avatar_type: 3,
-                                    base_avatar_id: 1309,
-                                    map_layer: 2,
-                                    uid: 2137,
-                                }),
-                                motion: Some(MotionInfo {
-                                    pos: Some(Vector {
-                                        z: 4480,
-                                        y: 19364,
-                                        x: -550,
-                                    }),
-                                    rot: Some(Vector {
-                                        z: 4480,
-                                        y: 19364,
-                                        x: -550,
-                                    }),
-                                }),
-                                ..Default::default()
-                            }],
-                        },
-                        Dhkacjhaoid {
-                            state: 1,
-                            group_id: 19,
-                            entity_list: vec![
-                                generate_calyx!(Vector {
-                                    z: 4480,
-                                    y: 19364,
-                                    x: -570,
-                                })
-                            ]
-                        }
-                    ],
-                    ..Default::default()
-                }),
+                scene: Some(load_scene(session, 2031301, false, Some(1014), &mut session.player_info_mut()).await.unwrap()),
             },
         )
         .await
 }
-
-
-/*
-pub async fn on_get_scene_map_info_cs_req(
-    session: &PlayerSession,
-    _body: &GetSceneMapInfoCsReq,
-) -> Result<()> {
-    let mut lightened_sections = vec![];
-
-    for i in 0..300 {
-        lightened_sections.push(i);
-    }
-
-    session
-        .send(
-            CMD_GET_SCENE_MAP_INFO_SC_RSP,
-            Cegeebldbke {
-                retcode: 0,
-                entry_id: _body.dmkkkfnkofh[0],
-                cgkfbhoadpc: vec![],
-                dcbdhkkkpgd: vec![],
-                ojlnmnehgai: lightened_sections.clone(),
-                phicefeaigb: TELEPORTS.to_vec(),
-                mhefdgcamjl: vec![
-                    Fjniajephmj {
-                        retcode: 0,
-                        kjlbpaefaff: _body.entry_id,
-                        entry_id: _body.dmkkkfnkofh[0],
-                        ojlnmnehgai: lightened_sections,
-                        phicefeaigb: TELEPORTS.to_vec(),
-                        ..Default::default()
-                    }
-                ],
-                pmolfbcbfpe: vec![],
-                kjlbpaefaff: _body.entry_id,
-                ..Default::default()
-            },
-        )
-        .await
-}
-
-
-pub async fn on_lckgkdehclb( //ENTER_SCENE_CS_Req
-    session: &PlayerSession,
-    _body: &Lckgkdehclb,
-) -> Result<()> {println!("{:?}", _body);
-    safe_unwrap_result!(session
-        .send(
-            CMD_ENTER_SCENE_BY_SERVER_SC_NOTIFY,
-            log_through(EnterSceneByServerScNotify {
-                lineup: Some(session.player_info().lineup.clone()),
-                scene: Some(SceneInfo {
-                    game_mode_type: 2,
-                    entry_id: _body.entry_id,
-                    plane_id: (_body.entry_id as f32 / 100f32).floor() as u32,
-                    floor_id: ((_body.entry_id as f32 / 100f32).floor() * 1000f32).floor() as u32 + 1u32,
-                    ..Default::default()
-                }),
-                bpodijpdnnk: Ffnhcbelgpd::EnterSceneReasonNone.into()
-            })
-        )
-        .await);
-
-    session
-        .send(
-            CMD_ENTER_SCENE_SC_RSP,
-            Mmnkgmcafeh {
-                retcode: 0,
-                ..Default::default()
-            },
-        )
-        .await
-}
-
-//EnterSectionCsReq
-*/
 
 //stole this from ami https://github.com/amizing25/robinsr
 
@@ -200,7 +28,7 @@ pub async fn on_lckgkdehclb(session: &PlayerSession, request: &Lckgkdehclb) -> R
 
         println!("{:?}", request);
 
-    let _ = load_scene(session, request.entry_id, true, Some(request.maplanefddc)).await;
+    let _ = load_scene(session, request.entry_id, true, Some(request.maplanefddc), &mut session.player_info_mut()).await;
 
 
     Ok(())
@@ -208,31 +36,64 @@ pub async fn on_lckgkdehclb(session: &PlayerSession, request: &Lckgkdehclb) -> R
 
 // getscenemapinfocsreq
 pub async fn on_get_scene_map_info_cs_req(sesison: &PlayerSession, request: &GetSceneMapInfoCsReq) -> Result<()> {
-    let mut map_infos = Vec::<Fjniajephmj>::new();
+    let mut map_infos = Vec::<MazeMapData>::new();
 
     for entry_id in &request.dmkkkfnkofh {
-        let mut map_info = Fjniajephmj {
+        let mut chest_count = 0;
+        
+        if let Some(entrance) = GAME_RESOURCES.map_entrance.get(&entry_id) && let Some(group) = GAME_RESOURCES.level_group.get(&format!("P{}_F{}", entrance.plane_id, entrance.floor_id)) {
+            for (_, v)  in &group.group_items {
+                for prop in &v.props {
+                    if prop.__test_field.contains("_TreasureBox_") {
+                        chest_count += 1;
+                    }
+                }
+            }
+        }
+
+        let mut map_info = MazeMapData {
             retcode: 0,
-            dcbdhkkkpgd: vec![
-                Gbiimoglajl {
-                    gommoeicmjg: Kihbdaniehp::MapInfoChestTypeNormal.into(),
+            unlocked_chest_list: vec![
+                MazeChest {
+                    map_info_chest_type: MapInfoChestType::MapInfoChestTypeNormal.into(),
+                    total_amount_list: chest_count,
+                    unlocked_amount_list: 2137,
+                },
+                MazeChest {
+                    map_info_chest_type: MapInfoChestType::MapInfoChestTypePuzzle.into(),
                     ..Default::default()
                 },
-                Gbiimoglajl {
-                    gommoeicmjg: Kihbdaniehp::MapInfoChestTypePuzzle.into(),
+                MazeChest {
+                    map_info_chest_type: MapInfoChestType::MapInfoChestTypeChallenge.into(),
                     ..Default::default()
                 },
-                Gbiimoglajl {
-                    gommoeicmjg: Kihbdaniehp::MapInfoChestTypeChallenge.into(),
-                    ..Default::default()
+            ],
+            aechnhklpkp: vec![
+                Kbbeoemcdhi {
+                    feiakppdjea: 0, //val
+                    iookcfnfjha: 0, //max
+                    ipnhjoomhdm: 1
                 },
+                Kbbeoemcdhi {
+                    feiakppdjea: 0,
+                    iookcfnfjha: 0,
+                    ipnhjoomhdm: 2
+                }
             ],
             entry_id: *entry_id,
             ..Default::default()
         };
 
+        for i in 1..100 {
+            for j in 0..100 {
+                map_info.lighten_section_list.push((i * 10000) + j)
+            }
+        }
+
+        // map_info.lighten_section_list.append(&mut vec![10000, 20000, 30000, 400002, 50000, 60000, 70000, 80000]);
+
         for i in 0..100 {
-            map_info.phicefeaigb.push(i)
+            map_info.lighten_section_list.push(i)
         }
 
         let group_config = GAME_RESOURCES
@@ -248,7 +109,7 @@ pub async fn on_get_scene_map_info_cs_req(sesison: &PlayerSession, request: &Get
         if let Some(level) = group_config {
             // add teleports
             for teleport in &level.teleports {
-                map_info.ojlnmnehgai.push(*teleport.0)
+                map_info.unlocked_teleport_list.push(*teleport.0)
             }
 
             for (group_id, group) in &level.group_items {
@@ -280,9 +141,9 @@ pub async fn on_get_scene_map_info_cs_req(sesison: &PlayerSession, request: &Get
     sesison
         .send(
             CMD_GET_SCENE_MAP_INFO_SC_RSP,
-            Cegeebldbke {
+            GetSceneMapInfoScRsp {
                 retcode: 0,
-                mhefdgcamjl: map_infos,
+                map_list: map_infos,
                 ..Default::default()
             },
         )
@@ -311,7 +172,7 @@ pub async fn on_scene_entity_move_cs_req(session: &PlayerSession, request: &Scen
     // *timestamp = util::cur_timestamp_ms() + (5 * 1000);
     
     for entity in &request.entity_motion_list {
-        if entity.entity_id != 0 {
+        if entity.entity_id > 4 {
             continue;
         }
 
@@ -340,6 +201,16 @@ pub async fn on_scene_entity_teleport_cs_req(
     session: &PlayerSession, 
     request: &SceneEntityTeleportCsReq
 ) -> Result<()> {
+    if let Some(emotion) = &request.entity_motion && let Some(motion) = &emotion.motion && let Some(pos) = &motion.pos && let Some(rot) = &motion.rot {
+        if emotion.entity_id < 5 {
+            let player_info = &mut session.player_info_mut();
+            let position = &mut player_info.position;
+            position.x = pos.x;
+            position.y = pos.y;
+            position.z = pos.z;
+            position.rot_y = rot.y;
+        }
+    }
     session
         .send(CMD_SCENE_ENTITY_TELEPORT_SC_RSP, SceneEntityTeleportScRsp{
             entity_motion: request.entity_motion.clone(),
@@ -349,14 +220,13 @@ pub async fn on_scene_entity_teleport_cs_req(
         .await
 }
 
-async fn load_scene(
+pub async fn load_scene(
     session: &PlayerSession,
     entry_id: u32,
     _save: bool,
     teleport_id: Option<u32>,
+    player_info: &mut PlayerInfo
 ) -> Result<SceneInfo> {
-    let player_info = &mut session.player_info_mut();
-    let json = &GAME_RESOURCES;
 
     let enterance = GAME_RESOURCES
         .map_entrance
@@ -420,6 +290,8 @@ async fn load_scene(
     let mut npc_entity_id = 10_000;
     let mut monster_entity_id = 20_000;
 
+    player_info.scene_prop_cache.clear();
+
     for (group_id, group) in &group_config.group_items {
         let mut group_info = Dhkacjhaoid {
             state: 0,
@@ -442,7 +314,7 @@ async fn load_scene(
                 y: (prop.pos_y * 1000f64) as i32,
                 z: (prop.pos_z * 1000f64) as i32,
                 rot_y: (prop.rot_y * 1000f64) as i32,
-            };println!("ID: {prop_entity_id} - {:?}", prop);
+            };
 
             let entity_info = SceneEntityInfo {
                 inst_id: prop.id as u32,
@@ -458,6 +330,7 @@ async fn load_scene(
             };
 
             group_info.entity_list.push(entity_info);
+            player_info.scene_prop_cache.insert(prop_entity_id, prop.clone());
         }
 
         // Load NPCs
@@ -558,6 +431,16 @@ async fn load_scene(
         })
     }
     scene_info.chhmmbdhjpg.push(player_group);
+
+    for i in 1..100 {
+        for j in 0..100 {
+            scene_info.lighten_section_list.push((i * 10000) + j)
+        }
+    }
+
+    for i in 0..100 {
+        scene_info.lighten_section_list.push(i)
+    }
 
     if _save {
         session
