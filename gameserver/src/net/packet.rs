@@ -114,7 +114,7 @@ trait_handler! {
     // StartTrialActivityScRsp 2603;
     // TakeTrialActivityRewardScRsp 2671;
     // GetActivityScheduleConfigScRsp 2609;
-    // GetActivityScheduleConfigCsReq 2602;
+    GetActivityScheduleConfigCsReq 2602;
     // SubmitMonsterResearchActivityMaterialScRsp 2639;
     // GetTrialActivityDataCsReq 2635;
     // GetMonsterResearchActivityDataCsReq 2695;

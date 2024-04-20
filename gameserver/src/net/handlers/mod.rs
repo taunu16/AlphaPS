@@ -2,6 +2,7 @@ mod archive;
 mod authentication;
 mod avatar;
 mod battle;
+mod events;
 mod friend;
 mod gacha;
 mod lineup;
@@ -24,6 +25,7 @@ pub use archive::*;
 pub use authentication::*;
 pub use avatar::*;
 pub use battle::*;
+pub use events::*;
 pub use friend::*;
 pub use gacha::*;
 pub use lineup::*;
@@ -96,14 +98,14 @@ dummy! {
     GetRogueHandbookData,
     GetDailyActiveInfo,
     GetFightActivityData,
-    GetMultipleDropInfo,
+    GetMultipleDropInfo,    
     GetPlayerReturnMultiDropInfo,
     GetShareData,
     GetTreasureDungeonActivityData,
     PlayerReturnInfoQuery,
     // GetBag,
     GetPlayerBoardData,
-    GetActivityScheduleConfig,
+    // GetActivityScheduleConfig,
     GetMissionData,
     GetMissionEventData,
     GetChallenge,

@@ -1326,7 +1326,7 @@ pub struct TakeLoginActivityRewardScRsp {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct Ooljpplljnk {
+pub struct ActivityScheduleInfo {
     #[prost(uint32, tag = "3")]
     pub nknoilmdemg: u32,
     #[prost(int64, tag = "9")]
@@ -1338,14 +1338,14 @@ pub struct Ooljpplljnk {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct Phkdfagiohm {}
+pub struct GetActivityScheduleConfigCsReq {}
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct Kopffhkkgce {
+pub struct GetActivityScheduleConfigScRsp {
     #[prost(uint32, tag = "4")]
     pub retcode: u32,
     #[prost(message, repeated, tag = "8")]
-    pub ehknfiakneo: ::prost::alloc::vec::Vec<Ooljpplljnk>,
+    pub activity_schedule_list: ::prost::alloc::vec::Vec<ActivityScheduleInfo>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]

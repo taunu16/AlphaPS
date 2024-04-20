@@ -442,7 +442,7 @@ async fn load_scene(
                 y: (prop.pos_y * 1000f64) as i32,
                 z: (prop.pos_z * 1000f64) as i32,
                 rot_y: (prop.rot_y * 1000f64) as i32,
-            };
+            };println!("ID: {prop_entity_id} - {:?}", prop);
 
             let entity_info = SceneEntityInfo {
                 inst_id: prop.id as u32,

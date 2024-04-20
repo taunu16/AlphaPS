@@ -85,25 +85,16 @@ pub async fn on_phbnokkhgkd(
 
         (13, 1401),
         (14, 1501),
+        (15, 1601),
     ]);
     let mut elements = HashMap::new();
 
-    for i in vec![101u32, 102, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14] {
+    for i in vec![101u32, 102, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16] {
         elements.insert(i, Bbjejalfhen {
             gfehjonbcmn: Nhnehbekhhj::PageInteracted as i32,
             hajfkgdcglb: Pefolbeomfh::PageDescCollapse as i32,
-            oockdmpidlg: vec![
-                Gbofekdfncl {
-                    item_id: 223000,
-                    unique_id: 223000,
-                    ohchcpejldh: 10,
-                    pnaebbacmlm: 10,
-                    pddanmnadaf: 10,
-                    lblemehjiek: 10,
-                    ..Default::default()
-                }
-            ],
-            egigfgpjddg: *ids.get(&i).unwrap_or(&0),
+            oockdmpidlg: vec![],
+            egigfgpjddg: format!("{i}01").parse().unwrap(), //*ids.get(&i).unwrap_or(&0),
             idgckihophm: i
         });
     }
@@ -114,36 +105,7 @@ pub async fn on_phbnokkhgkd(
             retcode: 0,
             impheidipgc: 2,
             biaghopnodp: elements,
-            moippddaohm: HashMap::from([
-                (223001u32, 1u32),
-                (223005u32, 1u32),
-                (223200u32, 1u32),
-                (223714u32, 1u32),
-                (223332u32, 1u32),
-                (223274u32, 1u32),
-                (223023u32, 1u32),
-                (223152u32, 1u32),
-                (223409u32, 1u32),
-                (223731u32, 1u32),
-                (223155u32, 1u32),
-                (223732u32, 1u32),
-                (223733u32, 1u32),
-                (223734u32, 1u32),
-                (223350u32, 1u32),
-                (223735u32, 1u32),
-                (223352u32, 1u32),
-                (223353u32, 1u32),
-                (223356u32, 1u32),
-                (223106u32, 1u32),
-                (223431u32, 1u32),
-                (223432u32, 1u32),
-                (223370u32, 1u32),
-                (223434u32, 1u32),
-                (223184u32, 1u32),
-                (223504u32, 1u32),
-                (223254u32, 1u32),
-                (223255u32, 1u32),
-            ])
+            moippddaohm: HashMap::from_iter(session.player_info().excel_manager.item.paster_config.iter().map(|(_, v)| (v.id, 1u32)))
         }
     ).await
 }
