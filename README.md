@@ -1,70 +1,11 @@
 # AlphaPS (based on [RobinSR](https://git.xeondev.com/reversedrooms/RobinSR/) and [RobinSR (amizing25)](https://github.com/amizing25/robinsr))
 
 A Server emulator for the game [`Honkai: Star Rail`](https://hsr.hoyoverse.com/en-us/)
-![screenshot](https://git.xeondev.com/reversedrooms/RobinSR/raw/branch/master/screenshot.png)
+![screenshot](https://github.com/taunu16/AlphaPS/blob/main/screenshot.png?raw=true)
 
 ## Installation
 
-### From Source
-
-#### Requirements
-
-- [Rust](https://www.rust-lang.org/tools/install)
-
-#### Building
-
-##### Manually
-
-```sh
-git clone https://git.xeondev.com/reversedrooms/RobinSR.git
-cd RobinSR
-cargo install --path gameserver
-cargo install --path sdkserver
-```
-
-##### Using xtasks (use this if stupid)
-
-```sh
-cargo xtask run
-```
-
-##### To run it with automatic recompilation when any Rust files are changed
-
-```sh
-cargo xtask watch
-```
-
-### From Pre-built Binaries
-
-Navigate to the [Releases](https://git.xeondev.com/reversedrooms/RobinSR/releases)
-page and download the latest release for your platform.
-
-## Usage
-
-To begin using the server, you need to run both the SDK server and the game server.
-
-If you installed from source, Rust's installer should have added .cargo/bin to your
-path, so simply run the following:
-
-```sh
-gameserver
-sdkserver
-```
-
-If you installed from pre-built binaries, navigate to the directory where you downloaded
-the binaries and either a) double-click on the following executable names or b)
-run the following in a terminal:
-
-```sh
-./gameserver
-./sdkserver
-```
-
-## Connecting
-
-[Get 2.2 beta client](https://bhrpg-prod.oss-accelerate.aliyuncs.com/client/beta/20240322124944_scfGE0xJXlWtoJ1r/StarRail_2.1.51.zip),
-replace [mhypbase.dll](https://git.xeondev.com/reversedrooms/RobinSR/raw/branch/master/mhypbase.dll)
-file in your game folder, it will redirect game traffic (and disable in-game censorship)
+[Check wiki](https://github.com/taunu16/AlphaPS/wiki/Installation)
 
 ## Contributing
 
