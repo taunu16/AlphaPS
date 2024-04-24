@@ -75,7 +75,7 @@ macro_rules! trait_handler {
                     return Ok(());
                 }
                 match cmd_type {
-                    // CMD_GET_FIRST_TALK_NPC_CS_REQ => {
+                    // CMD_GROUP_STATE_CHANGE_CS_REQ => {
                     //     println!("{}: {}", cmd_type, rbase64::encode(&payload));
                     //     Ok(())
                     // }
@@ -1262,7 +1262,7 @@ trait_handler! {
     // EnterSectionScRsp 1428;
     // StartCocoonStageScRsp 1454;
     // SceneCastSkillCostMpScRsp 1433;
-    // GroupStateChangeCsReq 1476;
+    GroupStateChangeCsReq 1476;
     SceneEntityMoveCsReq 1434;
     // GetUnlockTeleportScRsp 1469;
     // GameplayCounterUpdateScNotify 1478;

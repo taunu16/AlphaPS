@@ -16336,7 +16336,7 @@ pub struct Pokegknhbga {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct Gffbkjofnad {
+pub struct SceneEntityRefreshInfo {
     #[prost(message, optional, tag = "3")]
     pub glalelmdamm: ::core::option::Option<SceneEntityInfo>,
     #[prost(uint32, tag = "8")]
@@ -16346,21 +16346,21 @@ pub struct Gffbkjofnad {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct Jnofbbanolk {
+pub struct SceneGroupRefreshInfo {
     #[prost(uint32, tag = "4")]
     pub state: u32,
     #[prost(uint32, tag = "1")]
     pub group_id: u32,
     #[prost(message, repeated, tag = "14")]
-    pub fiiciciambe: ::prost::alloc::vec::Vec<Gffbkjofnad>,
-    #[prost(enumeration = "Njdmhcchfdj", tag = "7")]
-    pub kppckepfpce: i32,
+    pub refresh_entity: ::prost::alloc::vec::Vec<SceneEntityRefreshInfo>,
+    #[prost(enumeration = "SceneGroupRefreshType", tag = "7")]
+    pub refresh_type: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct Ljihfeagpcl {
+pub struct SceneGroupRefreshScNotify {
     #[prost(message, repeated, tag = "14")]
-    pub kpfomkdmoce: ::prost::alloc::vec::Vec<Jnofbbanolk>,
+    pub group_refresh_info: ::prost::alloc::vec::Vec<SceneGroupRefreshInfo>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -16376,13 +16376,13 @@ pub struct GroupStateInfo {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct GroupStateChangeScNotify {
+pub struct GroupStateChangeCsReq {
     #[prost(message, optional, tag = "8")]
     pub group_state_info: ::core::option::Option<GroupStateInfo>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct Bmoicojomde {
+pub struct GroupStateChangeScRsp {
     #[prost(message, optional, tag = "8")]
     pub group_state_info: ::core::option::Option<GroupStateInfo>,
     #[prost(uint32, tag = "15")]
@@ -16390,7 +16390,7 @@ pub struct Bmoicojomde {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct Eonjoanemal {
+pub struct GroupStateChangeScNotify {
     #[prost(message, optional, tag = "7")]
     pub group_state_info: ::core::option::Option<GroupStateInfo>,
 }
@@ -33495,21 +33495,21 @@ impl Oigihagkoib {
 }
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
 #[repr(i32)]
-pub enum Njdmhcchfdj {
+pub enum SceneGroupRefreshType {
     SceneGroupRefreshTypeNone = 0,
     SceneGroupRefreshTypeLoaded = 1,
     SceneGroupRefreshTypeUnload = 2,
 }
-impl Njdmhcchfdj {
+impl SceneGroupRefreshType {
     /// String value of the enum field names used in the ProtoBuf definition.
     ///
     /// The values are not transformed in any way and thus are considered stable
     /// (if the ProtoBuf definition does not change) and safe for programmatic use.
     pub fn as_str_name(&self) -> &'static str {
         match self {
-            Njdmhcchfdj::SceneGroupRefreshTypeNone => "SCENE_GROUP_REFRESH_TYPE_NONE",
-            Njdmhcchfdj::SceneGroupRefreshTypeLoaded => "SCENE_GROUP_REFRESH_TYPE_LOADED",
-            Njdmhcchfdj::SceneGroupRefreshTypeUnload => "SCENE_GROUP_REFRESH_TYPE_UNLOAD",
+            SceneGroupRefreshType::SceneGroupRefreshTypeNone => "SCENE_GROUP_REFRESH_TYPE_NONE",
+            SceneGroupRefreshType::SceneGroupRefreshTypeLoaded => "SCENE_GROUP_REFRESH_TYPE_LOADED",
+            SceneGroupRefreshType::SceneGroupRefreshTypeUnload => "SCENE_GROUP_REFRESH_TYPE_UNLOAD",
         }
     }
     /// Creates an enum from field names used in the ProtoBuf definition.

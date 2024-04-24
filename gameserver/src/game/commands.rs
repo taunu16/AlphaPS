@@ -8,6 +8,13 @@ use crate::*;
 
 use super::{inventory, PlayerInfo};
 
+// #[derive(Clone, Debug)]
+// pub enum Flag {
+//     TreasureChestMapCounter = 1,
+//     ShowOrigamiMapLocations = 2,
+//     PersistentStates = 3, //state to file
+// }
+
 #[derive(Default, Clone)]
 pub struct CommandSystem {
     state: CMDSystemState
@@ -161,10 +168,10 @@ async fn process(args: Vec<&str>, session: &PlayerSession, player_info: &mut Ato
             return send_message!("Taken {} of {}", parse_u32_def!(args.get(2), "1"), parse_u32!(args[1]));
         },
         "givel" => {
-            return inventory.add_lightcone(session, parse_u32!(args[1]), parse_u32_def!(args.get(2), "1"), parse_u32_def!(args.get(3), "1"), parse_u32_def!(args.get(3), "0")).await;
+            return inventory.add_lightcone(session, parse_u32!(args[1]), parse_u32_def!(args.get(2), "1"), parse_u32_def!(args.get(3), "1"), parse_u32_def!(args.get(4), "0")).await;
         },
         "givea" => {
-            return inventory.add_avatar(session, parse_u32!(args[1]), parse_u32_def!(args.get(2), "6"), parse_u32_def!(args.get(3), "0"), parse_u32_def!(args.get(3), "80")).await;
+            return inventory.add_avatar(session, parse_u32!(args[1]), parse_u32_def!(args.get(2), "6"), parse_u32_def!(args.get(3), "0"), parse_u32_def!(args.get(4), "80")).await;
         },
         "giver" => {
             return inventory.add_relic(session, parse_u32!(args[1]), parse_u32_def!(args.get(2), "15"), parse_u32_def!(args.get(3), "1"), vec![]).await;
@@ -272,21 +279,22 @@ async fn process(args: Vec<&str>, session: &PlayerSession, player_info: &mut Ato
         },
         "tpx" => {
             safe_unwrap_result!(tp(session, player_info, Some(parse_i32!(args[1])), None, None).await);
-
             return send_message!("Teleported");
         },
         "tpy" => {
             safe_unwrap_result!(tp(session, player_info, None, Some(parse_i32!(args[1])), None).await);
-
             return send_message!("Teleported");
         },
         "tpz" => {
             safe_unwrap_result!(tp(session, player_info, None, None, Some(parse_i32!(args[1]))).await);
-
             return send_message!("Teleported");
         },
-        "pos" => send_message!("x: {} \r\ny: {} \r\n z: {} \r\nyrot: {} \r\nentryid: {}", player_info.position.x, player_info.position.y, player_info.position.z, player_info.position.rot_y, player_info.position.entry_id),
-        _ => Ok(())
+        "pos" => send_message!("x: {} \r\ny: {} \r\nz: {} \r\nyrot: {} \r\nentryid: {}", player_info.position.x, player_info.position.y, player_info.position.z, player_info.position.rot_y, player_info.position.entry_id),
+        "resetestate" => {
+            session.entity_state_manager_mut().clear_data();
+            return send_message!("Entity state reseted");
+        },
+        _ => send_message!("Unknown command")
     }
 }
 

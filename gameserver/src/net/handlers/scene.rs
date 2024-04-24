@@ -44,8 +44,10 @@ pub async fn on_get_scene_map_info_cs_req(sesison: &PlayerSession, request: &Get
         if let Some(entrance) = GAME_RESOURCES.map_entrance.get(&entry_id) && let Some(group) = GAME_RESOURCES.level_group.get(&format!("P{}_F{}", entrance.plane_id, entrance.floor_id)) {
             for (_, v)  in &group.group_items {
                 for prop in &v.props {
-                    if prop.__test_field.contains("_TreasureBox_") {
-                        chest_count += 1;
+                    if let Some(prop) = GAME_RESOURCES.maze_prop.get(&prop.prop_id) {
+                        if prop.prop_type == "PROP_TREASURE_CHEST" {
+                            chest_count += 1;
+                        }
                     }
                 }
             }
@@ -90,8 +92,6 @@ pub async fn on_get_scene_map_info_cs_req(sesison: &PlayerSession, request: &Get
             }
         }
 
-        // map_info.lighten_section_list.append(&mut vec![10000, 20000, 30000, 400002, 50000, 60000, 70000, 80000]);
-
         for i in 0..100 {
             map_info.lighten_section_list.push(i)
         }
@@ -124,6 +124,8 @@ pub async fn on_get_scene_map_info_cs_req(sesison: &PlayerSession, request: &Get
                         group_id: prop.group_id,
                         state: if prop.prop_state_list.contains(&PropState::CheckPointEnable) {
                             PropState::CheckPointEnable as u32
+                        } else if (103023..=103027).contains(&prop.prop_id) {
+                            PropState::Closed as u32 //show origami birds on map
                         } else {
                             prop.state.clone() as u32
                         },
@@ -227,6 +229,7 @@ pub async fn load_scene(
     teleport_id: Option<u32>,
     player_info: &mut PlayerInfo
 ) -> Result<SceneInfo> {
+    let entity_state_manager = session.entity_state_manager();
 
     let enterance = GAME_RESOURCES
         .map_entrance
@@ -301,13 +304,14 @@ pub async fn load_scene(
 
         // Load Props
         for prop in &group.props {
+            prop_entity_id += 1;
+
             let prop_state = if prop.prop_state_list.contains(&PropState::CheckPointEnable) {
                 PropState::CheckPointEnable
             } else {
-                prop.state.clone()
+                entity_state_manager.get_entity_state(entry_id, prop_entity_id).unwrap_or(&prop.state).clone()
             };
-
-            prop_entity_id += 1;
+            
 
             let prop_position = Position {
                 x: (prop.pos_x * 1000f64) as i32,

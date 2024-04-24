@@ -44,15 +44,15 @@ async fn main() -> Result<()> {
         //reduce console spam + game errors in logs
         .route(
             "/sdk/dataUpload",
-            get(StatusCode::OK)
+            post(StatusCode::OK)
         )
         .route(
             "/apm/dataUpload",
-            get(StatusCode::OK)
+            post(StatusCode::OK)
         )
         .route(
             "/common/h5log/log/batch",
-            get(StatusCode::OK) 
+            post(StatusCode::OK) 
         )
         .fallback(errors::not_found);
 

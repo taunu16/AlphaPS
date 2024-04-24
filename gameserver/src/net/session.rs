@@ -8,13 +8,14 @@ use tokio::{
     sync::{Mutex, MutexGuard},
 };
 
-use crate::game::PlayerInfo;
+use crate::game::{EntityStateManager, PlayerInfo};
 
 use super::{packet::CommandHandler, NetPacket};
 
 pub struct PlayerSession {
     client_socket: Arc<Mutex<TcpStream>>,
     player_info: Arc<AtomicRefCell<PlayerInfo>>,
+    entity_state_manager: Arc<AtomicRefCell<EntityStateManager>>,
 }
 
 impl PlayerSession {
@@ -22,6 +23,7 @@ impl PlayerSession {
         Self {
             client_socket: Arc::new(Mutex::new(client_socket)),
             player_info: Arc::new(AtomicRefCell::new(PlayerInfo::new())),
+            entity_state_manager: Arc::new(AtomicRefCell::new(EntityStateManager::new())),
         }
     }
 
@@ -57,6 +59,14 @@ impl PlayerSession {
 
     pub fn player_info_mut(&self) -> AtomicRefMut<PlayerInfo> {
         self.player_info.borrow_mut()
+    }
+
+    pub fn entity_state_manager(&self) -> AtomicRef<EntityStateManager> {
+        self.entity_state_manager.borrow()
+    }
+
+    pub fn entity_state_manager_mut(&self) -> AtomicRefMut<EntityStateManager> {
+        self.entity_state_manager.borrow_mut()
     }
 }
 
