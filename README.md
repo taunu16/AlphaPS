@@ -5,7 +5,7 @@ A Server emulator for the game [`Honkai: Star Rail`](https://hsr.hoyoverse.com/e
 
 ## Installation
 
-[Check wiki](https://github.com/taunu16/AlphaPS/wiki/Installation)
+[Check wiki](https://github.com/taunu16/AlphaPS/wiki/0-Installation)
 
 ## Contributing
 
