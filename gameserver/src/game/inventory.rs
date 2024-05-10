@@ -4,15 +4,15 @@ use anyhow::Ok;
 use proto::{AmountInfo, AvatarSync, CMD_PLAYER_SYNC_SC_NOTIFY};
 use serde::{Deserialize, Serialize};
 
-use crate::{find_by_id, find_by_uid, find_i_by_id, find_i_by_uid, handle_error, handle_errorv, net::PlayerSession, safe_unwrap_option};
+use crate::{excel::{types::ItemType, EXCEL}, find_by_id, find_by_uid, find_i_by_id, find_i_by_uid, handle_error, handle_errorv, net::PlayerSession, safe_unwrap_option};
 
-use super::{constants, PlayerInfo};
+use super::PlayerInfo;
 
-const UNLOCKED_AVATARS: [u32; 54] = [ //tb fix exists so all trailblazers can co-exist
+const UNLOCKED_AVATARS: [u32; 56] = [ //tb fix exists so all trailblazers can co-exist
     8001, 8002, 8003, 8004, 8005, 8006, 1001, 1002, 1003, 1004, 1005, 1006, 1008, 1009, 1013, 1101, 1102, 1103, 1104, 1105, 1106,
     1107, 1108, 1109, 1110, 1111, 1112, 1201, 1202, 1203, 1204, 1205, 1206, 1207, 1208, 1209, 1210,
     1211, 1212, 1213, 1214, 1215, 1217, 1301, 1302, 1303, 1304, 1305, 1306, 1307, 1308, 1309, 1312,
-    1315,
+    1315, 1310, 1314
 ];
 
 macro_rules! sync_avatar_info {
@@ -368,9 +368,9 @@ impl Inventory {
     }
 
     pub async fn give_all_items(&mut self, session: &PlayerSession, count: u32) -> std::result::Result<(), anyhow::Error> {
-        self.items = constants::ALL_ITEMS.map(|id|  Item {
-            count, id
-        }).to_vec();
+        self.items = EXCEL.item.item_config.iter().filter(|itm| ![ItemType::Relic, ItemType::Equipment].contains(&itm.item_main_type) ).map(|itm|  Item {
+            count, id: itm.id
+        }).collect();
 
         self.save_data();
 
@@ -422,8 +422,8 @@ impl Avatar {
                 point_id: *k,
                 level: *v
             }).collect(),
-            amafpakcckf: self.relics.iter().map(|(slot, idx)| proto::EquipRelic {
-                ipnhjoomhdm: *slot,
+            equip_relic_list: self.relics.iter().map(|(slot, idx)| proto::EquipRelic {
+                iaglgkpdloe: *slot,
                 relic_unique_id: *idx
             }).collect(),
             ..Default::default()
@@ -473,7 +473,7 @@ impl Lightcone {
     pub fn to_proto(&self) -> proto::Equipment {
         proto::Equipment {
             tid: self.id,
-            imhlbinfhlh: self.avatar,
+            cmmegdchmlb: self.avatar,
             level: self.level,
             promotion: self.promotion,
             rank: self.rank,
@@ -525,11 +525,11 @@ impl Relic {
             level: self.level, 
             is_protected: false, 
             exp: 0, 
-            kjgemkmeikm: false, 
+            ongojjkjopd: false, 
             tid: self.id, 
             main_affix_id: self.main_affix_id, 
             unique_id: self.unique_id, 
-            imhlbinfhlh: self.avatar,
+            cmmegdchmlb: self.avatar,
             sub_affix_list: self.minor_affixes.iter().map(|a| a.to_proto()).collect(),
             ..Default::default() 
         }

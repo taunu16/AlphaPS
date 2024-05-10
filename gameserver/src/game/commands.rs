@@ -39,12 +39,12 @@ pub async fn invoke(
             let res = std::fmt::format(std::format_args!($($arg)*));
             session.send(
                 CMD_REVC_MSG_SC_NOTIFY, 
-                Kifdjbodlcc {
+                RevcMsgScNotify {
                     chat_type: body.chat_type,
                     msg_type: body.msg_type,
                     text: res.to_owned(),
-                    aljhmlmnmhp: 0,
-                    djefnoaonkc: 2137,
+                    ghojifhngmc: 0,
+                    cmmildghfnl: 2137,
                     emote: 0,
                     ..Default::default()
                 }
@@ -53,12 +53,12 @@ pub async fn invoke(
         ($t:expr) => {
             session.send(
                 CMD_REVC_MSG_SC_NOTIFY, 
-                Kifdjbodlcc {
+                RevcMsgScNotify {
                     chat_type: body.chat_type,
                     msg_type: body.msg_type,
                     text: "".to_owned(),
-                    aljhmlmnmhp: 0,
-                    djefnoaonkc: 2137,
+                    ghojifhngmc: 0,
+                    cmmildghfnl: 2137,
                     emote: $t,
                     ..Default::default()
                 }
@@ -70,12 +70,12 @@ pub async fn invoke(
     );
     safe_unwrap_result!(session.send(
         CMD_REVC_MSG_SC_NOTIFY, 
-        Kifdjbodlcc {
+        RevcMsgScNotify {
             chat_type: body.chat_type,
             msg_type: body.msg_type,
             text: body.text.clone(),
-            aljhmlmnmhp: 2137,
-            djefnoaonkc: 0,
+            ghojifhngmc: 2137,
+            cmmildghfnl: 0,
             emote: body.emote,
             ..Default::default()
         }
@@ -91,12 +91,12 @@ pub async fn invoke(
             if !body.text.starts_with("/") {
                 return session.send(
                     CMD_REVC_MSG_SC_NOTIFY, 
-                    Kifdjbodlcc {
+                    RevcMsgScNotify {
                         chat_type: body.chat_type,
                         msg_type: body.msg_type,
                         text: body.text.clone(),
-                        aljhmlmnmhp: 0,
-                        djefnoaonkc: 2137,
+                        ghojifhngmc: 0,
+                        cmmildghfnl: 2137,
                         emote: body.emote,
                         ..Default::default()
                     }
@@ -131,12 +131,12 @@ async fn process(args: Vec<&str>, session: &PlayerSession, player_info: &mut Ato
             let res = std::fmt::format(std::format_args!($($arg)*));
             session.send(
                 CMD_REVC_MSG_SC_NOTIFY, 
-                Kifdjbodlcc {
+                RevcMsgScNotify {
                     chat_type: ChatType::Private.into(),
                     msg_type: MsgType::CustomText.into(),
                     text: res.to_owned(),
-                    aljhmlmnmhp: 0,
-                    djefnoaonkc: 2137,
+                    ghojifhngmc: 0,
+                    cmmildghfnl: 2137,
                     emote: 0,
                     ..Default::default()
                 }
@@ -145,12 +145,12 @@ async fn process(args: Vec<&str>, session: &PlayerSession, player_info: &mut Ato
         ($t:expr) => {
             session.send(
                 CMD_REVC_MSG_SC_NOTIFY, 
-                Kifdjbodlcc {
+                RevcMsgScNotify {
                     chat_type: ChatType::Private.into(),
                     msg_type: MsgType::Emote.into(),
                     text: "".to_owned(),
-                    aljhmlmnmhp: 0,
-                    djefnoaonkc: 2137,
+                    ghojifhngmc: 0,
+                    cmmildghfnl: 2137,
                     emote: $t,
                     ..Default::default()
                 }
@@ -293,6 +293,18 @@ async fn process(args: Vec<&str>, session: &PlayerSession, player_info: &mut Ato
         "resetestate" => {
             session.entity_state_manager_mut().clear_data();
             return send_message!("Entity state reseted");
+        },
+        "debuglog" => {
+            if args.len() < 2 {
+                return send_message!("Usage: /debuglog [entities | ]");
+            }
+            match args[1].to_lowercase().as_str() {
+                "entities" => {
+                    println!("{:#?}", player_info.scene_prop_cache);
+                    return send_message!("OK, chcek server console");
+                },
+                _ => send_message!("Usage: /debuglog [entities | ]")
+            }
         },
         _ => send_message!("Unknown command")
     }

@@ -97,7 +97,7 @@ pub async fn on_replace_lineup_cs_req(
     let mut player_info = session.player_info_mut();
 
     player_info.lineup.avatar_list.clear();
-    for slot_info in &body.lineup_slots {
+    for slot_info in &body.replace_slot_list {
         player_info
             .lineup
             .avatar_list
@@ -149,78 +149,78 @@ fn lineup_avatar(id: u32, slot: u32) -> LineupAvatar {
     }
 }
 
-pub async fn on_get_assist_list_cs_req(
-    session: &PlayerSession,
-    _body: &GetAssistListCsReq,
-) -> Result<()> {
-    session.send(
-        CMD_GET_ASSIST_LIST_SC_RSP, 
-        Dmhpmbogjco {
-            retcode: 0,
-            bimojojomfc: vec![
-                Gimicolccfe {
-                    lehcnanhjdp: Some(DisplayAvatarDetailInfo {
-                        level: 80,
-                        avatar_id: 1308,
-                        relic_list: vec![],
-                        skilltree_list: vec![],
-                        promotion: 6,
-                        rank: 6,
-                        ..Default::default()
-                    }),
-                    simple_info: Some(SimpleInfo {
-                        nickname: "Acheron".to_owned(),
-                        uid: 4001,
-                        level: 69,
-                        is_banned: false,
-                        signature: "<b>nice</b>".to_owned(),
-                        platform_type: PlatformType::Pc.into(),
-                        online_status: FriendOnlineStatus::FriendOnlineStatusOnline.into(),
-                        gjlfhjlijon: 200103,
-                        ..Default::default()
-                    })
-                }
-            ]
-        }
-    ).await
-}
+// pub async fn on_get_assist_list_cs_req(
+//     session: &PlayerSession,
+//     _body: &GetAssistListCsReq,
+// ) -> Result<()> {
+//     session.send(
+//         CMD_GET_ASSIST_LIST_SC_RSP, 
+//         Dmhpmbogjco {
+//             retcode: 0,
+//             bimojojomfc: vec![
+//                 Gimicolccfe {
+//                     lehcnanhjdp: Some(DisplayAvatarDetailInfo {
+//                         level: 80,
+//                         avatar_id: 1308,
+//                         relic_list: vec![],
+//                         skilltree_list: vec![],
+//                         promotion: 6,
+//                         rank: 6,
+//                         ..Default::default()
+//                     }),
+//                     simple_info: Some(SimpleInfo {
+//                         nickname: "Acheron".to_owned(),
+//                         uid: 4001,
+//                         level: 69,
+//                         is_banned: false,
+//                         signature: "<b>nice</b>".to_owned(),
+//                         platform_type: PlatformType::Pc.into(),
+//                         online_status: FriendOnlineStatus::FriendOnlineStatusOnline.into(),
+//                         gjlfhjlijon: 200103,
+//                         ..Default::default()
+//                     })
+//                 }
+//             ]
+//         }
+//     ).await
+// }
 
-pub async fn on_set_assist_cs_req(
-    session: &PlayerSession,
-    body: &SetAssistCsReq,
-) -> Result<()> {
-    let player_info = &mut session.player_info_mut();
+// pub async fn on_set_assist_cs_req(
+//     session: &PlayerSession,
+//     body: &SetAssistCsReq,
+// ) -> Result<()> {
+//     let player_info = &mut session.player_info_mut();
     
-    if let Some(slot) = player_info.lineup.avatar_list.iter_mut().find(|a| a.slot == 3) {
-        slot.avatar_type = AvatarType::AvatarAssistType as i32;
-        slot.id = body.ckondfhadld;
-        //great way of storing this
-        slot.sp = Some(AmountInfo {
-            cur_amount: body.uid,
-            max_amount: body.uid
-        })
-    } else {
-        let slot = player_info.lineup.avatar_list.len() as u32;
-        player_info.lineup.avatar_list.push(LineupAvatar {
-            avatar_type: AvatarType::AvatarAssistType as i32,
-            hp: 10000,
-            sp: Some(AmountInfo {
-                cur_amount: body.uid,
-                max_amount: body.uid
-            }),
-            id: body.ckondfhadld,
-            satiety: 100,
-            slot
-        })
-    }
+//     if let Some(slot) = player_info.lineup.avatar_list.iter_mut().find(|a| a.slot == 3) {
+//         slot.avatar_type = AvatarType::AvatarAssistType as i32;
+//         slot.id = body.ckondfhadld;
+//         //great way of storing this
+//         slot.sp = Some(AmountInfo {
+//             cur_amount: body.uid,
+//             max_amount: body.uid
+//         })
+//     } else {
+//         let slot = player_info.lineup.avatar_list.len() as u32;
+//         player_info.lineup.avatar_list.push(LineupAvatar {
+//             avatar_type: AvatarType::AvatarAssistType as i32,
+//             hp: 10000,
+//             sp: Some(AmountInfo {
+//                 cur_amount: body.uid,
+//                 max_amount: body.uid
+//             }),
+//             id: body.ckondfhadld,
+//             satiety: 100,
+//             slot
+//         })
+//     }
 
-    player_info.sync_lineup(session, player_info.lineup.clone()).await;
-    session.send(
-        CMD_SET_ASSIST_SC_RSP,
-        SetAssistScRsp {
-            ckondfhadld: body.ckondfhadld,
-            uid: body.uid,
-            retcode: 0
-        } 
-    ).await
-}
+//     player_info.sync_lineup(session, player_info.lineup.clone()).await;
+//     session.send(
+//         CMD_SET_ASSIST_SC_RSP,
+//         SetAssistScRsp {
+//             ckondfhadld: body.ckondfhadld,
+//             uid: body.uid,
+//             retcode: 0
+//         } 
+//     ).await
+// }

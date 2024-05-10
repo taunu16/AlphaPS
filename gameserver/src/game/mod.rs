@@ -1,6 +1,5 @@
 mod global_config;
 mod player_info;
-pub mod constants;
 pub mod other;
 pub mod inventory;
 pub mod commands;

@@ -1,7 +1,6 @@
 use serde::{Serialize, Deserialize};
-use std::collections::HashMap;
 
-pub type BackgroundMusicConfig = HashMap<String, BackgroundMusicConfigValue>;
+pub type BackgroundMusicConfig = Vec<BackgroundMusicConfigValue>;
 
 #[derive(Debug, Serialize, Deserialize)]
 #[serde(rename_all = "PascalCase")]

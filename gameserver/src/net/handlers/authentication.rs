@@ -12,7 +12,6 @@ pub async fn on_player_get_token_cs_req(
             CMD_PLAYER_GET_TOKEN_SC_RSP,
             PlayerGetTokenScRsp {
                 retcode: 0,
-                msg: String::from("OK"),
                 uid: 2137,
                 ..Default::default()
             },

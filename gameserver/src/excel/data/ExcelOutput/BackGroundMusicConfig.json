@@ -1,5 +1,5 @@
-{
-  "-1965688365": {
+[
+  {
     "MusicSwitchName": "BGM_Spacetrain",
     "ID": 210000,
     "GroupID": 1,
@@ -16,7 +16,7 @@
     },
     "Unlock": true
   },
-  "1716477265": {
+  {
     "MusicSwitchName": "BGM_Herta_Space_Station_Suppy_Zone_Combat_Beast",
     "ID": 210001,
     "GroupID": 1,
@@ -33,7 +33,7 @@
     },
     "Unlock": false
   },
-  "-1527567446": {
+  {
     "MusicSwitchName": "BGM_Herta_Space_Station_Base_Zone",
     "ID": 210002,
     "GroupID": 1,
@@ -50,7 +50,7 @@
     },
     "Unlock": true
   },
-  "1706371399": {
+  {
     "MusicSwitchName": "BGM_Herta_Space_Station_Base_Zone_Combat",
     "ID": 210003,
     "GroupID": 1,
@@ -67,7 +67,7 @@
     },
     "Unlock": false
   },
-  "822658119": {
+  {
     "MusicSwitchName": "BGM_Herta_Space_Station_Storage_Zone_D",
     "ID": 210004,
     "GroupID": 1,
@@ -84,7 +84,7 @@
     },
     "Unlock": true
   },
-  "1236952177": {
+  {
     "MusicSwitchName": "BGM_Herta_Space_Station_Storage_Zone_E2_4",
     "ID": 210005,
     "GroupID": 1,
@@ -101,7 +101,7 @@
     },
     "Unlock": true
   },
-  "-994749164": {
+  {
     "MusicSwitchName": "BGM_Herta_Space_Station_Storage_Zone_E3_5",
     "ID": 210006,
     "GroupID": 1,
@@ -118,7 +118,7 @@
     },
     "Unlock": true
   },
-  "142157648": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Herta_Space_Station_Ending",
     "ID": 210007,
     "GroupID": 1,
@@ -135,7 +135,7 @@
     },
     "Unlock": true
   },
-  "-1803621395": {
+  {
     "MusicSwitchName": "BGM_Herta_Space_Station_Storage_Zone_Combat_full",
     "ID": 210008,
     "GroupID": 1,
@@ -152,7 +152,7 @@
     },
     "Unlock": false
   },
-  "248691409": {
+  {
     "MusicSwitchName": "BGM_Herta_Space_Station_Base_Zone_Combat_High",
     "ID": 210010,
     "GroupID": 1,
@@ -169,7 +169,7 @@
     },
     "Unlock": false
   },
-  "-856952504": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Spacetrain_Combat",
     "ID": 210226,
     "GroupID": 1,
@@ -186,7 +186,7 @@
     },
     "Unlock": false
   },
-  "640487417": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Spacetrain_Combat_Argenti",
     "ID": 210227,
     "GroupID": 1,
@@ -203,7 +203,7 @@
     },
     "Unlock": false
   },
-  "2141982033": {
+  {
     "MusicSwitchName": "BGM_Belobog_Overworld_Battle_Low",
     "ID": 210100,
     "GroupID": 2,
@@ -220,7 +220,7 @@
     },
     "Unlock": false
   },
-  "-1924427043": {
+  {
     "MusicSwitchName": "BGM_Belobog_Underworld_Combat_Low",
     "ID": 210101,
     "GroupID": 2,
@@ -237,7 +237,7 @@
     },
     "Unlock": false
   },
-  "554839661": {
+  {
     "MusicSwitchName": "BGM_Belobog_Underworld_Combat_High",
     "ID": 210102,
     "GroupID": 2,
@@ -254,7 +254,7 @@
     },
     "Unlock": false
   },
-  "831256186": {
+  {
     "MusicSwitchName": "BGM_Belobog_Underworld_Combat_Svarog",
     "ID": 210103,
     "GroupID": 2,
@@ -271,7 +271,7 @@
     },
     "Unlock": false
   },
-  "516943542": {
+  {
     "MusicSwitchName": "BGM_Belobog_Combat_Cocolia_Low",
     "ID": 210104,
     "GroupID": 2,
@@ -288,7 +288,7 @@
     },
     "Unlock": false
   },
-  "-602624124": {
+  {
     "MusicSwitchName": "BGM_Belobog_Combat_Cocolia_High_01",
     "ID": 210105,
     "GroupID": 2,
@@ -305,7 +305,7 @@
     },
     "Unlock": false
   },
-  "72733518": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Belobog_Cocolia_Vocal",
     "ID": 210106,
     "GroupID": 2,
@@ -322,7 +322,7 @@
     },
     "Unlock": false
   },
-  "-629668117": {
+  {
     "MusicSwitchName": "BGM_Belobog_Underworld_M2_1A",
     "ID": 210107,
     "GroupID": 2,
@@ -339,7 +339,7 @@
     },
     "Unlock": false
   },
-  "319417190": {
+  {
     "MusicSwitchName": "BGM_Belobog_Underworld_M2_2A",
     "ID": 210108,
     "GroupID": 2,
@@ -356,7 +356,7 @@
     },
     "Unlock": false
   },
-  "-1726224878": {
+  {
     "MusicSwitchName": "BGM_Belobog_Maze_M3_3_EverwinterHill",
     "ID": 210109,
     "GroupID": 2,
@@ -373,7 +373,7 @@
     },
     "Unlock": false
   },
-  "-685629297": {
+  {
     "MusicSwitchName": "BGM_Belobog_Maze_M3_3_PathSpace",
     "ID": 210110,
     "GroupID": 2,
@@ -390,7 +390,7 @@
     },
     "Unlock": false
   },
-  "578878901": {
+  {
     "MusicSwitchName": "BGM_Belobog_Overworld_Hollowing",
     "ID": 210111,
     "GroupID": 2,
@@ -407,7 +407,7 @@
     },
     "Unlock": false
   },
-  "-605594540": {
+  {
     "MusicSwitchName": "BGM_Belobog_Overworld_Relaxing",
     "ID": 210112,
     "GroupID": 2,
@@ -424,7 +424,7 @@
     },
     "Unlock": false
   },
-  "-596722603": {
+  {
     "MusicSwitchName": "BGM_Belobog_Overworld_Flowershop",
     "ID": 210113,
     "GroupID": 2,
@@ -441,7 +441,7 @@
     },
     "Unlock": false
   },
-  "1224037866": {
+  {
     "MusicSwitchName": "BGM_Belobog_Underworld_Joyful",
     "ID": 210114,
     "GroupID": 2,
@@ -458,7 +458,7 @@
     },
     "Unlock": false
   },
-  "1212688255": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Belobog_Overworld_Grandhotel",
     "ID": 210115,
     "GroupID": 2,
@@ -475,7 +475,7 @@
     },
     "Unlock": false
   },
-  "1053388462": {
+  {
     "MusicSwitchName": "BGM_Xianzhou_Maze_Cloudford",
     "ID": 210200,
     "GroupID": 3,
@@ -492,7 +492,7 @@
     },
     "Unlock": false
   },
-  "-894447843": {
+  {
     "MusicSwitchName": "BGM_Xianzhou_Maze_Stargazer_Navalia",
     "ID": 210201,
     "GroupID": 3,
@@ -509,7 +509,7 @@
     },
     "Unlock": false
   },
-  "917808313": {
+  {
     "MusicSwitchName": "BGM_Xianzhou_Maze_Divination_Commission",
     "ID": 210202,
     "GroupID": 3,
@@ -526,7 +526,7 @@
     },
     "Unlock": false
   },
-  "448073830": {
+  {
     "MusicSwitchName": "BGM_Xianzhou_Maze_Artisanship_Commission",
     "ID": 210203,
     "GroupID": 3,
@@ -543,7 +543,7 @@
     },
     "Unlock": false
   },
-  "1357397431": {
+  {
     "MusicSwitchName": "BGM_Xianzhou_Starskiff_Haven",
     "ID": 210204,
     "GroupID": 3,
@@ -560,7 +560,7 @@
     },
     "Unlock": false
   },
-  "1310917261": {
+  {
     "MusicSwitchName": "BGM_Xianzhou_Palace_of_Astrum",
     "ID": 210205,
     "GroupID": 3,
@@ -577,7 +577,7 @@
     },
     "Unlock": false
   },
-  "-1651163205": {
+  {
     "MusicSwitchName": "BGM_Xianzhou_Maze_X2_1_Combat_Low",
     "ID": 210206,
     "GroupID": 3,
@@ -594,7 +594,7 @@
     },
     "Unlock": false
   },
-  "1283763605": {
+  {
     "MusicSwitchName": "BGM_Xianzhou_Maze_X2_1_Combat_High",
     "ID": 210207,
     "GroupID": 3,
@@ -611,7 +611,7 @@
     },
     "Unlock": false
   },
-  "-863201483": {
+  {
     "MusicSwitchName": "BGM_Xianzhou_Exalting_Sanctum_Combat_Abundant_Ebon_Deer",
     "ID": 210208,
     "GroupID": 3,
@@ -628,7 +628,7 @@
     },
     "Unlock": false
   },
-  "-1174830829": {
+  {
     "MusicSwitchName": "BGM_Xianzhou_Exalting_Sanctum",
     "ID": 210209,
     "GroupID": 3,
@@ -645,7 +645,7 @@
     },
     "Unlock": false
   },
-  "579883036": {
+  {
     "MusicSwitchName": "BGM_Xianzhou_Seat_of_Divine_Foresight",
     "ID": 210210,
     "GroupID": 3,
@@ -662,7 +662,7 @@
     },
     "Unlock": false
   },
-  "819402330": {
+  {
     "MusicSwitchName": "BGM_Xianzhou_Maze_X1_1_Combat_High",
     "ID": 210211,
     "GroupID": 3,
@@ -679,7 +679,7 @@
     },
     "Unlock": false
   },
-  "-1041873475": {
+  {
     "MusicSwitchName": "BGM_Xianzhou_Combat_Kafuka",
     "ID": 210212,
     "GroupID": 3,
@@ -696,7 +696,7 @@
     },
     "Unlock": false
   },
-  "2028044964": {
+  {
     "MusicSwitchName": "BGM_Xianzhou_Maze_X1_1_Combat_Low",
     "ID": 210213,
     "GroupID": 3,
@@ -713,7 +713,7 @@
     },
     "Unlock": false
   },
-  "-1295299794": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Xianzhou_Maze_X3_Combat_Low",
     "ID": 210214,
     "GroupID": 3,
@@ -730,7 +730,7 @@
     },
     "Unlock": false
   },
-  "48137120": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Xianzhou_Maze_X3_Combat_High",
     "ID": 210215,
     "GroupID": 3,
@@ -747,7 +747,7 @@
     },
     "Unlock": false
   },
-  "2146442509": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Xianzhou_Combat_Yanqing_Stinger",
     "ID": 210216,
     "GroupID": 3,
@@ -764,7 +764,7 @@
     },
     "Unlock": false
   },
-  "1981827593": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Xianzhou_Maze_Alchemy_Commission",
     "ID": 210217,
     "GroupID": 3,
@@ -781,7 +781,7 @@
     },
     "Unlock": false
   },
-  "-1709001178": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Xianzhou_Maze_Scalegorge_Waterscape",
     "ID": 210218,
     "GroupID": 3,
@@ -798,7 +798,7 @@
     },
     "Unlock": false
   },
-  "-1081559266": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Xianzhou_Danheng_Vocal",
     "ID": 210219,
     "GroupID": 3,
@@ -815,7 +815,7 @@
     },
     "Unlock": false
   },
-  "-1921945959": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Xianzhou_Maze_Scalegorge_Waterscape_OpenSea",
     "ID": 210220,
     "GroupID": 3,
@@ -832,7 +832,7 @@
     },
     "Unlock": false
   },
-  "-1236028302": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Xianzhou_Maze_Arteria_Inceptionis",
     "ID": 210221,
     "GroupID": 3,
@@ -849,7 +849,7 @@
     },
     "Unlock": false
   },
-  "1253565986": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Xianzhou_Combat_Phantylia_01",
     "ID": 210222,
     "GroupID": 3,
@@ -866,7 +866,7 @@
     },
     "Unlock": false
   },
-  "-515023357": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Xianzhou_Combat_Phantylia_02",
     "ID": 210223,
     "GroupID": 3,
@@ -883,7 +883,7 @@
     },
     "Unlock": false
   },
-  "-1865082558": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Xianzhou_Combat_Phantylia_03",
     "ID": 210224,
     "GroupID": 3,
@@ -900,7 +900,7 @@
     },
     "Unlock": false
   },
-  "-1963758977": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Xianzhou_Sanctum_Alley",
     "ID": 210225,
     "GroupID": 3,
@@ -917,7 +917,7 @@
     },
     "Unlock": false
   },
-  "-1683586303": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Xianzhou_Combat_Fuyan",
     "ID": 210228,
     "GroupID": 3,
@@ -934,7 +934,7 @@
     },
     "Unlock": false
   },
-  "145452346": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Xianzhou_Maze_SuiGarden",
     "ID": 210229,
     "GroupID": 3,
@@ -951,7 +951,7 @@
     },
     "Unlock": false
   },
-  "2096582822": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Penocony_Combat_P01_OutDoor_High",
     "ID": 210300,
     "GroupID": 4,
@@ -968,7 +968,7 @@
     },
     "Unlock": false
   },
-  "-992671656": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Penocony_Combat_P01_OutDoor_low",
     "ID": 210301,
     "GroupID": 4,
@@ -985,7 +985,7 @@
     },
     "Unlock": false
   },
-  "1525728307": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Penocony_Combat_P01_InDoor_High",
     "ID": 210302,
     "GroupID": 4,
@@ -1002,7 +1002,7 @@
     },
     "Unlock": false
   },
-  "-1171407408": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Penocony_Combat_P01_InDoor_Low",
     "ID": 210303,
     "GroupID": 4,
@@ -1019,7 +1019,7 @@
     },
     "Unlock": false
   },
-  "1523341325": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Penocony_Combat_Death",
     "ID": 210304,
     "GroupID": 4,
@@ -1036,7 +1036,7 @@
     },
     "Unlock": false
   },
-  "1589108514": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Penocony_Combat_Sam",
     "ID": 210305,
     "GroupID": 4,
@@ -1053,7 +1053,7 @@
     },
     "Unlock": false
   },
-  "-2054623326": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Penocony_ADV_P01_MainSt",
     "ID": 210306,
     "GroupID": 4,
@@ -1070,7 +1070,7 @@
     },
     "Unlock": false
   },
-  "-252330948": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Penocony_ADV_P01_MarketSt",
     "ID": 210307,
     "GroupID": 4,
@@ -1087,7 +1087,7 @@
     },
     "Unlock": false
   },
-  "470599315": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Penocony_ADV_P01_ArcadeSq",
     "ID": 210308,
     "GroupID": 4,
@@ -1104,7 +1104,7 @@
     },
     "Unlock": false
   },
-  "610550149": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Penocony_MAZ_P101_MainTheme",
     "ID": 210309,
     "GroupID": 4,
@@ -1121,7 +1121,7 @@
     },
     "Unlock": false
   },
-  "-1708071266": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Penocony_ADV_P05_Lobby",
     "ID": 210310,
     "GroupID": 4,
@@ -1138,7 +1138,7 @@
     },
     "Unlock": false
   },
-  "149090271": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Penocony_ADV_P05_CommonRoom",
     "ID": 210311,
     "GroupID": 4,
@@ -1155,7 +1155,7 @@
     },
     "Unlock": false
   },
-  "1390512633": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Penocony_MAZ_P103_MainTheme",
     "ID": 210312,
     "GroupID": 4,
@@ -1172,7 +1172,7 @@
     },
     "Unlock": false
   },
-  "1125647085": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Penocony_MAZ_P103_Terrace_Vocal",
     "ID": 210313,
     "GroupID": 4,
@@ -1189,7 +1189,7 @@
     },
     "Unlock": false
   },
-  "-831689001": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Penocony_MAZ_P102_MainTheme",
     "ID": 210314,
     "GroupID": 4,
@@ -1206,7 +1206,7 @@
     },
     "Unlock": false
   },
-  "625633966": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Penocony_MAZ_P102_Study",
     "ID": 210315,
     "GroupID": 4,
@@ -1223,7 +1223,7 @@
     },
     "Unlock": false
   },
-  "2039136584": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Penocony_ADV_P01_NearOpera",
     "ID": 210316,
     "GroupID": 4,
@@ -1240,7 +1240,7 @@
     },
     "Unlock": false
   },
-  "-318566272": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Penocony_ADV_P01_Prop_DreamShop",
     "ID": 210317,
     "GroupID": 4,
@@ -1257,7 +1257,7 @@
     },
     "Unlock": false
   },
-  "-136127758": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Penocony_ADV_Prop_JazzBand1",
     "ID": 210318,
     "GroupID": 4,
@@ -1274,7 +1274,7 @@
     },
     "Unlock": false
   },
-  "1557947390": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Penocony_ADV_Prop_JazzBand2",
     "ID": 210319,
     "GroupID": 4,
@@ -1291,7 +1291,7 @@
     },
     "Unlock": false
   },
-  "1012205642": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Penocony_ADV_Prop_JazzBand3",
     "ID": 210320,
     "GroupID": 4,
@@ -1308,7 +1308,7 @@
     },
     "Unlock": false
   },
-  "2078520198": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Penocony_ADV_Prop_JazzBand4",
     "ID": 210321,
     "GroupID": 4,
@@ -1325,7 +1325,7 @@
     },
     "Unlock": false
   },
-  "1206956420": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Penocony_Gameplay_ClockBoy",
     "ID": 210322,
     "GroupID": 4,
@@ -1342,7 +1342,7 @@
     },
     "Unlock": false
   },
-  "-1626945552": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Penocony_Gameplay_WolfBro",
     "ID": 210323,
     "GroupID": 4,
@@ -1359,7 +1359,7 @@
     },
     "Unlock": false
   },
-  "-1759099859": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Penocony_Combat_Aventurine",
     "ID": 210324,
     "GroupID": 4,
@@ -1376,7 +1376,7 @@
     },
     "Unlock": false
   },
-  "-1389779997": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Penocony_MAZ_P201_MainTheme",
     "ID": 210325,
     "GroupID": 4,
@@ -1393,7 +1393,7 @@
     },
     "Unlock": false
   },
-  "-257291499": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Penocony_MAZ_P201_Hamster",
     "ID": 210326,
     "GroupID": 4,
@@ -1410,7 +1410,7 @@
     },
     "Unlock": false
   },
-  "654417941": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Penocony_MAZ_P201_Gangster",
     "ID": 210327,
     "GroupID": 4,
@@ -1427,7 +1427,7 @@
     },
     "Unlock": false
   },
-  "1854953720": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Penocony_MAZ_P202_MainTheme",
     "ID": 210328,
     "GroupID": 4,
@@ -1444,7 +1444,7 @@
     },
     "Unlock": false
   },
-  "1616134808": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Penocony_MAZ_P203_MainTheme",
     "ID": 210329,
     "GroupID": 4,
@@ -1461,7 +1461,7 @@
     },
     "Unlock": false
   },
-  "-2142403649": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Penocony_Gameplay_MovieGame_Race",
     "ID": 210330,
     "GroupID": 4,
@@ -1478,7 +1478,7 @@
     },
     "Unlock": false
   },
-  "-133344977": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Penocony_Gameplay_MovieGame_Shoot",
     "ID": 210331,
     "GroupID": 4,
@@ -1495,7 +1495,7 @@
     },
     "Unlock": false
   },
-  "851659154": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Penocony_Combat_Clock_A",
     "ID": 210332,
     "GroupID": 4,
@@ -1512,7 +1512,7 @@
     },
     "Unlock": false
   },
-  "-828041560": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Penocony_Combat_Clock_BC",
     "ID": 210333,
     "GroupID": 4,
@@ -1529,7 +1529,7 @@
     },
     "Unlock": false
   },
-  "1497524022": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Penocony_Combat_Clock_P2P3_SongVocal",
     "ID": 210334,
     "GroupID": 4,
@@ -1546,7 +1546,7 @@
     },
     "Unlock": false
   },
-  "-1423144983": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Penocony_Combat_P03_OutDoor_High",
     "ID": 210335,
     "GroupID": 4,
@@ -1563,7 +1563,7 @@
     },
     "Unlock": false
   },
-  "658026062": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Penocony_Combat_P03_OutDoor_Low",
     "ID": 210336,
     "GroupID": 4,
@@ -1580,7 +1580,7 @@
     },
     "Unlock": false
   },
-  "1957041115": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Penocony_Combat_P03_InDoor_High",
     "ID": 210337,
     "GroupID": 4,
@@ -1597,7 +1597,7 @@
     },
     "Unlock": false
   },
-  "1616671640": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Penocony_Combat_P03_InDoor_Low",
     "ID": 210338,
     "GroupID": 4,
@@ -1614,7 +1614,7 @@
     },
     "Unlock": false
   },
-  "-272028727": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Penocony_ADV_P02_Terrace",
     "ID": 210339,
     "GroupID": 4,
@@ -1631,7 +1631,7 @@
     },
     "Unlock": false
   },
-  "-1945849683": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Penocony_MAZ_P301_MainTheme_Ver1",
     "ID": 210340,
     "GroupID": 4,
@@ -1648,7 +1648,7 @@
     },
     "Unlock": false
   },
-  "1317153411": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Penocony_MAZ_P301_A1A2",
     "ID": 210341,
     "GroupID": 4,
@@ -1665,7 +1665,7 @@
     },
     "Unlock": false
   },
-  "-165355508": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Penocony_MAZ_P301_B1",
     "ID": 210342,
     "GroupID": 4,
@@ -1682,7 +1682,7 @@
     },
     "Unlock": false
   },
-  "128630205": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Penocony_MAZ_P301_B2",
     "ID": 210343,
     "GroupID": 4,
@@ -1699,7 +1699,7 @@
     },
     "Unlock": false
   },
-  "1750720133": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Penocony_MAZ_P301_MainTheme_Ver3",
     "ID": 210344,
     "GroupID": 4,
@@ -1716,7 +1716,7 @@
     },
     "Unlock": false
   },
-  "1527962623": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Penocony_MAZ_P302_MainTheme_Ver1",
     "ID": 210345,
     "GroupID": 4,
@@ -1733,7 +1733,7 @@
     },
     "Unlock": false
   },
-  "1799127551": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Penocony_MAZ_P302_MainTheme_Ver2",
     "ID": 210346,
     "GroupID": 4,
@@ -1750,7 +1750,7 @@
     },
     "Unlock": false
   },
-  "934069556": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Penocony_MAZ_P302_Chaos",
     "ID": 210347,
     "GroupID": 4,
@@ -1767,7 +1767,7 @@
     },
     "Unlock": false
   },
-  "1107648290": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Penocony_MAZ_P302_Norm",
     "ID": 210348,
     "GroupID": 4,
@@ -1784,7 +1784,7 @@
     },
     "Unlock": false
   },
-  "2114191907": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Penocony_MAZ_P302_Order",
     "ID": 210349,
     "GroupID": 4,
@@ -1801,7 +1801,7 @@
     },
     "Unlock": false
   },
-  "-1355311608": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Combat_Avatar_Robin_Vocal",
     "ID": 210350,
     "GroupID": 4,
@@ -1818,7 +1818,7 @@
     },
     "Unlock": false
   },
-  "2122712876": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Penocony_Combat_Clock_SongIntro",
     "ID": 210351,
     "GroupID": 4,
@@ -1835,7 +1835,7 @@
     },
     "Unlock": false
   },
-  "-688655849": {
+  {
     "MusicSwitchName": "BGM_Jukebox_Penocony_Combat_Clock_SongOutro",
     "ID": 210352,
     "GroupID": 4,
@@ -1851,5 +1851,56 @@
       "hash": 1482705457
     },
     "Unlock": false
+  },
+  {
+    "MusicSwitchName": "BGM_Jukebox_Penocony_ADV_P401_Current",
+    "ID": 210353,
+    "GroupID": 4,
+    "BPM": 73,
+    "RhythmColour": "TYPE_EASY",
+    "MusicName": {
+      "hash": 118321991
+    },
+    "UnlockDesc": {
+      "hash": -144889632
+    },
+    "BGMDesc": {
+      "hash": -1246177898
+    },
+    "Unlock": false
+  },
+  {
+    "MusicSwitchName": "BGM_Jukebox_Penocony_ADV_P401_Bridge",
+    "ID": 210354,
+    "GroupID": 4,
+    "BPM": 73,
+    "RhythmColour": "TYPE_EASY",
+    "MusicName": {
+      "hash": 877836878
+    },
+    "UnlockDesc": {
+      "hash": -144889633
+    },
+    "BGMDesc": {
+      "hash": -2005692785
+    },
+    "Unlock": false
+  },
+  {
+    "MusicSwitchName": "BGM_Jukebox_Penocony_P4_Song_Vocal",
+    "ID": 210355,
+    "GroupID": 4,
+    "BPM": 58,
+    "RhythmColour": "TYPE_EASY",
+    "MusicName": {
+      "hash": -688247063
+    },
+    "UnlockDesc": {
+      "hash": -144889634
+    },
+    "BGMDesc": {
+      "hash": -439608844
+    },
+    "Unlock": false
   }
-}
+]

@@ -36,13 +36,29 @@ pub use player::*;
 pub use scene::*;
 pub use tutorial::*;
 
+#[allow(unused_imports)]
 use proto::{
-    Aaihejacdpk::*, Achkcddkkkj::*, Bancodieeof::*, CmdActivityType::*, CmdBattleType::*,
-    CmdItemType::*, CmdPlayerType::*, Cmpepmnekko::*, Cpbdjpocnai::*, Ddhbjcelmjp::*,
-    Eegmjpcijbc::*, Emhbkpkpjpa::*, Fdkapmfjgjl::*, Gaifgoihffa::*, Galijhmhgcg::*, Gdjpnkniijf::*,
-    Hfjpennlffa::*, Hmnbojnkleh::*, Ieoildlcdkb::*, Kfmpmaojchm::*, Lopidcokdih::*, Lpegmiilfjm::*,
-    Mbnnmfkffbo::*, Mkeclbphcol::*, Niinikapdpg::*, Pfokmnnfiap::*, Pjmghcfmmge::*, Pnjfenbhbhg::*,
-    Pnnbhogkeeh::*, Plfdpoekndo::*
+    CmdActivityType::*, CmdAdventureType::*, CmdAetherDivideType::*, CmdAlleyType::*,
+    CmdArchiveType::*, CmdAvatarType::*, CmdBattleCollegeType::*, CmdBattlePassType::*,
+    CmdBattleType::*, CmdBoxingClubType::*, CmdChallengeType::*, CmdChatType::*,
+    CmdChessRogueType::*, CmdClockParkType::*, CmdContentPackageType::*, CmdDailyActiveType::*,
+    CmdDrinkMakerType::*, CmdEvolveBuildType::*, CmdExpeditionType::*,
+    CmdFantasticStoryActivityType::*, CmdFeverTimeActivityType::*, CmdFightActivityType::*,
+    CmdFightMathc3Type::*, CmdFightType::*, CmdFriendType::*, CmdGachaType::*, CmdHeartdialType::*,
+    CmdHeliobusType::*, CmdItemType::*, CmdJukeboxType::*, CmdLineupType::*, CmdLobbyType::*,
+    CmdMailType::*, CmdMapRotationType::*, CmdMatchThreeModuleType::*, CmdMatchType::*,
+    CmdMessageType::*, CmdMiscModuleType::*, CmdMissionType::*, CmdMonopolyType::*,
+    CmdMultiplayerType::*, CmdMultipleDropType::*, CmdMuseumType::*, CmdOfferingType::*,
+    CmdPamMissionType::*, CmdPhoneType::*, CmdPlayerBoardType::*, CmdPlayerReturnType::*,
+    CmdPlayerSync::*, CmdPlayerType::*, CmdPlotType::*, CmdPunkLordType::*, CmdQuestType::*,
+    CmdRaidCollectionType::*, CmdRaidType::*, CmdRedDotType::*, CmdReplayType::*,
+    CmdRndOptionType::*, CmdRogueCommonType::*, CmdRogueEndless::*, CmdRogueModifierType::*,
+    CmdRogueTournType::*, CmdRogueType::*, CmdRollShopType::*, CmdSceneType::*,
+    CmdServerPrefsType::*, CmdShopType::*, CmdSpaceZooType::*, CmdStarFightType::*,
+    CmdStoryLineType::*, CmdStrongChallengeActivityType::*, CmdTalkRewardType::*,
+    CmdTelevisionActivityType::*, CmdTextJoinType::*, CmdTrainVisitorType::*,
+    CmdTravelBrochureType::*, CmdTreasureDungeonType::*, CmdTutorialType::*, CmdWaypointType::*,
+    CmdWolfBroType::*
 };
 
 macro_rules! dummy {
@@ -84,10 +100,18 @@ macro_rules! dummy {
     };
 }
 
+
 dummy! {
+    UpdateServerPrefsData,
     // SceneEntityMove,
+    GetMarkItemList,
+    GetAllServerPrefsData,
     GetLevelRewardTakenList,
     GetRogueScoreRewardInfo,
+    GetRogueCommonDialogueData,
+    GetRogueEndlessActivityData,
+    GetMonsterResearchActivityData,
+    GetMainMissionCustomValue,
     // GetGachaInfo,
     QueryProductInfo,
     GetQuestData,
@@ -98,7 +122,7 @@ dummy! {
     GetRogueHandbookData,
     GetDailyActiveInfo,
     GetFightActivityData,
-    GetMultipleDropInfo,    
+    GetMultipleDropInfo,
     GetPlayerReturnMultiDropInfo,
     GetShareData,
     GetTreasureDungeonActivityData,
@@ -112,7 +136,6 @@ dummy! {
     GetCurChallenge,
     GetRogueInfo,
     GetExpeditionData,
-    GetRogueDialogueEventData,
     // GetJukeboxData,
     SyncClientResVersion,
     DailyFirstMeetPam,
@@ -128,16 +151,37 @@ dummy! {
     GetSecretKeyInfo,
     GetVideoVersionKey,
     GetCurBattleInfo,
-    // GetPhoneData,
+    // GetPhoneData, 
     PlayerLoginFinish,
-    //profile
-    GetAssistHistory,
-    GetFriendDevelopmentInfo,
-    GetFriendBattleRecordDetail,
-    //assists
-    GetFriendAssistList,
-    // GetLineupAvatarData,
-    //other
-    FinishTalkMission,
-    DailyFirstEnterMonopolyActivity
+    RogueTournQuery,
+    GetBattleCollegeData,
+    GetHeartDialInfo,
+    HeliobusActivityData,
+    GetEnteredScene,
+    GetAetherDivideInfo,
+    GetMapRotationData,
+    GetRogueCollection,
+    GetRogueExhibition,
+    GetNpcMessageGroup,
+    GetFriendLoginInfo,
+    GetChessRogueNousStoryInfo,
+    CommonRogueQuery,
+    GetStarFightData,
+    EvolveBuildQueryInfo,
+    GetAlleyInfo,
+    GetAetherDivideChallengeInfo,
+    GetStrongChallengeActivityData,
+    GetOfferingInfo,
+    ClockParkGetInfo,
+    GetGunPlayData,
+    SpaceZooData,
+    GetUnlockTeleport,
+    // TravelBrochureGetData,
+    RaidCollectionData,
+    GetChatEmojiList,
+    GetTelevisionActivityData,
+    GetTrainVisitorRegister,
+    GetLoginChatInfo,
+    GetFeverTimeActivityData,
+    GetAllSaveRaid
 }

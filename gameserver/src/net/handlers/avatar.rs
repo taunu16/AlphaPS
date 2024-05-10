@@ -43,7 +43,7 @@ pub async fn on_dress_avatar_cs_req(
     body: &DressAvatarCsReq,
 ) -> Result<()> {
     let inventory = &mut session.player_info_mut().inventory;
-    safe_unwrap_result!(inventory.equip_lightcone(session, body.imhlbinfhlh, body.equipment_unique_id).await);
+    safe_unwrap_result!(inventory.equip_lightcone(session, body.cmmegdchmlb, body.equipment_unique_id).await);
     session
         .send(
             CMD_DRESS_AVATAR_SC_RSP,
@@ -59,7 +59,7 @@ pub async fn on_dress_relic_avatar_cs_req(
 ) -> Result<()> {
     println!("{:?}", body);
     let inventory = &mut session.player_info_mut().inventory;
-    safe_unwrap_result!(inventory.equip_relic(session, body.imhlbinfhlh, body.param_list.clone()).await);
+    safe_unwrap_result!(inventory.equip_relic(session, body.cmmegdchmlb, body.param_list.clone()).await);
     session
         .send(
             CMD_DRESS_RELIC_AVATAR_SC_RSP,
@@ -74,7 +74,7 @@ pub async fn on_take_off_equipment_cs_req(
     body: &TakeOffEquipmentCsReq,
 ) -> Result<()> {
     let inventory = &mut session.player_info_mut().inventory;
-    safe_unwrap_result!(inventory.equip_lightcone(session, body.imhlbinfhlh, 0).await);
+    safe_unwrap_result!(inventory.equip_lightcone(session, body.cmmegdchmlb, 0).await);
     session
         .send(
             CMD_TAKE_OFF_EQUIPMENT_SC_RSP,
@@ -89,7 +89,7 @@ pub async fn on_take_off_relic_cs_req(
     body: &TakeOffRelicCsReq,
 ) -> Result<()> {
     let inventory = &mut session.player_info_mut().inventory;
-    safe_unwrap_result!(inventory.equip_relic(session, body.imhlbinfhlh, body.slot_list.iter().map(|sl| RelicParam { slot: *sl, relic_unique_id: 0 }).collect()).await);
+    //safe_unwrap_result!(inventory.equip_relic(session, body.cmmegdchmlb, body.slot_list.iter().map(|sl| RelicParam { slot: *sl, relic_unique_id: 0 }).collect()).await); //todo: AFTER RELIC FIX
     session
         .send(
             CMD_TAKE_OFF_RELIC_SC_RSP,
@@ -99,34 +99,66 @@ pub async fn on_take_off_relic_cs_req(
         ).await
 }
 
-pub async fn on_scene_cast_skill_cost_mp_cs_req(
-    session: &PlayerSession,
-    _body: &SceneCastSkillCostMpCsReq,
-) -> Result<()> {
-    session.player_info_mut().lineup.mp -= 1;
-    session
-        .send(
-            CMD_SCENE_CAST_SKILL_COST_MP_SC_RSP,
-            SceneCastSkillCostMpCsReq {}
-        ).await
+// pub async fn on_scene_cast_skill_cost_mp_cs_req(
+//     session: &PlayerSession,
+//     _body: &SceneCastSkillCostMpCsReq,
+// ) -> Result<()> {
+//     // session.player_info_mut().lineup.mp -= 1;
+//     session
+//         .send(
+//             CMD_SCENE_CAST_SKILL_COST_MP_SC_RSP,
+//             SceneCastSkillCostMpCsReq {}
+//         ).await
 
-}
+// }
 
 pub async fn on_scene_cast_skill_cs_req(
     session: &PlayerSession,
     body: &SceneCastSkillCsReq,
 ) -> Result<()> {
+    // println!("{:#?}", body);
+    // let player_info = session.player_info();
     session
         .send(
             CMD_SCENE_CAST_SKILL_SC_RSP,
             SceneCastSkillScRsp {
                 retcode: 0,
-                elgjckaejld: body.elgjckaejld,
-                pbgpinglheg: vec![
-                    Kaijnnbaieb {
-                        ..Default::default()
-                    }
-                ],
+                jkdaceoekll: body.jkdaceoekll,
+                /*battle_info: if body.hjopkcdlmln.len() > 0 { Some(SceneBattleInfo {
+                    battle_id: 2,
+                    logic_random_seed: 4444,
+                    stage_id: 201012311,
+                    buff_list: vec![],
+                    monster_wave_list: vec![
+                        SceneMonsterWave {
+                            wave_param: Some(SceneMonsterWaveParam { 
+                                level: 100,
+                                ..Default::default()
+                            }),
+                            monster_list: vec![
+                                SceneMonsterParam {
+                                    monster_id: 3025012,
+                                    ..Default::default()
+                                },
+                                SceneMonsterParam {
+                                    monster_id: 3024011,
+                                    ..Default::default()
+                                },
+                                // SceneMonsterParam {
+                                //     monster_id: 8015020,
+                                //     ..Default::default()
+                                // },
+                                // SceneMonsterParam {
+                                //     monster_id: 3014022,
+                                //     ..Default::default()
+                                // }
+                            ],
+                            ..Default::default()
+                        }
+                    ],
+                    battle_avatar_list: player_info.inventory.create_battle_lineup(&player_info),
+                    ..Default::default()
+                })} else {Option::None},*/
                 ..Default::default()
             }
         ).await

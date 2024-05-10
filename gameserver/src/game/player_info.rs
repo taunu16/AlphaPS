@@ -1,6 +1,6 @@
 use std::collections::HashMap;
 
-use crate::{excel::{tools_res::LevelProp, ExcelManager}, net::PlayerSession};
+use crate::{excel::tools_res::LevelProp, net::PlayerSession};
 
 use super::{commands::CommandSystem, globals, inventory::Inventory};
 use anyhow::Result;
@@ -10,7 +10,6 @@ use serde::{Deserialize, Serialize};
 pub struct PlayerInfo {
     pub lineup: LineupInfo,
     pub inventory: Inventory,
-    pub excel_manager: ExcelManager,
     pub command_system: CommandSystem,
     pub position: PlayerPosition,
     pub scene_prop_cache: HashMap<u32, LevelProp>
@@ -48,7 +47,6 @@ impl PlayerInfo {
         Self {
             lineup: default_lineup(),
             inventory: Inventory::new(),
-            excel_manager: ExcelManager::new(),
             command_system: Default::default(),
             position: Default::default(),
             scene_prop_cache: HashMap::new()

@@ -20,7 +20,7 @@ pub async fn on_get_cur_scene_info_cs_req(
 //stole this from ami https://github.com/amizing25/robinsr
 
 // enterscene
-pub async fn on_lckgkdehclb(session: &PlayerSession, request: &Lckgkdehclb) -> Result<()> {
+pub async fn on_enter_scene_cs_req(session: &PlayerSession, request: &EnterSceneCsReq) -> Result<()> {println!("{:?}", request);
     // send packet first
     session
         .send(CMD_ENTER_SCENE_SC_RSP, GetBagCsReq{})
@@ -28,7 +28,7 @@ pub async fn on_lckgkdehclb(session: &PlayerSession, request: &Lckgkdehclb) -> R
 
         println!("{:?}", request);
 
-    let _ = load_scene(session, request.entry_id, true, Some(request.maplanefddc), &mut session.player_info_mut()).await;
+    let _ = load_scene(session, request.entry_id, true, Some(request.entry_id), &mut session.player_info_mut()).await; //todo: make tps work
 
 
     Ok(())
@@ -36,9 +36,9 @@ pub async fn on_lckgkdehclb(session: &PlayerSession, request: &Lckgkdehclb) -> R
 
 // getscenemapinfocsreq
 pub async fn on_get_scene_map_info_cs_req(sesison: &PlayerSession, request: &GetSceneMapInfoCsReq) -> Result<()> {
-    let mut map_infos = Vec::<MazeMapData>::new();
+    let mut map_infos = Vec::<SceneMapInfo>::new();
 
-    for entry_id in &request.dmkkkfnkofh {
+    for entry_id in &request.entry_id_list {
         let mut chest_count = 0;
         
         if let Some(entrance) = GAME_RESOURCES.map_entrance.get(&entry_id) && let Some(group) = GAME_RESOURCES.level_group.get(&format!("P{}_F{}", entrance.plane_id, entrance.floor_id)) {
@@ -53,35 +53,35 @@ pub async fn on_get_scene_map_info_cs_req(sesison: &PlayerSession, request: &Get
             }
         }
 
-        let mut map_info = MazeMapData {
+        let mut map_info = SceneMapInfo {
             retcode: 0,
-            unlocked_chest_list: vec![
-                MazeChest {
-                    map_info_chest_type: MapInfoChestType::MapInfoChestTypeNormal.into(),
-                    total_amount_list: chest_count,
-                    unlocked_amount_list: 2137,
+            chest_info_list: vec![
+                ChestInfo {
+                    map_info_chest_type: MapInfoChestType::Normal.into(),
+                    jnkdigdigoi: chest_count,
+                    eliebjmijkb: 2137,
                 },
-                MazeChest {
-                    map_info_chest_type: MapInfoChestType::MapInfoChestTypePuzzle.into(),
+                ChestInfo {
+                    map_info_chest_type: MapInfoChestType::Puzzle.into(),
                     ..Default::default()
                 },
-                MazeChest {
-                    map_info_chest_type: MapInfoChestType::MapInfoChestTypeChallenge.into(),
+                ChestInfo {
+                    map_info_chest_type: MapInfoChestType::Challenge.into(),
                     ..Default::default()
                 },
             ],
-            aechnhklpkp: vec![
-                Kbbeoemcdhi {
-                    feiakppdjea: 0, //val
-                    iookcfnfjha: 0, //max
-                    ipnhjoomhdm: 1
-                },
-                Kbbeoemcdhi {
-                    feiakppdjea: 0,
-                    iookcfnfjha: 0,
-                    ipnhjoomhdm: 2
-                }
-            ],
+            // aechnhklpkp: vec![
+            //     Kbbeoemcdhi {
+            //         feiakppdjea: 0, //val
+            //         iookcfnfjha: 0, //max
+            //         ipnhjoomhdm: 1
+            //     },
+            //     Kbbeoemcdhi {
+            //         feiakppdjea: 0,
+            //         iookcfnfjha: 0,
+            //         ipnhjoomhdm: 2
+            //     }
+            // ],
             entry_id: *entry_id,
             ..Default::default()
         };
@@ -109,27 +109,27 @@ pub async fn on_get_scene_map_info_cs_req(sesison: &PlayerSession, request: &Get
         if let Some(level) = group_config {
             // add teleports
             for teleport in &level.teleports {
-                map_info.unlocked_teleport_list.push(*teleport.0)
+                map_info.unlock_teleport_list.push(*teleport.0)
             }
 
             for (group_id, group) in &level.group_items {
-                map_info.pmolfbcbfpe.push(Gecjjlmabhp {
+                map_info.maze_group_list.push(MazeGroup {
                     group_id: *group_id,
                     ..Default::default()
                 });
 
                 // prop
                 for prop in &group.props {
-                    map_info.cgkfbhoadpc.push(Kangcibfhee {
+                    map_info.maze_prop_list.push(MazePropState {
                         group_id: prop.group_id,
                         state: if prop.prop_state_list.contains(&PropState::CheckPointEnable) {
                             PropState::CheckPointEnable as u32
                         } else if (103023..=103027).contains(&prop.prop_id) {
-                            PropState::Closed as u32 //show origami birds on map
+                            PropState::Open as u32 //show origami birds on map
                         } else {
                             prop.state.clone() as u32
                         },
-                        ifjocipnpgd: prop.id as u32,
+                        config_id: prop.id as u32,
                     });
                 }
             }
@@ -145,7 +145,7 @@ pub async fn on_get_scene_map_info_cs_req(sesison: &PlayerSession, request: &Get
             CMD_GET_SCENE_MAP_INFO_SC_RSP,
             GetSceneMapInfoScRsp {
                 retcode: 0,
-                map_list: map_infos,
+                map_info_list: map_infos,
                 ..Default::default()
             },
         )
@@ -214,10 +214,10 @@ pub async fn on_scene_entity_teleport_cs_req(
         }
     }
     session
-        .send(CMD_SCENE_ENTITY_TELEPORT_SC_RSP, SceneEntityTeleportScRsp{
+        .send(CMD_SCENE_ENTITY_TELEPORT_SC_RSP, SceneEntityTeleportScRsp {
             entity_motion: request.entity_motion.clone(),
             retcode: 0,
-            oeipegeoedk: 0
+            lgflfajffjl: 0
         })
         .await
 }
@@ -268,7 +268,7 @@ pub async fn load_scene(
         plane_id: enterance.plane_id as u32,
         entry_id,
         game_mode_type: plane.plane_type as u32,
-        pbfgagecpcd: plane.world_id,
+        lgflfajffjl: plane.world_id, //???
         ..Default::default()
     };
 
@@ -296,7 +296,7 @@ pub async fn load_scene(
     player_info.scene_prop_cache.clear();
 
     for (group_id, group) in &group_config.group_items {
-        let mut group_info = Dhkacjhaoid {
+        let mut group_info = SceneGroupInfo {
             state: 0,
             group_id: *group_id,
             ..Default::default()
@@ -360,7 +360,7 @@ pub async fn load_scene(
                 entity_id: npc_entity_id,
                 motion: Some(npc_position.to_motion()),
                 npc: Some(SceneNpcInfo {
-                    egeneneoadj: npc.npcid as u32,
+                    npc_id: npc.npcid as u32,
                     ..Default::default()
                 }),
                 ..Default::default()
@@ -398,11 +398,11 @@ pub async fn load_scene(
             group_info.entity_list.push(info);
         }
 
-        scene_info.chhmmbdhjpg.push(group_info);
+        scene_info.scene_group_list.push(group_info);
     }
 
     // load player entity
-    let mut player_group = Dhkacjhaoid {
+    let mut player_group = SceneGroupInfo {
         state: 0,
         group_id: 0,
         ..Default::default()
@@ -434,7 +434,8 @@ pub async fn load_scene(
             ..Default::default()
         })
     }
-    scene_info.chhmmbdhjpg.push(player_group);
+    
+    scene_info.scene_group_list.push(player_group);
 
     for i in 1..100 {
         for j in 0..100 {

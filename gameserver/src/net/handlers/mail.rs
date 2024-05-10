@@ -1,8 +1,6 @@
 use std::time::{SystemTime, UNIX_EPOCH};
 
-use anyhow::Ok;
-
-use crate::{excel::types::UseEffect, safe_unwrap_result};
+use crate::{excel::{types::UseEffect, EXCEL}, safe_unwrap_result};
 
 use super::*;
 
@@ -115,19 +113,19 @@ pub async fn on_use_item_cs_req(
     session: &PlayerSession,
     body: &UseItemCsReq,
 ) -> Result<()> {
-    println!("{:?}", body);
-    
+    println!("{:?}", body);//TODO: find proper variable item_use_id
+    /* 
     let mut player_info = session.player_info_mut();
-    let buff_data = player_info.excel_manager.item.buff_data.get(&body.use_item_id.to_string());
+    let buff_data = EXCEL.item.buff_data.get(&body.use_item_id.to_string());
     if buff_data.is_none() {
         return session
         .send(
             CMD_USE_ITEM_SC_RSP,
             UseItemScRsp {
                 retcode: 0,
-                use_item_id: body.use_item_id,
-                return_data: Option::None,
-                oipebhlkhpe: body.oipebhlkhpe,
+                onnkbfefeok: body.onnkbfefeok,
+                fghjlkadkpp: Option::None,
+                cankcdddjgc: body.cankcdddjgc,
                 ..Default::default()
             }
         ).await;
@@ -146,14 +144,15 @@ pub async fn on_use_item_cs_req(
         safe_unwrap_result!(player_info.sync_lineup(session, player_info.lineup.clone()).await);
     } else {
         safe_unwrap_result!(player_info.sync_lineup_reason(session, sync_reasons).await);
-    }
+    }*/
 
     session
         .send(
             CMD_USE_ITEM_SC_RSP,
             UseItemScRsp {
                 retcode: 0,
-                use_item_id: body.use_item_id,
+                cankcdddjgc: body.cankcdddjgc,
+                onnkbfefeok: body.onnkbfefeok,
                 ..Default::default()
             }
         ).await

@@ -1,6 +1,6 @@
 use std::collections::HashMap;
 
-use crate::util;
+use crate::{excel::EXCEL, util};
 
 use super::*;
 
@@ -63,49 +63,29 @@ pub async fn on_player_heart_beat_cs_req(
 }
 
 //travel broshure
-pub async fn on_phbnokkhgkd(
+pub async fn on_travel_brochure_get_data_cs_req(
     session: &PlayerSession,
-    _body: &Phbnokkhgkd,
+    _body: &TravelBrochureGetDataCsReq,
 ) -> Result<()> {
-    let ids = HashMap::from([
-        (12, 1300),
-        (1, 101),
-        (2, 200),
-        (3, 300),
-        (4, 402),
-        (101, 0),
-        (5, 502),
-        (102, 0),
-        (6, 600),
-        (7, 702),
-        (8, 800),
-        (9, 1001),
-        (10, 1101),
-        (11, 1202),
-
-        (13, 1401),
-        (14, 1501),
-        (15, 1601),
-    ]);
     let mut elements = HashMap::new();
 
     for i in vec![101u32, 102, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16] {
-        elements.insert(i, Bbjejalfhen {
-            gfehjonbcmn: Nhnehbekhhj::PageInteracted as i32,
-            hajfkgdcglb: Pefolbeomfh::PageDescCollapse as i32,
-            oockdmpidlg: vec![],
-            egigfgpjddg: format!("{i}01").parse().unwrap(), //*ids.get(&i).unwrap_or(&0),
-            idgckihophm: i
+        elements.insert(i, Gnapkglaenf {
+            mafmebchomj: TravelBrochurePageStatus::PageInteracted as i32,
+            noicpkddpee: Cmdahlbmklc::PageDescCollapse as i32,
+            pfoknkknace: vec![],
+            mnboaolhcof: format!("{i}01").parse().unwrap(), //*ids.get(&i).unwrap_or(&0),
+            inmjgoeaakb: i
         });
     }
 
     session.send(
         CMD_TRAVEL_BROCHURE_GET_DATA_SC_RSP,
-        Ipogaccpagm {
+        TravelBrochureGetDataScRsp {
             retcode: 0,
-            impheidipgc: 2,
-            biaghopnodp: elements,
-            moippddaohm: HashMap::from_iter(session.player_info().excel_manager.item.paster_config.iter().map(|(_, v)| (v.id, 1u32)))
+            lmfadlckloe: 2,
+            nibokkaieid: elements,
+            akphbfphkgc: HashMap::from_iter(EXCEL.item.paster_config.iter().map(|v| (v.id, 1u32)))
         }
     ).await
 }
@@ -116,17 +96,17 @@ pub async fn on_get_phone_data_cs_req(
 ) -> Result<()> {
     let mut data = vec![];
     let mut data2 = vec![];
-    for i in 0..6u32 {
+    for i in 0..7u32 {
         data.push(221000 + i);
         data2.push(220000 + i);
     }
     session.send(
         CMD_GET_PHONE_DATA_SC_RSP,
         GetPhoneDataScRsp {
-            epoicbnlbgn: data2.clone(),
-            paciklpabdl: data,
-            ccmpnpbeipj: 221000,
-            eacdbinnkjg: 220000,
+            mnclhkknffn: data,
+            mpgkclipima: data2,
+            danocgnclik: 220000,
+            fipccimjcgb: 221000,
             retcode: 0
         }
     ).await
@@ -139,8 +119,8 @@ pub async fn on_select_phone_theme_cs_req(
     session.send(
         CMD_SELECT_PHONE_THEME_SC_RSP,
         SelectPhoneThemeScRsp {
-            ccmpnpbeipj: body.bganhiddedd,
-            inhdnclkmjg: body.bganhiddedd,
+            fipccimjcgb: body.ihefcgoomem,
+            njieglbjpmn: body.ihefcgoomem,
             retcode: 0
         }
     ).await
@@ -153,8 +133,8 @@ pub async fn on_select_chat_bubble_cs_req(
     session.send(
         CMD_SELECT_CHAT_BUBBLE_SC_RSP,
         SelectChatBubbleScRsp {
-            eacdbinnkjg: body.minhcfcflbd,
-            gcknobhoooa: body.minhcfcflbd,
+            cjcfcdccane: body.bfeleinblee,
+            danocgnclik: body.bfeleinblee,
             retcode: 0
         }
     ).await

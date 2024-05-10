@@ -1,9 +1,8 @@
 use serde::{Serialize, Deserialize};
-use std::collections::HashMap;
 
 use crate::excel::tools_res::PropState;
 
-pub type Interact = HashMap<String, InteractValue>;
+pub type Interact = Vec<InteractValue>;
 
 #[derive(Debug, Serialize, Deserialize)]
 #[serde(rename_all = "PascalCase")]

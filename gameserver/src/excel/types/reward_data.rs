@@ -1,0 +1,60 @@
+use serde::{Serialize, Deserialize};
+
+pub type RewardData = Vec<RewardDataElement>;
+
+#[derive(Debug, Serialize, Deserialize)]
+#[serde(rename_all = "PascalCase")]
+pub struct RewardDataElement {
+    #[serde(rename = "RewardID")]
+    pub reward_id: i64,
+    pub hcoin: i64,
+    #[serde(rename = "ItemID_1")]
+    pub item_id_1: i64,
+    #[serde(rename = "Count_1")]
+    pub count_1: i64,
+    #[serde(rename = "Level_1")]
+    pub level_1: i64,
+    #[serde(rename = "Rank_1")]
+    pub rank_1: i64,
+    #[serde(rename = "ItemID_2")]
+    pub item_id_2: i64,
+    #[serde(rename = "Count_2")]
+    pub count_2: i64,
+    #[serde(rename = "Level_2")]
+    pub level_2: i64,
+    #[serde(rename = "Rank_2")]
+    pub rank_2: i64,
+    #[serde(rename = "ItemID_3")]
+    pub item_id_3: i64,
+    #[serde(rename = "Count_3")]
+    pub count_3: i64,
+    #[serde(rename = "Level_3")]
+    pub level_3: i64,
+    #[serde(rename = "Rank_3")]
+    pub rank_3: i64,
+    #[serde(rename = "ItemID_4")]
+    pub item_id_4: i64,
+    #[serde(rename = "Count_4")]
+    pub count_4: i64,
+    #[serde(rename = "Level_4")]
+    pub level_4: i64,
+    #[serde(rename = "Rank_4")]
+    pub rank_4: i64,
+    #[serde(rename = "ItemID_5")]
+    pub item_id_5: i64,
+    #[serde(rename = "Count_5")]
+    pub count_5: i64,
+    #[serde(rename = "Level_5")]
+    pub level_5: i64,
+    #[serde(rename = "Rank_5")]
+    pub rank_5: i64,
+    #[serde(rename = "ItemID_6")]
+    pub item_id_6: i64,
+    #[serde(rename = "Count_6")]
+    pub count_6: i64,
+    #[serde(rename = "Level_6")]
+    pub level_6: i64,
+    #[serde(rename = "Rank_6")]
+    pub rank_6: i64,
+    pub is_special: bool,
+}

@@ -16,22 +16,22 @@ pub async fn on_get_friend_list_info_cs_req(
                             nickname: "AlphaServer".to_owned(),
                             uid: 0,
                             level: 69,
-                            plmbeaaegak: vec![],
-                            is_banned: false,
-                            ailinangjne: "test1".to_owned(),
-                            ldfiofjhjja: "test2".to_owned(),
-                            signature: "POLSKA GUROM 🇵🇱".to_owned(),
-                            platform_type: PlatformType::Pc.into(),
-                            online_status: FriendOnlineStatus::FriendOnlineStatusOnline.into(),
-                            gjlfhjlijon: 200101,
-                            jpajpffgnbi: 0,
-                            oopogjgllpg: 0,
+                            oemkmkkhkde: vec![],
+                            lnaaoaojpff: false,
+                            ejknhjgaibm: "test1".to_owned(),
+                            aionaipakjc: "test2".to_owned(),
+                            ldcholahmei: "POLSKA GUROM 🇵🇱".to_owned(),
+                            platform: PlatformType::Pc.into(),
+                            mjbmlkimpnn: Iciddlkpjpe::FriendOnlineStatusOnline.into(),
+                            kpiphlhfiib: 0,
+                            dgojjmfnomj: 200101,
+                            jnlnifcohpc: 0,
                             ..Default::default()
                         }),
                         ..Default::default()
                     }
                 ],
-                domnlbiijfb: vec![],
+                hgloaipjiob: vec![],
                 retcode: 0,
                 ..Default::default()
             }
@@ -46,9 +46,9 @@ pub async fn on_get_private_chat_history_cs_req(
     println!("{:?}", body);
     session.send(
         CMD_GET_PRIVATE_CHAT_HISTORY_SC_RSP,
-        Ooibcglpnac {
+        GetPrivateChatHistoryScRsp {
             retcode: 0,
-            pgofeopnpbm: vec![
+            fepangjbmpa: vec![
 //                 Bpifmdladdn {
 //                     emote: 0,
 //                     fbelgjfhbkh: "
@@ -71,18 +71,17 @@ pub async fn on_get_private_chat_history_cs_req(
 //                     phhhfhobhmk: 1
 //                 },
 // there is no help command
-                Bpifmdladdn {
+                Gnbekokccfc {
                     emote: 0,
-                    fbelgjfhbkh: "
-<ųũźť=20>Server Console</ųũźť>
-                    ".trim().to_owned(),
+                    anjfbjikchf: "Server Console".trim().to_owned(),
                     msg_type: MsgType::CustomText.into(),
-                    nokipdbhglc: 0,
-                    phhhfhobhmk: 0
+                    hkkkjdbgiao: 0, //time
+                    befmkobhohp: 0,
+                    ggadmjhlomj: Option::None
                 },
             ],
-            fjbkleaflam: 0,
-            oligkfnjkma: 0,
+            cibgdjekbja: 0,
+            ienomggikon: 0,
             ..Default::default()
         }
     ).await
@@ -104,39 +103,39 @@ pub async fn on_get_player_detail_info_cs_req(
         match body.uid {
             0 => GetPlayerDetailInfoScRsp {
                 retcode: 0,
-                iikiicbkejc: Some(Fkplcibblhf {
+                knmbdmpogkc: Some(Pplihjclmmk {
                     uid: body.uid,
-                    signature: "POLSKA GUROM 🇵🇱".to_owned(),
+                    ldcholahmei: "POLSKA GUROM 🇵🇱".to_owned(),
                     level: 69,
-                    is_banned: false,
+                    hkbddialajk: false,
                     nickname: "AlphaServer".to_owned(),
-                    platform_type: PlatformType::Pc.into(),
-                    gjlfhjlijon: 200101,
+                    platform: PlatformType::Pc.into(),
+                    dgojjmfnomj: 200101,
                     world_level: 6,
-                    ailinangjne: "test1".to_owned(),
-                    ldfiofjhjja: "test2".to_owned(),
+                    ejknhjgaibm: "test1".to_owned(),
+                    aionaipakjc: "test2".to_owned(),
                     ..Default::default()
                 })
             },
             2137 => GetPlayerDetailInfoScRsp {
                 retcode: 0,
-                iikiicbkejc: Some(Fkplcibblhf {
+                knmbdmpogkc: Some(Pplihjclmmk {
                     uid: body.uid,
-                    signature: "🦼".to_owned(),
+                    ldcholahmei: "polando".to_owned(),
                     level: 70,
-                    is_banned: false,
+                    hkbddialajk: false,
                     nickname: "Alpha".to_owned(),
-                    platform_type: PlatformType::Pc.into(),
+                    platform: PlatformType::Pc.into(),
                     // gjlfhjlijon: 200101,
                     world_level: 6,
-                    ailinangjne: "test1".to_owned(),
-                    ldfiofjhjja: "test2".to_owned(),
+                    ejknhjgaibm: "test1".to_owned(),
+                    aionaipakjc: "test2".to_owned(),
                     ..Default::default()
                 })
             },
             _ => GetPlayerDetailInfoScRsp {
                 retcode: Retcode::RetServerInternalError as u32,
-                iikiicbkejc: Option::None
+                knmbdmpogkc: Option::None
             }
         }
     ).await

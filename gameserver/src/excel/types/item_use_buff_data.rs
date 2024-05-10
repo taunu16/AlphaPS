@@ -1,38 +1,38 @@
 use serde::{Serialize, Deserialize};
 
-use std::collections::HashMap;
+pub type ItemUseBuffData = Vec<ItemUseBuffDatum>;
 
-pub type ItemUseBuffData = HashMap<String, ItemUseBuffDataValue>;
-
-#[derive(Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize)]
 #[serde(rename_all = "PascalCase")]
-pub struct ItemUseBuffDataValue {
+pub struct ItemUseBuffDatum {
+    pub consume_tag: Vec<ConsumeTag>,
+    pub maze_buff_param: Vec<Option<serde_json::Value>>,
+    pub maze_buff_param2: Vec<Option<serde_json::Value>>,
+    pub use_effect: UseEffect,
     #[serde(rename = "UseDataID")]
     pub use_data_id: i64,
     pub consume_type: i64,
-    pub consume_tag: Vec<ConsumeTag>,
-    pub use_target_type: Option<UseTargetType>,
+    pub use_target_type: UseTargetType,
     #[serde(rename = "MazeBuffID")]
     pub maze_buff_id: i64,
-    pub maze_buff_param: Vec<Option<serde_json::Value>>,
-    pub maze_buff_param2: Vec<Option<serde_json::Value>>,
-    pub use_multiple_max: i64,
-    #[serde(rename = "IsCheckHP")]
-    pub is_check_hp: Option<bool>,
-    pub use_effect: UseEffect,
-    #[serde(rename = "PreviewHPRecoveryPercent")]
-    pub preview_hp_recovery_percent: Option<f64>,
-    #[serde(rename = "PreviewHPRecoveryValue")]
-    pub preview_hp_recovery_value: Option<i64>,
-    pub is_show_item_desc: bool,
-    pub activity_count: i64,
     #[serde(rename = "MazeBuffID2")]
-    pub maze_buff_id2: Option<i64>,
-    pub preview_skill_point: Option<u32>,
-    pub preview_power_percent: Option<f64>,
+    pub maze_buff_id2: i64,
+    pub satiety_value: i64,
+    pub use_multiple_max: i64,
+    #[serde(rename = "PreviewHPRecoveryPercent")]
+    pub preview_hp_recovery_percent: f64,
+    #[serde(rename = "PreviewHPRecoveryValue")]
+    pub preview_hp_recovery_value: f64,
+    pub preview_skill_point: f64,
+    pub preview_power_percent: f64,
+    pub activity_count: i64,
+    #[serde(rename = "IsCheckHP")]
+    pub is_check_hp: bool,
+    pub is_show_item_desc: bool,
+    pub is_show_use_multiple_slider: bool,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize)]
 pub enum ConsumeTag {
     #[serde(rename = "BP")]
     Bp,
@@ -42,7 +42,7 @@ pub enum ConsumeTag {
     Sp,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize)]
 pub enum UseEffect {
     #[serde(rename = "AvatarItemIcon_Eff_AtkUp")]
     AvatarItemIconEffAtkUp,
@@ -60,8 +60,9 @@ pub enum UseEffect {
     AvatarItemIconEffSkillPoints,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize)]
 pub enum UseTargetType {
     Alive,
+    All,
     Dead,
 }

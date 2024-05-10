@@ -1,5 +1,5 @@
-{
-  "-1727846114": {
+[
+  {
     "UIPrefab": "UI/Quest/ChallengePanel/QuestChallengePanel.prefab",
     "TypeParam": [],
     "UnlockConditions": "[PlayerLevel:20],[FinishMainMission:1000510]",
@@ -15,6 +15,7 @@
     "SortWeight": 1,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": -1251713575
     },
@@ -36,7 +37,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "1541567372": {
+  {
     "UIPrefab": "UI/Quest/Widget/SevenDayRewardPanel.prefab",
     "TypeParam": [
       1002
@@ -60,6 +61,7 @@
     "SortWeight": 3010,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": -1251713569
     },
@@ -81,7 +83,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "-285765191": {
+  {
     "UIPrefab": "UI/Quest/Widget/QuestExploitMissionPanel.prefab",
     "TypeParam": [
       3000001,
@@ -109,6 +111,7 @@
     "SortWeight": 3001,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": -1251713570
     },
@@ -130,7 +133,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "1094657001": {
+  {
     "UIPrefab": "UI/Quest/Widget/QuestNewbieMissionPanel.prefab",
     "TypeParam": [],
     "UnlockConditions": "[FinishMainMission:1000510]",
@@ -152,6 +155,7 @@
     "SortWeight": 3000,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": -1251713571
     },
@@ -173,7 +177,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "-98463842": {
+  {
     "UIPrefab": "UI/Quest/Widget/SingleTaskActivityPanel.prefab",
     "TypeParam": [
       10017
@@ -191,6 +195,7 @@
     "SortWeight": 2000,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": -1251713572
     },
@@ -212,7 +217,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "316355716": {
+  {
     "UIPrefab": "UI/Quest/Widget/SevenDayRewardPanelVersion.prefab",
     "TypeParam": [
       1003
@@ -236,6 +241,7 @@
     "SortWeight": 3011,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": -1251713565
     },
@@ -257,7 +263,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "-843580787": {
+  {
     "UIPrefab": "UI/Quest/Widget/PlayerReturnPanel.prefab",
     "TypeParam": [],
     "UnlockConditions": "[PlayerLevel:10],[FinishMainMission:1010403]",
@@ -278,6 +284,7 @@
     "SortWeight": 8000,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": -1251713566
     },
@@ -299,7 +306,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "1830140871": {
+  {
     "UIPrefab": "UI/Quest/Widget/QuestDoubleFarmCocoonPanel.prefab",
     "TypeParam": [
       10001
@@ -323,6 +330,7 @@
     "SortWeight": 6001,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": -848429046
     },
@@ -344,7 +352,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "-1170935627": {
+  {
     "UIPrefab": "UI/Quest/Widget/QuestFarmMultipleDropPanel.prefab",
     "TypeParam": [
       30001
@@ -368,6 +376,7 @@
     "SortWeight": 6001,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": -848429047
     },
@@ -389,79 +398,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "5259429": {
-    "UIPrefab": "UI/Quest/Widget/AbyssAlternationPanel.prefab",
-    "TypeParam": [],
-    "UnlockConditions": "[FinishMainMission:4020103]|[FinishMainMission:4010106]|[FinishSubMission:801710102]",
-    "TabIcon": "SpriteOutput/Quest/TabIcon/BtnAbyssAlternation.png",
-    "DisplayItemList": [
-      {
-        "ItemID": 1,
-        "ItemNum": 720
-      },
-      {
-        "ItemID": 262,
-        "ItemNum": 600
-      },
-      {
-        "ItemID": 213,
-        "ItemNum": 24
-      },
-      {
-        "ItemID": 223,
-        "ItemNum": 12
-      },
-      {
-        "ItemID": 233,
-        "ItemNum": 24
-      },
-      {
-        "ItemID": 261,
-        "ItemNum": 96
-      },
-      {
-        "ItemID": 2,
-        "ItemNum": 360000
-      }
-    ],
-    "ActionNameList": [
-      "Menu_Confirm",
-      "ActionGroup_Return"
-    ],
-    "ActionNameListOnTab": [
-      "Menu_Confirm",
-      "ActionGroup_Return"
-    ],
-    "FinishConditions": [],
-    "PanelID": 10022,
-    "Type": 26,
-    "ActivityModuleID": 0,
-    "HideQuest": 0,
-    "SortWeight": 2001,
-    "ActivityThemeID": 0,
-    "ResidentPanelUnlockModuleID": 0,
-    "TabName": {
-      "hash": -848429048
-    },
-    "TitleName": {
-      "hash": -1257757459
-    },
-    "PanelDesc": {
-      "hash": 371857150
-    },
-    "TagDesc": {
-      "hash": 1855300465
-    },
-    "IntroDesc": {
-      "hash": 649325793
-    },
-    "DisplayItemManualSort": false,
-    "IsActivityHaveResidentPart": false,
-    "IsResidentPanel": false,
-    "DailyHint": false,
-    "IsSkipSwitchStoryLine": false
-  },
-  "1468380238": {
+  {
     "UIPrefab": "UI/Quest/SevenDay/SevenDayRewardPanelVersion0120.prefab",
     "TypeParam": [
       10023
@@ -485,6 +422,7 @@
     "SortWeight": 3012,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": -848429049
     },
@@ -506,7 +444,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "-1049295559": {
+  {
     "UIPrefab": "UI/Quest/Widget/QuestFarmMultipleDrop2SetPanel.prefab",
     "TypeParam": [
       30002
@@ -530,6 +468,7 @@
     "SortWeight": 6001,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": -848429042
     },
@@ -551,7 +490,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "607281405": {
+  {
     "UIPrefab": "UI/Quest/Widget/QuestAbyssPanel.prefab",
     "TypeParam": [
       10025
@@ -569,6 +508,7 @@
     "SortWeight": 2000,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": -848429043
     },
@@ -590,7 +530,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "-1836710115": {
+  {
     "UIPrefab": "UI/Quest/Widget/QuestFarmMultipleDrop2SetPanel.prefab",
     "TypeParam": [
       30003
@@ -614,6 +554,7 @@
     "SortWeight": 6001,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": -848429044
     },
@@ -635,7 +576,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "-306384236": {
+  {
     "UIPrefab": "UI/Quest/SevenDay/SevenDayRewardPanelVersion0130.prefab",
     "TypeParam": [
       10028
@@ -659,6 +600,7 @@
     "SortWeight": 3013,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": -848429038
     },
@@ -680,7 +622,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "-1228578608": {
+  {
     "UIPrefab": "UI/Quest/SevenDay/SevenDayRewardPanelVersion0140.prefab",
     "TypeParam": [
       10032
@@ -704,6 +646,7 @@
     "SortWeight": 3014,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": 1880454307
     },
@@ -725,7 +668,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "-397461211": {
+  {
     "UIPrefab": "UI/Quest/SevenDay/SevenDayRewardPanelVersion0150.prefab",
     "TypeParam": [
       10035
@@ -749,6 +692,7 @@
     "SortWeight": 3015,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": 1880454312
     },
@@ -770,7 +714,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "1748366635": {
+  {
     "UIPrefab": "UI/Quest/SevenDay/SevenDayRewardPanelVersion0131.prefab",
     "TypeParam": [
       10039
@@ -794,6 +738,7 @@
     "SortWeight": 3016,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": 1880454316
     },
@@ -815,7 +760,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "-1309702555": {
+  {
     "UIPrefab": "UI/Quest/SevenDay/SevenDayRewardPanelVersion0160.prefab",
     "TypeParam": [
       10040
@@ -839,6 +784,7 @@
     "SortWeight": 3017,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": -2011228460
     },
@@ -860,7 +806,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "-1525659675": {
+  {
     "UIPrefab": "UI/Quest/Widget/QuestChallengeStoryPanel.prefab",
     "TypeParam": [
       10041
@@ -875,9 +821,10 @@
     "Type": 52,
     "ActivityModuleID": 1004101,
     "HideQuest": 0,
-    "SortWeight": 2000,
+    "SortWeight": 2001,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": -2011228461
     },
@@ -899,15 +846,195 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "-587755301": {
-    "UIPrefab": "UI/Quest/Widget/QuestChallengeStoryAlternationPanel.prefab",
+  {
+    "UIPrefab": "UI/Quest/Widget/PlayerReturnRecallPanel.prefab",
+    "TypeParam": [],
+    "UnlockConditions": "[PlayerLevel:10],[FinishMainMission:1010403]",
+    "TabIcon": "SpriteOutput/Quest/TabIcon/BtnQuestRetrunRecall.png",
+    "DisplayItemList": [],
+    "ActionNameList": [
+      "ActionGroup_Return"
+    ],
+    "ActionNameListOnTab": [
+      "ActionGroup_Return"
+    ],
+    "FinishConditions": [],
+    "PanelID": 10043,
+    "Type": 38,
+    "ActivityModuleID": 5001901,
+    "HideQuest": 0,
+    "SortWeight": 5900,
+    "ActivityThemeID": 0,
+    "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
+    "TabName": {
+      "hash": -2011228463
+    },
+    "TitleName": {
+      "hash": -2064326512
+    },
+    "PanelDesc": {
+      "hash": 264456354
+    },
+    "TagDesc": {
+      "hash": 1048731412
+    },
+    "IntroDesc": {
+      "hash": -513473622
+    },
+    "DisplayItemManualSort": false,
+    "IsActivityHaveResidentPart": false,
+    "IsResidentPanel": false,
+    "DailyHint": false,
+    "IsSkipSwitchStoryLine": false
+  },
+  {
+    "UIPrefab": "UI/Quest/SevenDay/SevenDayRewardPanelVersion0200.prefab",
+    "TypeParam": [
+      10047
+    ],
+    "UnlockConditions": "[FinishMainMission:1000510]",
+    "TabIcon": "SpriteOutput/Quest/TabIcon/BtnSevenDayVersion0200.png",
+    "DisplayItemList": [],
+    "ActionNameList": [
+      "ItemDetail",
+      "ActionGroup_Return"
+    ],
+    "ActionNameListOnTab": [
+      "Menu_Confirm",
+      "ActionGroup_Return"
+    ],
+    "FinishConditions": [],
+    "PanelID": 10047,
+    "Type": 2,
+    "ActivityModuleID": 1004701,
+    "HideQuest": 0,
+    "SortWeight": 3018,
+    "ActivityThemeID": 0,
+    "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
+    "TabName": {
+      "hash": -2011228459
+    },
+    "TitleName": {
+      "hash": -2064326508
+    },
+    "PanelDesc": {
+      "hash": 371857150
+    },
+    "TagDesc": {
+      "hash": 1048731408
+    },
+    "IntroDesc": {
+      "hash": -513473626
+    },
+    "DisplayItemManualSort": false,
+    "IsActivityHaveResidentPart": false,
+    "IsResidentPanel": false,
+    "DailyHint": false,
+    "IsSkipSwitchStoryLine": false
+  },
+  {
+    "UIPrefab": "UI/Quest/SevenDay/SevenDayRewardPanelVersion0220.prefab",
+    "TypeParam": [
+      10056
+    ],
+    "UnlockConditions": "[FinishMainMission:1000510]",
+    "TabIcon": "SpriteOutput/Quest/TabIcon/BtnSevenDayVersion0220.png",
+    "DisplayItemList": [],
+    "ActionNameList": [
+      "ItemDetail",
+      "ActionGroup_Return"
+    ],
+    "ActionNameListOnTab": [
+      "Menu_Confirm",
+      "ActionGroup_Return"
+    ],
+    "FinishConditions": [],
+    "PanelID": 10056,
+    "Type": 2,
+    "ActivityModuleID": 1005601,
+    "HideQuest": 0,
+    "SortWeight": 7999,
+    "ActivityThemeID": 0,
+    "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
+    "TabName": {
+      "hash": 717654897
+    },
+    "TitleName": {
+      "hash": 664556846
+    },
+    "PanelDesc": {
+      "hash": 371857150
+    },
+    "TagDesc": {
+      "hash": -517352534
+    },
+    "IntroDesc": {
+      "hash": 1052610316
+    },
+    "DisplayItemManualSort": false,
+    "IsActivityHaveResidentPart": false,
+    "IsResidentPanel": false,
+    "DailyHint": false,
+    "IsSkipSwitchStoryLine": false
+  },
+  {
+    "UIPrefab": "UI/Quest/SevenDay/SevenDayRewardPanelVersion0230.prefab",
+    "TypeParam": [
+      10057
+    ],
+    "UnlockConditions": "[FinishMainMission:1000510]",
+    "TabIcon": "SpriteOutput/Quest/TabIcon/BtnSevenDayVersion0230.png",
+    "DisplayItemList": [],
+    "ActionNameList": [
+      "ItemDetail",
+      "ActionGroup_Return"
+    ],
+    "ActionNameListOnTab": [
+      "Menu_Confirm",
+      "ActionGroup_Return"
+    ],
+    "FinishConditions": [],
+    "PanelID": 10057,
+    "Type": 2,
+    "ActivityModuleID": 1005701,
+    "HideQuest": 0,
+    "SortWeight": 7900,
+    "ActivityThemeID": 0,
+    "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
+    "TabName": {
+      "hash": 717654896
+    },
+    "TitleName": {
+      "hash": 664556847
+    },
+    "PanelDesc": {
+      "hash": 371857150
+    },
+    "TagDesc": {
+      "hash": -517352533
+    },
+    "IntroDesc": {
+      "hash": 1052610315
+    },
+    "DisplayItemManualSort": false,
+    "IsActivityHaveResidentPart": false,
+    "IsResidentPanel": false,
+    "DailyHint": false,
+    "IsSkipSwitchStoryLine": false
+  },
+  {
+    "UIPrefab": "UI/Quest/Widget/QuestChallengeBoss.prefab",
     "TypeParam": [],
     "UnlockConditions": "[FinishMainMission:4020103]|[FinishMainMission:4010106]|[FinishSubMission:801710102]",
     "TabIcon": "SpriteOutput/Quest/TabIcon/BtnAbyssAlternation.png",
     "DisplayItemList": [
       {
         "ItemID": 1,
-        "ItemNum": 720
+        "ItemNum": 800
       },
       {
         "ItemID": 262,
@@ -943,27 +1070,28 @@
       "ActionGroup_Return"
     ],
     "FinishConditions": [],
-    "PanelID": 10042,
-    "Type": 53,
+    "PanelID": 10061,
+    "Type": 54,
     "ActivityModuleID": 0,
     "HideQuest": 0,
-    "SortWeight": 2001,
+    "SortWeight": 2002,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
-      "hash": -2011228462
+      "hash": 1120939421
     },
     "TitleName": {
-      "hash": -2064326513
+      "hash": 1067841368
     },
     "PanelDesc": {
       "hash": 371857150
     },
     "TagDesc": {
-      "hash": 1048731411
+      "hash": -114068004
     },
     "IntroDesc": {
-      "hash": -513473621
+      "hash": -1676273038
     },
     "DisplayItemManualSort": false,
     "IsActivityHaveResidentPart": false,
@@ -971,85 +1099,48 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "1562747528": {
-    "UIPrefab": "UI/Quest/Widget/PlayerReturnRecallPanel.prefab",
-    "TypeParam": [],
-    "UnlockConditions": "[PlayerLevel:10],[FinishMainMission:1010403]",
-    "TabIcon": "SpriteOutput/Quest/TabIcon/BtnQuestRetrunRecall.png",
-    "DisplayItemList": [],
-    "ActionNameList": [
-      "ActionGroup_Return"
-    ],
-    "ActionNameListOnTab": [
-      "ActionGroup_Return"
-    ],
-    "FinishConditions": [],
-    "PanelID": 10043,
-    "Type": 38,
-    "ActivityModuleID": 1005401,
-    "HideQuest": 0,
-    "SortWeight": 5900,
-    "ActivityThemeID": 0,
-    "ResidentPanelUnlockModuleID": 0,
-    "TabName": {
-      "hash": -2011228463
-    },
-    "TitleName": {
-      "hash": -2064326512
-    },
-    "PanelDesc": {
-      "hash": 264456354
-    },
-    "TagDesc": {
-      "hash": 1048731412
-    },
-    "IntroDesc": {
-      "hash": -513473622
-    },
-    "DisplayItemManualSort": false,
-    "IsActivityHaveResidentPart": false,
-    "IsResidentPanel": false,
-    "DailyHint": false,
-    "IsSkipSwitchStoryLine": false
-  },
-  "-1729881175": {
-    "UIPrefab": "UI/Quest/SevenDay/SevenDayRewardPanelVersion0200.prefab",
+  {
+    "UIPrefab": "UI/Quest/Widget/QuestChallengeBossPanel.prefab",
     "TypeParam": [
-      10047
+      10062
     ],
-    "UnlockConditions": "[FinishMainMission:1000510]",
-    "TabIcon": "SpriteOutput/Quest/TabIcon/BtnSevenDayVersion0200.png",
-    "DisplayItemList": [],
-    "ActionNameList": [
-      "ItemDetail",
-      "ActionGroup_Return"
+    "UnlockConditions": "[FinishMainMission:4020103]",
+    "TabIcon": "SpriteOutput/Quest/TabIcon/BtnChallengeBossReward_1214.png",
+    "DisplayItemList": [
+      {
+        "ItemID": 1,
+        "ItemNum": 300
+      },
+      {
+        "ItemID": 236,
+        "ItemNum": 1
+      }
     ],
-    "ActionNameListOnTab": [
-      "Menu_Confirm",
-      "ActionGroup_Return"
-    ],
+    "ActionNameList": [],
+    "ActionNameListOnTab": [],
     "FinishConditions": [],
-    "PanelID": 10047,
-    "Type": 2,
-    "ActivityModuleID": 1004701,
+    "PanelID": 10062,
+    "Type": 234,
+    "ActivityModuleID": 1006201,
     "HideQuest": 0,
-    "SortWeight": 3018,
+    "SortWeight": 2000,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
-      "hash": -2011228459
+      "hash": 1120939420
     },
     "TitleName": {
-      "hash": -2064326508
+      "hash": 1067841369
     },
     "PanelDesc": {
-      "hash": 371857150
+      "hash": -898343059
     },
     "TagDesc": {
-      "hash": 1048731408
+      "hash": -114068003
     },
     "IntroDesc": {
-      "hash": -513473626
+      "hash": -1676273035
     },
     "DisplayItemManualSort": false,
     "IsActivityHaveResidentPart": false,
@@ -1057,52 +1148,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "860860137": {
-    "UIPrefab": "UI/Quest/SevenDay/SevenDayRewardPanelVersion0220.prefab",
-    "TypeParam": [
-      10056
-    ],
-    "UnlockConditions": "[FinishMainMission:1000510]",
-    "TabIcon": "SpriteOutput/Quest/TabIcon/BtnSevenDayVersion0220.png",
-    "DisplayItemList": [],
-    "ActionNameList": [
-      "ItemDetail",
-      "ActionGroup_Return"
-    ],
-    "ActionNameListOnTab": [
-      "Menu_Confirm",
-      "ActionGroup_Return"
-    ],
-    "FinishConditions": [],
-    "PanelID": 10056,
-    "Type": 2,
-    "ActivityModuleID": 1005601,
-    "HideQuest": 0,
-    "SortWeight": 7999,
-    "ActivityThemeID": 0,
-    "ResidentPanelUnlockModuleID": 0,
-    "TabName": {
-      "hash": 717654897
-    },
-    "TitleName": {
-      "hash": 664556846
-    },
-    "PanelDesc": {
-      "hash": 371857150
-    },
-    "TagDesc": {
-      "hash": -517352534
-    },
-    "IntroDesc": {
-      "hash": 1052610316
-    },
-    "DisplayItemManualSort": false,
-    "IsActivityHaveResidentPart": false,
-    "IsResidentPanel": false,
-    "DailyHint": false,
-    "IsSkipSwitchStoryLine": false
-  },
-  "-792242493": {
+  {
     "UIPrefab": "UI/Quest/Widget/RoleTrialPanel.prefab",
     "TypeParam": [
       311020,
@@ -1125,6 +1171,7 @@
     "SortWeight": 5000,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": 314364990
     },
@@ -1146,7 +1193,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "496149042": {
+  {
     "UIPrefab": "UI/Quest/Widget/RoleTrialPanel.prefab",
     "TypeParam": [
       312040,
@@ -1169,6 +1216,7 @@
     "SortWeight": 5001,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": 314364991
     },
@@ -1190,7 +1238,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "1111495548": {
+  {
     "UIPrefab": "UI/Quest/Widget/QuestAntiVirusPanel.prefab",
     "TypeParam": [],
     "UnlockConditions": "[PlayerLevel:22]",
@@ -1233,6 +1281,7 @@
     "SortWeight": 6001,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": 314368192
     },
@@ -1254,7 +1303,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "-217380510": {
+  {
     "UIPrefab": "UI/Quest/Widget/QuestBoxingClubPanel.prefab",
     "TypeParam": [
       241,
@@ -1312,6 +1361,7 @@
     "SortWeight": 6001,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": 314371524
     },
@@ -1333,7 +1383,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "-1216672870": {
+  {
     "UIPrefab": "UI/Quest/Widget/QuestFistClubPaperPanel.prefab",
     "TypeParam": [],
     "UnlockConditions": "[PlayerLevel:21],[FinishMainMission:1011001]",
@@ -1380,6 +1430,7 @@
     "SortWeight": 6001,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": 314374724
     },
@@ -1401,7 +1452,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "-889998321": {
+  {
     "UIPrefab": "UI/Quest/Widget/QuestGraffitiPixelPanel.prefab",
     "TypeParam": [],
     "UnlockConditions": "[PlayerLevel:21]",
@@ -1452,6 +1503,7 @@
     "SortWeight": 6000,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": 314374723
     },
@@ -1473,7 +1525,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "-852306972": {
+  {
     "UIPrefab": "UI/Quest/Widget/QuestMuseumPanel.prefab",
     "TypeParam": [],
     "UnlockConditions": "[PlayerLevel:21]",
@@ -1524,6 +1576,7 @@
     "SortWeight": 6001,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": 314374722
     },
@@ -1545,7 +1598,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "-1425545909": {
+  {
     "UIPrefab": "UI/Quest/Widget/RoleTrialPanel.prefab",
     "TypeParam": [
       312040,
@@ -1568,6 +1621,7 @@
     "SortWeight": 5002,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": 314364992
     },
@@ -1589,7 +1643,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "1567579524": {
+  {
     "UIPrefab": "UI/Quest/Widget/QuestTreasureTrotterPanel.prefab",
     "TypeParam": [
       1013
@@ -1636,6 +1690,7 @@
     "SortWeight": 6001,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": 314368194
     },
@@ -1657,7 +1712,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "526134915": {
+  {
     "UIPrefab": "UI/Quest/Widget/QuestPocketMonsterPanel.prefab",
     "TypeParam": [
       1,
@@ -1702,6 +1757,7 @@
     "SortWeight": 6001,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": 314368193
     },
@@ -1723,7 +1779,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "-341531887": {
+  {
     "UIPrefab": "UI/Quest/Widget/RoleTrialPanel.prefab",
     "TypeParam": [
       310060,
@@ -1746,6 +1802,7 @@
     "SortWeight": 5003,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": 314364994
     },
@@ -1767,7 +1824,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "-1103645219": {
+  {
     "UIPrefab": "UI/Quest/Widget/RoleTrialPanel.prefab",
     "TypeParam": [
       312030,
@@ -1790,6 +1847,7 @@
     "SortWeight": 5004,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": 314364995
     },
@@ -1811,7 +1869,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "-736428468": {
+  {
     "UIPrefab": "UI/Quest/Widget/RoleTrialPanel.prefab",
     "TypeParam": [
       310060,
@@ -1833,6 +1891,7 @@
     "SortWeight": 5005,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": 314364996
     },
@@ -1854,7 +1913,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "-894563473": {
+  {
     "UIPrefab": "UI/Quest/Widget/RoleTrialPanel.prefab",
     "TypeParam": [
       312050,
@@ -1877,6 +1936,7 @@
     "SortWeight": 5006,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": 314364997
     },
@@ -1898,7 +1958,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "853499559": {
+  {
     "UIPrefab": "UI/Quest/Widget/RoleTrialPanel.prefab",
     "TypeParam": [
       310050,
@@ -1921,6 +1981,7 @@
     "SortWeight": 5007,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": 314364998
     },
@@ -1942,7 +2003,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "1658495156": {
+  {
     "UIPrefab": "UI/Quest/Widget/RoleTrialPanel.prefab",
     "TypeParam": [
       310050,
@@ -1964,6 +2025,7 @@
     "SortWeight": 5008,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": -1251718952
     },
@@ -1985,7 +2047,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "-928436636": {
+  {
     "UIPrefab": "UI/Quest/Widget/RoleTrialPanel.prefab",
     "TypeParam": [
       312130,
@@ -2008,6 +2070,7 @@
     "SortWeight": 5007,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": -1251718951
     },
@@ -2029,7 +2092,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "-284732995": {
+  {
     "UIPrefab": "UI/Quest/Widget/RoleTrialPanel.prefab",
     "TypeParam": [
       312080,
@@ -2052,6 +2115,7 @@
     "SortWeight": 5007,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": -1251718950
     },
@@ -2073,7 +2137,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "72612962": {
+  {
     "UIPrefab": "UI/Quest/Widget/RoleTrialPanel.prefab",
     "TypeParam": [
       312130,
@@ -2095,6 +2159,7 @@
     "SortWeight": 5008,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": -1251718949
     },
@@ -2116,7 +2181,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "-1441924640": {
+  {
     "UIPrefab": "UI/Quest/Widget/RoleTrialPanel.prefab",
     "TypeParam": [
       312130,
@@ -2140,6 +2205,7 @@
     "SortWeight": 5008,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": 371857150
     },
@@ -2161,7 +2227,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "-1045183261": {
+  {
     "UIPrefab": "UI/Quest/Widget/RoleTrialPanel.prefab",
     "TypeParam": [
       311120,
@@ -2183,6 +2249,7 @@
     "SortWeight": 5008,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": -1251718944
     },
@@ -2204,7 +2271,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "-527748470": {
+  {
     "UIPrefab": "UI/Quest/Widget/RoleTrialPanel.prefab",
     "TypeParam": [
       312170,
@@ -2226,6 +2293,7 @@
     "SortWeight": 5008,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": -848434424
     },
@@ -2247,7 +2315,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "2122609830": {
+  {
     "UIPrefab": "UI/Quest/Widget/RoleTrialPanel.prefab",
     "TypeParam": [
       313030,
@@ -2269,6 +2337,7 @@
     "SortWeight": 5008,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": -848434421
     },
@@ -2290,7 +2359,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "-271135858": {
+  {
     "UIPrefab": "UI/Quest/Widget/RoleTrialPanel.prefab",
     "TypeParam": [
       313070,
@@ -2312,6 +2381,7 @@
     "SortWeight": 5008,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": -848434418
     },
@@ -2333,7 +2403,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "-2043165753": {
+  {
     "UIPrefab": "UI/Quest/Widget/RoleTrialPanel.prefab",
     "TypeParam": [
       313080,
@@ -2355,6 +2425,7 @@
     "SortWeight": 5008,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": 1880448930
     },
@@ -2376,7 +2447,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "228597372": {
+  {
     "UIPrefab": "UI/Quest/Widget/RoleTrialPanel.prefab",
     "TypeParam": [
       313090,
@@ -2397,6 +2468,7 @@
     "SortWeight": 5008,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": 1880448933
     },
@@ -2418,7 +2490,50 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "-132440892": {
+  {
+    "UIPrefab": "UI/Quest/Widget/RoleTrialPanel.prefab",
+    "TypeParam": [
+      313100,
+      313140
+    ],
+    "UnlockConditions": "[FinishMainMission:1000510]",
+    "TabIcon": "SpriteOutput/Quest/TabIcon/BtnQuestRoleTrial21.png",
+    "DisplayItemList": [],
+    "ActionNameList": [
+      "Menu_Cancel"
+    ],
+    "ActionNameListOnTab": [],
+    "FinishConditions": [],
+    "PanelID": 20036,
+    "Type": 6,
+    "ActivityModuleID": 2003600,
+    "HideQuest": 0,
+    "SortWeight": 5008,
+    "ActivityThemeID": 0,
+    "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
+    "TabName": {
+      "hash": 1880448936
+    },
+    "TitleName": {
+      "hash": 1471131275
+    },
+    "PanelDesc": {
+      "hash": 371857150
+    },
+    "TagDesc": {
+      "hash": 289217671
+    },
+    "IntroDesc": {
+      "hash": -2079554369
+    },
+    "DisplayItemManualSort": false,
+    "IsActivityHaveResidentPart": false,
+    "IsResidentPanel": false,
+    "DailyHint": false,
+    "IsSkipSwitchStoryLine": false
+  },
+  {
     "UIPrefab": "UI/Quest/Widget/QuestGuessTheSilhouettePanel.prefab",
     "TypeParam": [],
     "UnlockConditions": "[PlayerLevel:21],[FinishMainMission:1010701]",
@@ -2459,6 +2574,7 @@
     "SortWeight": 6001,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": 314368196
     },
@@ -2480,7 +2596,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "-745331169": {
+  {
     "UIPrefab": "UI/Quest/Widget/QuestMedicineAssignmentPanel.prefab",
     "TypeParam": [],
     "UnlockConditions": "[PlayerLevel:21],[FinishMainMission:1010206]",
@@ -2513,6 +2629,7 @@
     "SortWeight": 6001,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": 314368195
     },
@@ -2534,7 +2651,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "35893016": {
+  {
     "UIPrefab": "UI/Quest/Widget/QuestAlleyPanel.prefab",
     "TypeParam": [
       1021702
@@ -2589,6 +2706,7 @@
     "SortWeight": 6001,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": 314374721
     },
@@ -2610,7 +2728,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "705757868": {
+  {
     "UIPrefab": "UI/Quest/Widget/QuestAlleyPanel.prefab",
     "TypeParam": [
       1021702
@@ -2670,6 +2788,7 @@
     "SortWeight": 6012,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 5000301,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": 145370958
     },
@@ -2691,7 +2810,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "-852450233": {
+  {
     "UIPrefab": "UI/Quest/Widget/QuestColleaguePanel.prefab",
     "TypeParam": [],
     "UnlockConditions": "[PlayerLevel:21]",
@@ -2707,6 +2826,7 @@
     "SortWeight": 4000,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": 596689992
     },
@@ -2728,7 +2848,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "-294731430": {
+  {
     "UIPrefab": "UI/Quest/Widget/QuestColleaguePanel.prefab",
     "TypeParam": [],
     "UnlockConditions": "[PlayerLevel:21]",
@@ -2744,6 +2864,7 @@
     "SortWeight": 4000,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": 596689993
     },
@@ -2765,7 +2886,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "-1249149968": {
+  {
     "UIPrefab": "UI/Quest/Widget/QuestColleaguePanel.prefab",
     "TypeParam": [],
     "UnlockConditions": "[PlayerLevel:21]",
@@ -2781,6 +2902,7 @@
     "SortWeight": 4000,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": 596689994
     },
@@ -2802,7 +2924,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "1078084964": {
+  {
     "UIPrefab": "UI/Quest/TreasureDungeon/Widget/QuestTreasureDungeonPanel.prefab",
     "TypeParam": [],
     "UnlockConditions": "[PlayerLevel:21]",
@@ -2857,6 +2979,7 @@
     "SortWeight": 6001,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": 314374720
     },
@@ -2878,7 +3001,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "-1772571115": {
+  {
     "UIPrefab": "UI/Quest/Widget/QuestPrincipalLineBannerPanel.prefab",
     "TypeParam": [
       2020104,
@@ -2903,6 +3026,7 @@
     "SortWeight": 6001,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": 314375880
     },
@@ -2924,7 +3048,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "-547793093": {
+  {
     "UIPrefab": "UI/Quest/Widget/QuestMainStory130Panel.prefab",
     "TypeParam": [
       1021501,
@@ -2949,6 +3073,7 @@
     "SortWeight": 6001,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": 314375877
     },
@@ -2970,7 +3095,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "1605580366": {
+  {
     "UIPrefab": "UI/Quest/Widget/QuestMainStory140Panel.prefab",
     "TypeParam": [
       1021702,
@@ -2995,6 +3120,7 @@
     "SortWeight": 6000,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": 314375878
     },
@@ -3016,7 +3142,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "1562704652": {
+  {
     "UIPrefab": "UI/Quest/Widget/QuestSubStory140Panel.prefab",
     "TypeParam": [
       2021001,
@@ -3070,6 +3196,7 @@
     "SortWeight": 6001,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": 314375883
     },
@@ -3091,7 +3218,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "-277755867": {
+  {
     "UIPrefab": "UI/Quest/Widget/QuestMainStory160Panel.prefab",
     "TypeParam": [
       1011503,
@@ -3117,6 +3244,7 @@
     "SortWeight": 6001,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": 314375884
     },
@@ -3138,7 +3266,65 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "1661315480": {
+  {
+    "UIPrefab": "UI/Quest/Widget/QuestMainStory210Panel.prefab",
+    "TypeParam": [
+      1030801,
+      1030901,
+      1031001,
+      1031101,
+      1031201,
+      1031301,
+      1031401,
+      1031501,
+      1031601,
+      1031701,
+      1031801,
+      1032001,
+      1032101
+    ],
+    "UnlockConditions": "[FinishMainMission:1000510]",
+    "TabIcon": "SpriteOutput/Quest/TabIcon/BtnMainStory210.png",
+    "DisplayItemList": [],
+    "ActionNameList": [
+      "ActionGroup_Scroll",
+      "ActionGroup_Return"
+    ],
+    "ActionNameListOnTab": [
+      "ActionGroup_Scroll",
+      "ActionGroup_Return"
+    ],
+    "FinishConditions": [],
+    "PanelID": 80007,
+    "Type": 25,
+    "ActivityModuleID": 8000701,
+    "HideQuest": 0,
+    "SortWeight": 6001,
+    "ActivityThemeID": 0,
+    "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
+    "TabName": {
+      "hash": 314375882
+    },
+    "TitleName": {
+      "hash": -94946129
+    },
+    "PanelDesc": {
+      "hash": -1704902381
+    },
+    "TagDesc": {
+      "hash": -1276859733
+    },
+    "IntroDesc": {
+      "hash": 1812134939
+    },
+    "DisplayItemManualSort": false,
+    "IsActivityHaveResidentPart": false,
+    "IsResidentPanel": false,
+    "DailyHint": false,
+    "IsSkipSwitchStoryLine": false
+  },
+  {
     "UIPrefab": "UI/Quest/Widget/QuestFistClubPaperPanel.prefab",
     "TypeParam": [
       140007
@@ -3184,6 +3370,7 @@
     "SortWeight": 6010,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 5000002,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": -257913569
     },
@@ -3205,7 +3392,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "-805942907": {
+  {
     "UIPrefab": "UI/Quest/Widget/QuestMuseumPanel.prefab",
     "TypeParam": [],
     "UnlockConditions": "[PlayerLevel:21],[FinishMainMission:1011503]",
@@ -3253,6 +3440,7 @@
     "SortWeight": 6011,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 5000201,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": 1308170372
     },
@@ -3274,7 +3462,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "-1295051657": {
+  {
     "UIPrefab": "UI/Quest/Widget/QuestAetherDividePanel.prefab",
     "TypeParam": [],
     "UnlockConditions": "[PlayerLevel:21]",
@@ -3345,6 +3533,7 @@
     "SortWeight": 6001,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": 314374719
     },
@@ -3366,7 +3555,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "-567077718": {
+  {
     "UIPrefab": "UI/Quest/Widget/QuestAetherDividePanel.prefab",
     "TypeParam": [],
     "UnlockConditions": "[PlayerLevel:21]",
@@ -3430,6 +3619,7 @@
     "SortWeight": 6013,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 5000501,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": -661198096
     },
@@ -3451,7 +3641,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "400834083": {
+  {
     "UIPrefab": "UI/Quest/Widget/FantasticStoryPanel.prefab",
     "TypeParam": [],
     "UnlockConditions": "[PlayerLevel:21]",
@@ -3505,6 +3695,7 @@
     "SortWeight": 6001,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": 314371521
     },
@@ -3526,7 +3717,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "63998764": {
+  {
     "UIPrefab": "UI/Quest/Widget/FantasticStoryPanel.prefab",
     "TypeParam": [],
     "UnlockConditions": "[PlayerLevel:21]",
@@ -3605,6 +3796,7 @@
     "SortWeight": 6016,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 4000208,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": -1501783218
     },
@@ -3626,7 +3818,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "1662315895": {
+  {
     "UIPrefab": "UI/Quest/Widget/QuestRogueRewardPanel.prefab",
     "TypeParam": [
       1013
@@ -3639,11 +3831,11 @@
         "ItemNum": 0
       },
       {
-        "ItemID": 24000,
+        "ItemID": 24004,
         "ItemNum": 0
       },
       {
-        "ItemID": 24001,
+        "ItemID": 24003,
         "ItemNum": 0
       },
       {
@@ -3651,7 +3843,11 @@
         "ItemNum": 0
       },
       {
-        "ItemID": 24003,
+        "ItemID": 24001,
+        "ItemNum": 0
+      },
+      {
+        "ItemID": 24000,
         "ItemNum": 0
       },
       {
@@ -3665,10 +3861,11 @@
     "PanelID": 60001,
     "Type": 11,
     "ActivityModuleID": 6000101,
-    "HideQuest": 3000017,
+    "HideQuest": 3000015,
     "SortWeight": 1000,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": 314369346
     },
@@ -3690,7 +3887,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "-1477910637": {
+  {
     "UIPrefab": "UI/Quest/Widget/QuestRoguePlanet7Panel.prefab",
     "TypeParam": [
       1013,
@@ -3730,6 +3927,7 @@
     "SortWeight": 1000,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": 314369341
     },
@@ -3751,7 +3949,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "652826184": {
+  {
     "UIPrefab": "UI/Quest/Widget/QuestRogueDlcPanel.prefab",
     "TypeParam": [],
     "UnlockConditions": "[FinishMainMission:8013103]",
@@ -3804,6 +4002,7 @@
     "SortWeight": 1000,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": 314369348
     },
@@ -3825,7 +4024,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "-846535001": {
+  {
     "UIPrefab": "UI/Quest/Widget/QuestRoguePlanet8Panel.prefab",
     "TypeParam": [
       1013,
@@ -3865,6 +4064,7 @@
     "SortWeight": 1000,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": 314369342
     },
@@ -3886,7 +4086,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "965280416": {
+  {
     "UIPrefab": "UI/Quest/Widget/QuestRogueEndlessPanel.prefab",
     "TypeParam": [
       1013,
@@ -3938,6 +4138,7 @@
     "SortWeight": 6001,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": 314369343
     },
@@ -3959,10 +4160,10 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "1276948903": {
+  {
     "UIPrefab": "UI/Quest/Widget/QuestRogueNousDlcPanel.prefab",
     "TypeParam": [],
-    "UnlockConditions": "[FinishMainMission:8013103]",
+    "UnlockConditions": "[PlayerLevel:21],[FinishMainMission:4030009]",
     "TabIcon": "SpriteOutput/Quest/TabIcon/BtnQuestRogueNous.png",
     "DisplayItemList": [
       {
@@ -4012,6 +4213,7 @@
     "SortWeight": 1000,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": 314369344
     },
@@ -4033,7 +4235,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "-1648833248": {
+  {
     "UIPrefab": "UI/Quest/Widget/QuestRoguePlanet9Panel.prefab",
     "TypeParam": [
       1013,
@@ -4073,6 +4275,7 @@
     "SortWeight": 1000,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": 314369353
     },
@@ -4094,7 +4297,110 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "-445832922": {
+  {
+    "UIPrefab": "UI/Quest/Widget/QuestRogueTourn1Panel.prefab",
+    "TypeParam": [],
+    "UnlockConditions": "[PlayerLevel:21]",
+    "TabIcon": "SpriteOutput/Quest/TabIcon/BtnRogueTourntBannerSmall1.png",
+    "DisplayItemList": [
+      {
+        "ItemID": 1,
+        "ItemNum": 0
+      },
+      {
+        "ItemID": 236,
+        "ItemNum": 0
+      },
+      {
+        "ItemID": 241,
+        "ItemNum": 0
+      },
+      {
+        "ItemID": 24004,
+        "ItemNum": 0
+      },
+      {
+        "ItemID": 101,
+        "ItemNum": 0
+      },
+      {
+        "ItemID": 503,
+        "ItemNum": 0
+      },
+      {
+        "ItemID": 235,
+        "ItemNum": 0
+      },
+      {
+        "ItemID": 221006,
+        "ItemNum": 0
+      },
+      {
+        "ItemID": 202018,
+        "ItemNum": 0
+      },
+      {
+        "ItemID": 250601,
+        "ItemNum": 0
+      },
+      {
+        "ItemID": 250602,
+        "ItemNum": 0
+      },
+      {
+        "ItemID": 110101,
+        "ItemNum": 0
+      },
+      {
+        "ItemID": 213,
+        "ItemNum": 0
+      },
+      {
+        "ItemID": 223,
+        "ItemNum": 0
+      },
+      {
+        "ItemID": 233,
+        "ItemNum": 0
+      },
+      {
+        "ItemID": 2,
+        "ItemNum": 0
+      }
+    ],
+    "ActionNameList": [],
+    "ActionNameListOnTab": [],
+    "FinishConditions": [],
+    "PanelID": 60011,
+    "Type": 233,
+    "ActivityModuleID": 6001101,
+    "HideQuest": 0,
+    "SortWeight": 7800,
+    "ActivityThemeID": 0,
+    "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 200002,
+    "TabName": {
+      "hash": -1251714595
+    },
+    "TitleName": {
+      "hash": -1661032254
+    },
+    "PanelDesc": {
+      "hash": -138829328
+    },
+    "TagDesc": {
+      "hash": 1452012734
+    },
+    "IntroDesc": {
+      "hash": -916759304
+    },
+    "DisplayItemManualSort": true,
+    "IsActivityHaveResidentPart": false,
+    "IsResidentPanel": false,
+    "DailyHint": true,
+    "IsSkipSwitchStoryLine": false
+  },
+  {
     "UIPrefab": "UI/Quest/Widget/QuestHeliobusPanel.prefab",
     "TypeParam": [
       2021701,
@@ -4163,6 +4469,7 @@
     "SortWeight": 6001,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": 314374718
     },
@@ -4184,7 +4491,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "1551995675": {
+  {
     "UIPrefab": "UI/Quest/Widget/QuestHeliobusPanel.prefab",
     "TypeParam": [
       2021701,
@@ -4250,6 +4557,7 @@
     "SortWeight": 6014,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 5000601,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": 904885845
     },
@@ -4271,7 +4579,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "1943731188": {
+  {
     "UIPrefab": "UI/Quest/Widget/QuestBoxingClubResonancePanel.prefab",
     "TypeParam": [],
     "UnlockConditions": "[PlayerLevel:21],[FinishMainMission:1011001]",
@@ -4324,6 +4632,7 @@
     "SortWeight": 6001,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": 314371522
     },
@@ -4345,7 +4654,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "-1585113303": {
+  {
     "UIPrefab": "UI/Quest/Widget/QuestBoxingClubResonancePanel_Resident.prefab",
     "TypeParam": [
       150000,
@@ -4406,6 +4715,7 @@
     "SortWeight": 6015,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 4000301,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": -742268331
     },
@@ -4427,7 +4737,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "1936973099": {
+  {
     "UIPrefab": "UI/Quest/Widget/ActivityStrongChallengePanel.prefab",
     "TypeParam": [],
     "UnlockConditions": "[PlayerLevel:21]",
@@ -4472,6 +4782,7 @@
     "SortWeight": 6001,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": 314371519
     },
@@ -4493,7 +4804,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "-1027323260": {
+  {
     "UIPrefab": "UI/Quest/Widget/QuestSpaceZooPanel.prefab",
     "TypeParam": [],
     "UnlockConditions": "[PlayerLevel:21]",
@@ -4548,6 +4859,7 @@
     "SortWeight": 6000,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": 314368198
     },
@@ -4569,7 +4881,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "444121549": {
+  {
     "UIPrefab": "UI/Quest/Widget/QuestSpaceZooPanel.prefab",
     "TypeParam": [],
     "UnlockConditions": "[PlayerLevel:21]",
@@ -4629,6 +4941,7 @@
     "SortWeight": 6017,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 3000801,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": -628473683
     },
@@ -4650,7 +4963,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "-972058000": {
+  {
     "UIPrefab": "UI/Quest/Widget/QuestPenaconyGiftPanel.prefab",
     "TypeParam": [],
     "UnlockConditions": "[PlayerLevel:21]",
@@ -4716,6 +5029,7 @@
     "SortWeight": 6001,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": 314368197
     },
@@ -4737,7 +5051,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "-1372150517": {
+  {
     "UIPrefab": "UI/Quest/Widget/QuestMiniGamePanel.prefab",
     "TypeParam": [],
     "UnlockConditions": "[PlayerLevel:21]",
@@ -4891,6 +5205,7 @@
     "SortWeight": 6001,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": 314374717
     },
@@ -4912,7 +5227,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "-1741942332": {
+  {
     "UIPrefab": "UI/Quest/Widget/QuestMiniGamePanel.prefab",
     "TypeParam": [],
     "UnlockConditions": "[PlayerLevel:21]",
@@ -4954,6 +5269,7 @@
     "SortWeight": 6018,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 5000702,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": -1823997510
     },
@@ -4975,7 +5291,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "1736520095": {
+  {
     "UIPrefab": "UI/Quest/Widget/QuestTelevisionPanel.prefab",
     "TypeParam": [],
     "UnlockConditions": "[PlayerLevel:21]",
@@ -5020,6 +5336,7 @@
     "SortWeight": 6001,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": 314371520
     },
@@ -5041,7 +5358,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "-1734670437": {
+  {
     "UIPrefab": "UI/Quest/Widget/PenaconyActivityQuestTimeLimitPanel.prefab",
     "TypeParam": [],
     "UnlockConditions": "[PlayerLevel:21]",
@@ -5169,6 +5486,7 @@
     "SortWeight": 6000,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": -1251715751
     },
@@ -5190,7 +5508,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "1647936": {
+  {
     "UIPrefab": "UI/Quest/Widget/QuestMonopolyPanel.prefab",
     "TypeParam": [],
     "UnlockConditions": "[PlayerLevel:21]",
@@ -5237,14 +5555,8 @@
         "ItemNum": 0
       }
     ],
-    "ActionNameList": [
-      "Menu_Confirm",
-      "ActionGroup_Return"
-    ],
-    "ActionNameListOnTab": [
-      "Menu_Confirm",
-      "ActionGroup_Return"
-    ],
+    "ActionNameList": [],
+    "ActionNameListOnTab": [],
     "FinishConditions": [
       {
         "Param": "6021131",
@@ -5386,6 +5698,7 @@
     "SortWeight": 7800,
     "ActivityThemeID": 1001,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": 314374732
     },
@@ -5407,7 +5720,7 @@
     "DailyHint": true,
     "IsSkipSwitchStoryLine": true
   },
-  "-54959260": {
+  {
     "UIPrefab": "UI/Quest/Widget/QuestDrinkMakerPanel.prefab",
     "TypeParam": [],
     "UnlockConditions": "[PlayerLevel:21]",
@@ -5460,6 +5773,7 @@
     "SortWeight": 6001,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": 314374731
     },
@@ -5481,7 +5795,7 @@
     "DailyHint": true,
     "IsSkipSwitchStoryLine": false
   },
-  "1380577501": {
+  {
     "UIPrefab": "UI/Quest/Widget/QuestDrinkMakerPanel.prefab",
     "TypeParam": [],
     "UnlockConditions": "[PlayerLevel:21]",
@@ -5535,6 +5849,7 @@
     "SortWeight": 6019,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 5000902,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": 1664400732
     },
@@ -5556,16 +5871,12 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "-669529539": {
+  {
     "UIPrefab": "UI/Quest/Widget/QuestFeverTimeChallengePanel.prefab",
     "TypeParam": [],
     "UnlockConditions": "[PlayerLevel:21]",
-    "TabIcon": "SpriteOutput/Quest/TabIcon/BtnQuestTelevision.png",
+    "TabIcon": "SpriteOutput/Quest/TabIcon/BtnQuestFeverTime.png",
     "DisplayItemList": [
-      {
-        "ItemID": 236,
-        "ItemNum": 0
-      },
       {
         "ItemID": 241,
         "ItemNum": 0
@@ -5575,11 +5886,7 @@
         "ItemNum": 0
       },
       {
-        "ItemID": 22002,
-        "ItemNum": 0
-      },
-      {
-        "ItemID": 220004,
+        "ItemID": 235,
         "ItemNum": 0
       },
       {
@@ -5710,6 +6017,7 @@
     "SortWeight": 6001,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": -1251709217
     },
@@ -5731,7 +6039,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "251150671": {
+  {
     "UIPrefab": "UI/Quest/Widget/QuestEvolveBuildPanel.prefab",
     "TypeParam": [],
     "UnlockConditions": "[PlayerLevel:21]",
@@ -5784,6 +6092,7 @@
     "SortWeight": 6001,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": -1251709218
     },
@@ -5805,7 +6114,7 @@
     "DailyHint": true,
     "IsSkipSwitchStoryLine": false
   },
-  "-721758385": {
+  {
     "UIPrefab": "UI/Quest/Widget/QuestClockParkPanel.prefab",
     "TypeParam": [],
     "UnlockConditions": "[PlayerLevel:21]",
@@ -5975,6 +6284,7 @@
     "SortWeight": 6000,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": -1251709219
     },
@@ -5996,7 +6306,7 @@
     "DailyHint": true,
     "IsSkipSwitchStoryLine": false
   },
-  "-1349626221": {
+  {
     "UIPrefab": "UI/Quest/Widget/QuestClockParkPanel.prefab",
     "TypeParam": [],
     "UnlockConditions": "[PlayerLevel:21]",
@@ -6090,6 +6400,7 @@
     "SortWeight": 6020,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 5001202,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": -1420712984
     },
@@ -6111,7 +6422,7 @@
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
   },
-  "755806593": {
+  {
     "UIPrefab": "UI/Quest/Widget/QuestPanelExpeditionAboutBoothill.prefab",
     "TypeParam": [],
     "UnlockConditions": "[PlayerLevel:21],[FinishMainMission:1010206]",
@@ -6149,6 +6460,7 @@
     "SortWeight": 6001,
     "ActivityThemeID": 0,
     "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
     "TabName": {
       "hash": -1251709220
     },
@@ -6169,5 +6481,223 @@
     "IsResidentPanel": false,
     "DailyHint": false,
     "IsSkipSwitchStoryLine": false
+  },
+  {
+    "UIPrefab": "UI/Quest/Widget/QuestMatchThreePanel.prefab",
+    "TypeParam": [],
+    "UnlockConditions": "[PlayerLevel:21]",
+    "TabIcon": "SpriteOutput/Quest/TabIcon/BtnQuestMatchThree.png",
+    "DisplayItemList": [
+      {
+        "ItemID": 236,
+        "ItemNum": 0
+      },
+      {
+        "ItemID": 241,
+        "ItemNum": 0
+      },
+      {
+        "ItemID": 1,
+        "ItemNum": 0
+      },
+      {
+        "ItemID": 309004,
+        "ItemNum": 0
+      },
+      {
+        "ItemID": 213,
+        "ItemNum": 0
+      },
+      {
+        "ItemID": 223,
+        "ItemNum": 0
+      },
+      {
+        "ItemID": 233,
+        "ItemNum": 0
+      },
+      {
+        "ItemID": 110182,
+        "ItemNum": 0
+      },
+      {
+        "ItemID": 2,
+        "ItemNum": 0
+      }
+    ],
+    "ActionNameList": [
+      "Menu_Confirm",
+      "ActionGroup_Return"
+    ],
+    "ActionNameListOnTab": [
+      "Menu_Confirm",
+      "ActionGroup_Return"
+    ],
+    "FinishConditions": [],
+    "PanelID": 50014,
+    "Type": 231,
+    "ActivityModuleID": 5001400,
+    "HideQuest": 0,
+    "SortWeight": 6001,
+    "ActivityThemeID": 0,
+    "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
+    "TabName": {
+      "hash": -1251709221
+    },
+    "TitleName": {
+      "hash": -1661037636
+    },
+    "PanelDesc": {
+      "hash": -138832526
+    },
+    "TagDesc": {
+      "hash": 1452011584
+    },
+    "IntroDesc": {
+      "hash": -916762502
+    },
+    "DisplayItemManualSort": true,
+    "IsActivityHaveResidentPart": true,
+    "IsResidentPanel": false,
+    "DailyHint": false,
+    "IsSkipSwitchStoryLine": false
+  },
+  {
+    "UIPrefab": "UI/Quest/Widget/QuestMatchThreePanel.prefab",
+    "TypeParam": [],
+    "UnlockConditions": "[PlayerLevel:21]",
+    "TabIcon": "SpriteOutput/Quest/TabIcon/BtnQuestMatchThree.png",
+    "DisplayItemList": [
+      {
+        "ItemID": 1,
+        "ItemNum": 0
+      },
+      {
+        "ItemID": 212,
+        "ItemNum": 0
+      },
+      {
+        "ItemID": 222,
+        "ItemNum": 0
+      },
+      {
+        "ItemID": 232,
+        "ItemNum": 0
+      },
+      {
+        "ItemID": 2,
+        "ItemNum": 0
+      }
+    ],
+    "ActionNameList": [
+      "Menu_Confirm",
+      "ActionGroup_Return"
+    ],
+    "ActionNameListOnTab": [
+      "Menu_Confirm",
+      "ActionGroup_Return"
+    ],
+    "FinishConditions": [
+      {
+        "Param": "6023719",
+        "Type": "FinishQuest"
+      }
+    ],
+    "PanelID": 150014,
+    "Type": 231,
+    "ActivityModuleID": 5001400,
+    "HideQuest": 0,
+    "SortWeight": 6021,
+    "ActivityThemeID": 0,
+    "ResidentPanelUnlockModuleID": 5001401,
+    "EarlyAccessContentID": 0,
+    "TabName": {
+      "hash": 2067685258
+    },
+    "TitleName": {
+      "hash": 626560237
+    },
+    "PanelDesc": {
+      "hash": -850216415
+    },
+    "TagDesc": {
+      "hash": 1243371025
+    },
+    "IntroDesc": {
+      "hash": -853877431
+    },
+    "DisplayItemManualSort": true,
+    "IsActivityHaveResidentPart": false,
+    "IsResidentPanel": true,
+    "DailyHint": false,
+    "IsSkipSwitchStoryLine": false
+  },
+  {
+    "UIPrefab": "UI/Quest/Widget/QuestStarChallengePanel.prefab",
+    "TypeParam": [],
+    "UnlockConditions": "[PlayerLevel:21]",
+    "TabIcon": "SpriteOutput/Quest/TabIcon/BtnQuestStarChallenge.png",
+    "DisplayItemList": [
+      {
+        "ItemID": 1,
+        "ItemNum": 0
+      },
+      {
+        "ItemID": 241,
+        "ItemNum": 0
+      },
+      {
+        "ItemID": 213,
+        "ItemNum": 0
+      },
+      {
+        "ItemID": 235,
+        "ItemNum": 0
+      },
+      {
+        "ItemID": 232,
+        "ItemNum": 0
+      },
+      {
+        "ItemID": 110202,
+        "ItemNum": 0
+      },
+      {
+        "ItemID": 2,
+        "ItemNum": 0
+      }
+    ],
+    "ActionNameList": [],
+    "ActionNameListOnTab": [],
+    "FinishConditions": [],
+    "PanelID": 50016,
+    "Type": 232,
+    "ActivityModuleID": 5001601,
+    "HideQuest": 0,
+    "SortWeight": 6001,
+    "ActivityThemeID": 0,
+    "ResidentPanelUnlockModuleID": 0,
+    "EarlyAccessContentID": 0,
+    "TabName": {
+      "hash": -1251709223
+    },
+    "TitleName": {
+      "hash": -1661037634
+    },
+    "PanelDesc": {
+      "hash": -138832524
+    },
+    "TagDesc": {
+      "hash": 1452011586
+    },
+    "IntroDesc": {
+      "hash": -916762500
+    },
+    "DisplayItemManualSort": false,
+    "IsActivityHaveResidentPart": false,
+    "IsResidentPanel": false,
+    "DailyHint": true,
+    "IsSkipSwitchStoryLine": false
   }
-}
+]

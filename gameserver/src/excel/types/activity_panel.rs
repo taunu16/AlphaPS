@@ -1,11 +1,10 @@
 use serde::{Serialize, Deserialize};
-use std::collections::BTreeMap;
 
-pub type ActivityPanel = BTreeMap<String, ActivityPanelValue>;
+pub type ActivityPanel = Vec<ActivityPanelElement>;
 
 #[derive(Debug, Serialize, Deserialize)]
 #[serde(rename_all = "PascalCase")]
-pub struct ActivityPanelValue {
+pub struct ActivityPanelElement {
     #[serde(rename = "UIPrefab")]
     pub ui_prefab: String,
     pub type_param: Vec<i64>,
@@ -27,6 +26,8 @@ pub struct ActivityPanelValue {
     pub activity_theme_id: i64,
     #[serde(rename = "ResidentPanelUnlockModuleID")]
     pub resident_panel_unlock_module_id: i64,
+    #[serde(rename = "EarlyAccessContentID")]
+    pub early_access_content_id: i64,
     pub tab_name: IntroDesc,
     pub title_name: IntroDesc,
     pub panel_desc: IntroDesc,

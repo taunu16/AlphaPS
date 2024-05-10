@@ -1,28 +1,29 @@
-use crate::{excel::tools_res::{Position, PropState, GAME_RESOURCES}, safe_unwrap_result};
+use crate::{excel::{tools_res::{Position, PropState, GAME_RESOURCES}, EXCEL}, safe_unwrap_result};
 
 use super::*;
 
-pub async fn on_bciendaonnn(
-    session: &PlayerSession,
-    body: &Bciendaonnn,
-) -> Result<()> {
-    println!("{:?}", body);
+//TODO: find protos
+// pub async fn on_bciendaonnn(
+//     session: &PlayerSession,
+//     body: &Bciendaonnn,
+// ) -> Result<()> {
+//     println!("{:?}", body);
 
-    session
-        .send(
-            CMD_GET_FIRST_TALK_BY_PERFORMANCE_NPC_SC_RSP,
-            Bemeopenkpd {
-                retcode: 0,
-                apiaadfldbe: body.khjfgfhhchj.iter().map(|id| 
-                    Hndfedalldc {
-                        jmnkdpdjilg: *id,
-                        apcaodelfcp: false
-                    }
-                ).collect()
-            },
-        )
-        .await
-}
+//     session
+//         .send(
+//             CMD_GET_FIRST_TALK_BY_PERFORMANCE_NPC_SC_RSP,
+//             Bemeopenkpd {
+//                 retcode: 0,
+//                 apiaadfldbe: body.khjfgfhhchj.iter().map(|id| 
+//                     Hndfedalldc {
+//                         jmnkdpdjilg: *id,
+//                         apcaodelfcp: false
+//                     }
+//                 ).collect()
+//             },
+//         )
+//         .await
+// }
 
 //GetNpcTakenRewardCsReq
 pub async fn on_get_npc_taken_reward_cs_req(
@@ -36,8 +37,8 @@ pub async fn on_get_npc_taken_reward_cs_req(
             CMD_GET_NPC_TAKEN_REWARD_SC_RSP,
             GetNpcTakenRewardScRsp {
                 retcode: 0,
-                egeneneoadj: body.egeneneoadj,
-                bekdcnobfeo: vec![]
+                npc_id: body.npc_id,
+                talk_event_list: vec![]
             }
         ).await
 }
@@ -46,20 +47,20 @@ pub async fn on_get_npc_taken_reward_cs_req(
 
 
 //SubmitOrigamiItemCsReq
-pub async fn on_submit_origami_item_cs_req(
-    session: &PlayerSession,
-    body: &SubmitOrigamiItemCsReq,
-) -> Result<()> {
-    println!("{:?}", body);
-    session
-        .send(
-            CMD_SUBMIT_ORIGAMI_ITEM_SC_RSP,
-            SubmitOrigamiItemScRsp {
-                retcode: 0,
-                gbjdobijaoi: body.gbjdobijaoi
-            }
-        ).await
-}
+// pub async fn on_submit_origami_item_cs_req(
+//     session: &PlayerSession,
+//     body: &SubmitOrigamiItemCsReq,
+// ) -> Result<()> {
+//     println!("{:?}", body);
+//     session
+//         .send(
+//             CMD_SUBMIT_ORIGAMI_ITEM_SC_RSP,
+//             SubmitOrigamiItemScRsp {
+//                 retcode: 0,
+//                 gbjdobijaoi: body.gbjdobijaoi
+//             }
+//         ).await
+// }
 
 //
 pub async fn on_interact_prop_cs_req(
@@ -77,7 +78,7 @@ pub async fn on_interact_prop_cs_req(
     if let Some(prop) = player_info.scene_prop_cache.get(&body.prop_entity_id) {
         state = prop.state.clone();
         // println!("{:#?}", prop);
-        if let Some((_, interact)) = session.player_info().excel_manager.interact.iter().find(|(_, v)| v.interact_id == body.interact_id && v.src_state == prop.state) {
+        if let Some(interact) = EXCEL.interact.iter().find(|v| v.interact_id == body.interact_id && v.src_state == prop.state) {
             // state = match &prop.prop_state_list {
             //     x if x.contains(&PropState::Destructed) => PropState::Destructed,
             //     x if x.contains(&PropState::ChestUsed) => PropState::ChestUsed,
@@ -88,8 +89,8 @@ pub async fn on_interact_prop_cs_req(
 
             safe_unwrap_result!(session.send(
                 CMD_SCENE_PLANE_EVENT_SC_NOTIFY, 
-                Bkpebkeapjh { 
-                    ckbbbokbdao: Some(ItemList {
+                ScenePlaneEventScNotify { 
+                    emeofonpphl: Some(ItemList {
                         item_list: interact.item_cost_list.iter().map(|i| Item {
                             item_id: i.item_id,
                             num: i.item_num,
@@ -110,7 +111,7 @@ pub async fn on_interact_prop_cs_req(
 
         let mut refresh_entity = vec![
             SceneEntityRefreshInfo {
-                glalelmdamm: Some(SceneEntityInfo {
+                gonncekbppg: Some(SceneEntityInfo {
                     inst_id: prop.id,
                     group_id: prop.group_id,
                     motion: Some(prop_position.to_motion()),
@@ -125,55 +126,55 @@ pub async fn on_interact_prop_cs_req(
                 ..Default::default()
             }
         ];
-        
-        if let Some(prop_info) = GAME_RESOURCES.maze_prop.get(&prop.prop_id) {
-            // if puzzle unlock everything in prop's group
-            println!("PROP INFORMED {:?}", prop_info);
-            if (prop_info.prop_type == "PROP_MAZE_PUZZLE" || prop_info.prop_type == "PROP_MAZE_JIGSAW") && (state == PropState::Open || state == PropState::Closed) {
-                refresh_entity.append(&mut player_info.scene_prop_cache
-                    .iter()
-                    .filter(|(eid, p)| p.group_id == prop.group_id && **eid != body.prop_entity_id)
-                    .map(|(eid, prop)| {
-                        println!("KUMALA eid({:?}) {:?}", eid, prop_info);
-                        let prop_position = Position {
-                            x: (prop.pos_x * 1000f64) as i32,
-                            y: (prop.pos_y * 1000f64) as i32,
-                            z: (prop.pos_z * 1000f64) as i32,
-                            rot_y: (prop.rot_y * 1000f64) as i32,
-                        };
 
-                        let state = if let Some(prop_info) = GAME_RESOURCES.maze_prop.get(&prop.prop_id) {
-                            match prop_info.prop_type.as_str() {
-                                "PROP_TREASURE_CHEST" => PropState::ChestClosed,
-                                "PROP_MAZE_PUZZLE" => prop.state.clone(),
-                                _ => PropState::Open
-                            }
-                        } else {
-                            PropState::Open
-                        };
+        //nvm it does not work like that
+        // if let Some(prop_info) = GAME_RESOURCES.maze_prop.get(&prop.prop_id) {
+        //     // if puzzle unlock everything in prop's group
+        //     println!("PROP INFORMED {:?}", prop_info);
+        //     if prop_info.prop_type == "PROP_MAZE_PUZZLE" && (state == PropState::Open || state == PropState::Closed) {
+        //         refresh_entity.append(&mut player_info.scene_prop_cache
+        //             .iter()
+        //             .filter(|(eid, p)| p.group_id == prop.group_id && **eid != body.prop_entity_id)
+        //             .map(|(eid, prop)| {
+        //                 let prop_position = Position {
+        //                     x: (prop.pos_x * 1000f64) as i32,
+        //                     y: (prop.pos_y * 1000f64) as i32,
+        //                     z: (prop.pos_z * 1000f64) as i32,
+        //                     rot_y: (prop.rot_y * 1000f64) as i32,
+        //                 };
 
-                        entity_state_manager.set_entity_state(player_info.position.entry_id, *eid, state.clone());
+        //                 let state = if let Some(prop_info) = GAME_RESOURCES.maze_prop.get(&prop.prop_id) {
+        //                     match prop_info.prop_type.as_str() {
+        //                         "PROP_TREASURE_CHEST" => PropState::ChestClosed,
+        //                         "PROP_MAZE_PUZZLE" => prop.state.clone(),
+        //                         _ => PropState::Open
+        //                     }
+        //                 } else {
+        //                     PropState::Open
+        //                 };
 
-                        SceneEntityRefreshInfo {
-                            glalelmdamm: Some(SceneEntityInfo {
-                                inst_id: prop.id,
-                                group_id: prop.group_id,
-                                motion: Some(prop_position.to_motion()),
-                                prop: Some(ScenePropInfo {
-                                    prop_id: prop.prop_id,
-                                    prop_state: state.clone() as u32,
-                                    ..Default::default()
-                                }),
-                                entity_id: body.prop_entity_id,
-                                ..Default::default()
-                            }),
-                            ..Default::default()
-                        }
-                    })
-                    .collect()
-                );   
-            }
-        }
+        //                 entity_state_manager.set_entity_state(player_info.position.entry_id, *eid, state.clone());
+
+        //                 SceneEntityRefreshInfo {
+        //                     glalelmdamm: Some(SceneEntityInfo {
+        //                         inst_id: prop.id,
+        //                         group_id: prop.group_id,
+        //                         motion: Some(prop_position.to_motion()),
+        //                         prop: Some(ScenePropInfo {
+        //                             prop_id: prop.prop_id,
+        //                             prop_state: state.clone() as u32,
+        //                             ..Default::default()
+        //                         }),
+        //                         entity_id: body.prop_entity_id,
+        //                         ..Default::default()
+        //                     }),
+        //                     ..Default::default()
+        //                 }
+        //             })
+        //             .collect()
+        //         );   
+        //     }
+        // }
 
         //if console open all bridges in its group
         if prop.clone().init_level_graph.map(|j| j.contains("Common_Console")) == Some(true) {
@@ -191,7 +192,7 @@ pub async fn on_interact_prop_cs_req(
                     entity_state_manager.set_entity_state(player_info.position.entry_id, *eid, state.clone());
 
                     SceneEntityRefreshInfo {
-                        glalelmdamm: Some(SceneEntityInfo {
+                        gonncekbppg: Some(SceneEntityInfo {
                             inst_id: prop.id,
                             group_id: prop.group_id,
                             motion: Some(prop_position.to_motion()),
@@ -230,8 +231,8 @@ pub async fn on_interact_prop_cs_req(
     if state == PropState::ChestUsed {
         safe_unwrap_result!(session.send(
             CMD_SCENE_PLANE_EVENT_SC_NOTIFY, 
-            Bkpebkeapjh { 
-                ckbbbokbdao: Some(ItemList {
+            ScenePlaneEventScNotify { 
+                emeofonpphl: Some(ItemList {
                     item_list: vec![
                         Item {
                             item_id: 102,
@@ -257,22 +258,22 @@ pub async fn on_interact_prop_cs_req(
 }
 
 //GetMainMissionCustomValueCsReq
-pub async fn on_get_main_mission_custom_value_cs_req(
-    session: &PlayerSession,
-    body: &GetMainMissionCustomValueCsReq
-) -> Result<()> {//println!("{:?}", body);
-    session.send(
-        CMD_GET_MAIN_MISSION_CUSTOM_VALUE_SC_RSP,
-        GetMainMissionCustomValueScRsp {
-            retcode: 0,
-            mmmedgnoljo: body.sub_mission_id_list.iter().map(|a| Ebeeijpilmi {
-                id: *a,
-                status: 2,
-                miadakiaoln:vec![]
-            }).collect()
-        }
-    ).await
-}
+// pub async fn on_get_main_mission_custom_value_cs_req(
+//     session: &PlayerSession,
+//     body: &GetMainMissionCustomValueCsReq
+// ) -> Result<()> {//println!("{:?}", body);
+//     session.send(
+//         CMD_GET_MAIN_MISSION_CUSTOM_VALUE_SC_RSP,
+//         GetMainMissionCustomValueScRsp {
+//             retcode: 0,
+//             mmmedgnoljo: body.sub_mission_id_list.iter().map(|a| Ebeeijpilmi {
+//                 id: *a,
+//                 status: 2,
+//                 miadakiaoln:vec![]
+//             }).collect()
+//         }
+//     ).await
+// }
 
 pub async fn on_get_first_talk_npc_cs_req(
     session: &PlayerSession,
@@ -280,11 +281,11 @@ pub async fn on_get_first_talk_npc_cs_req(
 ) -> Result<()> {
     session.send(
         CMD_GET_FIRST_TALK_NPC_SC_RSP,
-        Abojckcendm {
+        GetFirstTalkNpcScRsp {
             retcode: 0,
-            apiaadfldbe: body.aammpfgpknj.iter().map(|q| Oijcllopbih {
-                ihbalhicnej: *q,
-                ..Default::default()
+            npc_meet_status_list: body.series_id_list.iter().map(|q| NpcMeetStatus {
+                series_id: *q,
+                is_meet: false
             }).collect()
         }
     ).await

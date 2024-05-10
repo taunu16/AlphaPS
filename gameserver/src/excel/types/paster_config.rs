@@ -1,7 +1,6 @@
 use serde::{Serialize, Deserialize};
-use std::collections::HashMap;
 
-pub type PasterConfig = HashMap<String, PasterConfigValue>;
+pub type PasterConfig = Vec<PasterConfigValue>;
 
 #[derive(Debug, Serialize, Deserialize)]
 #[serde(rename_all = "PascalCase")]
