@@ -75,7 +75,7 @@ macro_rules! trait_handler {
                     return Ok(());
                 }
                 match cmd_type {
-                    // CMD_GROUP_STATE_CHANGE_CS_REQ => {
+                    // CMD_GET_FIRST_TALK_BY_PERFORMANCE_NPC_CS_REQ => {
                     //     println!("{}: {}", cmd_type, rbase64::encode(&payload));
                     //     Ok(())
                     // }
@@ -187,7 +187,7 @@ trait_handler_auto! {
     BuyGoodsCsReq;
     GetNpcTakenRewardCsReq; //GetNpcTakenRewardCsReq
     GetFirstTalkNpcCsReq;
-    //GetFirstTalkByPerformanceNpcCsReq; //Bciendaonnn //todo
+    GetFirstTalkByPerformanceNpcCsReq;
     TravelBrochureGetDataCsReq;
     GetTutorialGuideCsReq;
     UnlockTutorialGuideCsReq;

@@ -17,10 +17,10 @@ pub async fn on_get_cur_scene_info_cs_req(
         .await
 }
 
-//stole this from ami https://github.com/amizing25/robinsr
+//stole this from ami https://github.com/amizing25/robinsr (not everything xD)
 
 // enterscene
-pub async fn on_enter_scene_cs_req(session: &PlayerSession, request: &EnterSceneCsReq) -> Result<()> {println!("{:?}", request);
+pub async fn on_enter_scene_cs_req(session: &PlayerSession, request: &EnterSceneCsReq) -> Result<()> {
     // send packet first
     session
         .send(CMD_ENTER_SCENE_SC_RSP, GetBagCsReq{})
@@ -28,7 +28,71 @@ pub async fn on_enter_scene_cs_req(session: &PlayerSession, request: &EnterScene
 
         println!("{:?}", request);
 
-    let _ = load_scene(session, request.entry_id, true, Some(request.entry_id), &mut session.player_info_mut()).await; //todo: make tps work
+    let player_info = &mut session.player_info_mut();
+
+    if let Err(err) = load_scene(session, request.entry_id, true, Some(request.dehbihbbbgo), player_info).await {
+        println!("Normal scene load failed: {:?}, loading using fallback mode", err);
+
+        let mut scene_info = SceneInfo {
+            entry_id: request.entry_id,
+            plane_id: request.entry_id / 100u32,
+            floor_id: format!("{}00{}", request.entry_id / 100u32, request.entry_id.to_string().chars().last().unwrap().to_digit(10).unwrap()).parse().unwrap(),
+            game_mode_type: PlaneType::Town as u32,
+            ..Default::default()
+        };
+
+        for i in 0..100 {
+            scene_info.lighten_section_list.push(i)
+        }
+
+        // load player entity
+        let mut player_group = SceneGroupInfo {
+            state: 0,
+            group_id: 0,
+            ..Default::default()
+        };
+        for (slot, avatar_id) in player_info.lineup.avatar_list.iter().map(|av| (av.slot, av.id)) {
+            player_group.entity_list.push(SceneEntityInfo {
+                inst_id: 0,
+                entity_id: slot + 1,
+                motion: Some(MotionInfo {
+                    // pos
+                    pos: Some(Vector {
+                        x: player_info.position.x,
+                        y: player_info.position.y,
+                        z: player_info.position.z,
+                    }),
+                    // rot
+                    rot: Some(Vector {
+                        x: 0,
+                        y: player_info.position.rot_y,
+                        z: 0,
+                    }),
+                }),
+                actor: Some(SceneActorInfo {
+                    avatar_type: AvatarType::AvatarFormalType.into(),
+                    base_avatar_id: avatar_id,
+                    map_layer: 0,
+                    uid: 0,
+                }),
+                ..Default::default()
+            })
+        }
+        
+        scene_info.scene_group_list.push(player_group);
+
+
+        session
+            .send(
+                CMD_ENTER_SCENE_BY_SERVER_SC_NOTIFY,
+                EnterSceneByServerScNotify {
+                    scene: Some(scene_info),
+                    lineup: Some(player_info.lineup.clone()),
+                    ..Default::default()
+                },
+            )
+            .await?;
+    }
 
 
     Ok(())
@@ -132,6 +196,11 @@ pub async fn on_get_scene_map_info_cs_req(sesison: &PlayerSession, request: &Get
                         config_id: prop.id as u32,
                     });
                 }
+            }
+        } else {
+            //fallback mode
+            for i in request.entry_id..request.entry_id+10 {
+                map_info.unlock_teleport_list.push(i)
             }
         }
 

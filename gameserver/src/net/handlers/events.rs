@@ -6,7 +6,7 @@ const ALLOWED_EVENTS: [u32; 3] = [
     50014, //match three
     150014, //same as above
     50016, //star challenge
-    //that's it? dead patch tbh
+    //that's it? dead patch tbh /j
 ];
 
 // const ALLOWED_EVENT_TYPES: [i64; 8] = [

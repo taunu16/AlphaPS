@@ -1,6 +1,6 @@
 use std::time::{SystemTime, UNIX_EPOCH};
 
-use crate::{excel::{types::UseEffect, EXCEL}, safe_unwrap_result};
+use crate::{excel::EXCEL, safe_unwrap_result};
 
 use super::*;
 
@@ -113,10 +113,10 @@ pub async fn on_use_item_cs_req(
     session: &PlayerSession,
     body: &UseItemCsReq,
 ) -> Result<()> {
-    println!("{:?}", body);//TODO: find proper variable item_use_id
-    /* 
+    println!("{:?}", body);
+     
     let mut player_info = session.player_info_mut();
-    let buff_data = EXCEL.item.buff_data.get(&body.use_item_id.to_string());
+    let buff_data = EXCEL.item.buff_data.iter().find(|iubd| iubd.use_data_id == body.use_item_id);
     if buff_data.is_none() {
         return session
         .send(
@@ -125,7 +125,7 @@ pub async fn on_use_item_cs_req(
                 retcode: 0,
                 onnkbfefeok: body.onnkbfefeok,
                 fghjlkadkpp: Option::None,
-                cankcdddjgc: body.cankcdddjgc,
+                use_item_id: body.use_item_id,
                 ..Default::default()
             }
         ).await;
@@ -134,8 +134,8 @@ pub async fn on_use_item_cs_req(
 
     let mut sync_reasons: Vec<SyncLineupReason> = vec![];
 
-    if let Some(sp) = buff_data.preview_skill_point {
-        player_info.lineup.mp = (player_info.lineup.mp + sp).clamp(0, player_info.lineup.mp_max);
+    if buff_data.preview_skill_point > 0.0 {
+        player_info.lineup.mp = (player_info.lineup.mp + buff_data.preview_skill_point as u32).clamp(0, player_info.lineup.mp_max);
         sync_reasons.push(SyncLineupReason::SyncReasonMpAdd);
     }
 
@@ -144,14 +144,14 @@ pub async fn on_use_item_cs_req(
         safe_unwrap_result!(player_info.sync_lineup(session, player_info.lineup.clone()).await);
     } else {
         safe_unwrap_result!(player_info.sync_lineup_reason(session, sync_reasons).await);
-    }*/
+    }
 
     session
         .send(
             CMD_USE_ITEM_SC_RSP,
             UseItemScRsp {
                 retcode: 0,
-                cankcdddjgc: body.cankcdddjgc,
+                use_item_id: body.use_item_id,
                 onnkbfefeok: body.onnkbfefeok,
                 ..Default::default()
             }

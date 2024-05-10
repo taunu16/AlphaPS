@@ -1,33 +1,42 @@
 use lazy_static::lazy_static;
-
+use paste::paste;
 use super::{types::*, Item};
 
-const ACTIVITY_PANEL_JSON: &str = include_str!("./data/ExcelOutput/ActivityPanel.json");
-const BACKGROUND_MUSIC_CONFIG_JSON: &str = include_str!("./data/ExcelOutput/BackGroundMusicConfig.json");
-const INTERACT_JSON: &str = include_str!("./data/ExcelOutput/Interact.json");
-const STAGE_CONFIG_JSON: &str = include_str!("./data/ExcelOutput/StageConfig.json");
-const CHALLENGE_MAZE_CONFIG_JSON: &str = include_str!("./data/ExcelOutput/ChallengeMazeConfig.json");
+macro_rules! excel_parse {
+    ($($name:ident),* $(,)*) => {
+        paste! {
+        $(
+            const [<$name:snake:upper _JSON>]: &str = include_str!(concat!("./data/ExcelOutput/", stringify!($name), ".json"));
+        )*
 
-pub struct ExcelManager {
-    pub item: Item,
-    pub activity_panel: ActivityPanel,
-    pub background_music_config: BackgroundMusicConfig,
-    pub interact: Interact,
-    pub stage_config: StageConfig,
-    pub challenge_maze_config: ChallengeMazeConfig,
-}
+        pub struct ExcelManager {
+            pub item: Item,
+            $(
+                 pub [<$name:snake>]: $name,
+            )*
+        }
 
-impl ExcelManager {
-    pub fn new() -> Self {
-        Self {
-            item: Item::new(),
-            activity_panel: serde_json::from_str(ACTIVITY_PANEL_JSON).expect("ActivityPanel parse failed"),
-            background_music_config: serde_json::from_str(BACKGROUND_MUSIC_CONFIG_JSON).expect("BackGroundMusicConfig parse failed"),
-            interact: serde_json::from_str(INTERACT_JSON).expect("Interact parse failed"),
-            stage_config: serde_json::from_str(STAGE_CONFIG_JSON).expect("StageConfig parse failed"),
-            challenge_maze_config: serde_json::from_str(CHALLENGE_MAZE_CONFIG_JSON).expect("ChallengeMazeConfig parse failed"),
+        impl ExcelManager {
+            pub fn new() -> Self {
+                Self {
+                    item: Item::new(),
+                    $(
+                        [<$name:snake>]: serde_json::from_str([<$name:snake:upper _JSON>]).expect((&(stringify!($name).to_owned() + " parse failed"))),
+                    )*
+                }
+            }
         }
     }
+    };
+}
+
+excel_parse! {
+    ActivityPanel,
+    BackgroundMusicConfig,
+    Interact,
+    StageConfig,
+    ChallengeMazeConfig,
+    MainMissionConfig,
 }
 
 lazy_static! {

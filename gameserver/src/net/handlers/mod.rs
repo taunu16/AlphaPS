@@ -183,5 +183,6 @@ dummy! {
     GetTrainVisitorRegister,
     GetLoginChatInfo,
     GetFeverTimeActivityData,
-    GetAllSaveRaid
+    GetAllSaveRaid,
+    FinishTalkMission, //todo: implement this for real
 }

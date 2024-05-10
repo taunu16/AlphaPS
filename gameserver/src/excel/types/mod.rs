@@ -8,6 +8,7 @@ mod item_config;
 // mod plane_event;
 mod stage_config;
 mod challenge_maze_config;
+mod main_mission_config;
 
 pub use item_use_buff_data::*;
 pub use paster_config::*;
@@ -19,3 +20,4 @@ pub use item_config::*;
 // pub use plane_event::*;
 pub use stage_config::*;
 pub use challenge_maze_config::*;
+pub use main_mission_config::*;

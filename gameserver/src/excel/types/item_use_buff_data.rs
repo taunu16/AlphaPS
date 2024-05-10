@@ -10,7 +10,7 @@ pub struct ItemUseBuffDatum {
     pub maze_buff_param2: Vec<Option<serde_json::Value>>,
     pub use_effect: UseEffect,
     #[serde(rename = "UseDataID")]
-    pub use_data_id: i64,
+    pub use_data_id: u32,
     pub consume_type: i64,
     pub use_target_type: UseTargetType,
     #[serde(rename = "MazeBuffID")]

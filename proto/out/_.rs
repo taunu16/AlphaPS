@@ -8342,7 +8342,7 @@ pub struct UseItemCsReq {
     #[prost(enumeration = "AvatarType", tag = "8")]
     pub odioghcdmeh: i32,
     #[prost(uint32, tag = "7")]
-    pub cankcdddjgc: u32,
+    pub use_item_id: u32,
     #[prost(uint32, tag = "4")]
     pub mdcfgcppaof: u32,
 }
@@ -8350,7 +8350,7 @@ pub struct UseItemCsReq {
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UseItemScRsp {
     #[prost(uint32, tag = "6")]
-    pub cankcdddjgc: u32,
+    pub use_item_id: u32,
     #[prost(message, optional, tag = "4")]
     pub fghjlkadkpp: ::core::option::Option<ItemList>,
     #[prost(uint32, tag = "9")]
@@ -19864,13 +19864,13 @@ pub struct Pghekcopokm {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct Peabfdfkmim {
+pub struct GetFirstTalkByPerformanceNpcCsReq {
     #[prost(uint32, repeated, tag = "14")]
     pub kajphbfibik: ::prost::alloc::vec::Vec<u32>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct Jmpodfchomf {
+pub struct GetFirstTalkByPerformanceNpcScRsp {
     #[prost(uint32, tag = "8")]
     pub retcode: u32,
     #[prost(message, repeated, tag = "10")]

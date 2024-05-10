@@ -2,28 +2,27 @@ use crate::{excel::{tools_res::{Position, PropState, GAME_RESOURCES}, EXCEL}, sa
 
 use super::*;
 
-//TODO: find protos
-// pub async fn on_bciendaonnn(
-//     session: &PlayerSession,
-//     body: &Bciendaonnn,
-// ) -> Result<()> {
-//     println!("{:?}", body);
+pub async fn on_get_first_talk_by_performance_npc_cs_req(
+    session: &PlayerSession,
+    body: &GetFirstTalkByPerformanceNpcCsReq,
+) -> Result<()> {
+    println!("{:?}", body);
 
-//     session
-//         .send(
-//             CMD_GET_FIRST_TALK_BY_PERFORMANCE_NPC_SC_RSP,
-//             Bemeopenkpd {
-//                 retcode: 0,
-//                 apiaadfldbe: body.khjfgfhhchj.iter().map(|id| 
-//                     Hndfedalldc {
-//                         jmnkdpdjilg: *id,
-//                         apcaodelfcp: false
-//                     }
-//                 ).collect()
-//             },
-//         )
-//         .await
-// }
+    session
+        .send(
+            CMD_GET_FIRST_TALK_BY_PERFORMANCE_NPC_SC_RSP,
+            GetFirstTalkByPerformanceNpcScRsp {
+                retcode: 0,
+                npc_meet_status_list: body.kajphbfibik.iter().map(|id| 
+                    Pghekcopokm {
+                        ldcaeblnbco: *id,
+                        is_meet: false
+                    }
+                ).collect()
+            },
+        )
+        .await
+}
 
 //GetNpcTakenRewardCsReq
 pub async fn on_get_npc_taken_reward_cs_req(
