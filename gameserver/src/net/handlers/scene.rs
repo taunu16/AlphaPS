@@ -41,6 +41,11 @@ pub async fn on_enter_scene_cs_req(session: &PlayerSession, request: &EnterScene
             ..Default::default()
         };
 
+        if let Some(entrance) = GAME_RESOURCES.map_entrance.get(&request.entry_id) {
+            scene_info.plane_id = entrance.plane_id;
+            scene_info.floor_id = entrance.floor_id;
+        }
+
         for i in 0..100 {
             scene_info.lighten_section_list.push(i)
         }
@@ -199,9 +204,11 @@ pub async fn on_get_scene_map_info_cs_req(sesison: &PlayerSession, request: &Get
             }
         } else {
             //fallback mode
-            for i in request.entry_id..request.entry_id+10 {
+            for i in *entry_id..*entry_id+10 {
                 map_info.unlock_teleport_list.push(i)
             }
+
+            println!("amognus {:?}", map_info.unlock_teleport_list);
         }
 
         // Debug

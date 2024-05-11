@@ -184,5 +184,4 @@ dummy! {
     GetLoginChatInfo,
     GetFeverTimeActivityData,
     GetAllSaveRaid,
-    FinishTalkMission, //todo: implement this for real
 }

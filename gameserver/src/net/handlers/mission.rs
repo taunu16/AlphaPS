@@ -72,3 +72,24 @@ pub async fn on_get_mission_status_cs_req(
 
     session.send(CMD_GET_MISSION_STATUS_SC_RSP, rsp).await
 }
+
+//does not work, at start says system error with kpbihgcpnco value xD
+// pub async fn on_get_mission_data_cs_req(
+//     session: &PlayerSession,
+//     _body: &Pkmlkladnal,
+// ) -> Result<()> {
+//     session.send(
+//         CMD_GET_MISSION_DATA_SC_RSP, 
+//         Lnkdmigocmb {
+//             kpbihgcpnco: 8020233,
+//             lakdcghjpaa: vec![
+//                 Mission {
+//                     id: 8020233,
+//                     progress: 0,
+//                     status: MissionStatus::MissionDoing as u32
+//                 }
+//             ],
+//             retcode: 0
+//         }
+//     ).await
+// }

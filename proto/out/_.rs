@@ -1734,7 +1734,7 @@ pub struct Kegbjdgmmli {
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct Mddhjpbpmdd {
     #[prost(uint32, tag = "6")]
-    pub kongbcnifjk: u32,
+    pub item_id: u32,
     #[prost(uint32, tag = "14")]
     pub slot: u32,
 }
@@ -1770,7 +1770,7 @@ pub struct Cimdnofpjok {
     #[prost(uint32, tag = "14")]
     pub kfknfjgpnnf: u32,
     #[prost(uint32, tag = "1")]
-    pub kongbcnifjk: u32,
+    pub item_id: u32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -1817,7 +1817,7 @@ pub struct Fdoddcgpbce {
     #[prost(uint32, tag = "3")]
     pub slot: u32,
     #[prost(uint32, tag = "5")]
-    pub kongbcnifjk: u32,
+    pub item_id: u32,
     #[prost(uint32, tag = "8")]
     pub boebdgnebpf: u32,
 }
@@ -1944,7 +1944,7 @@ pub struct Imebhiocjhg {
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct Fjldpekbdak {
     #[prost(uint32, tag = "4")]
-    pub kongbcnifjk: u32,
+    pub item_id: u32,
     #[prost(uint32, tag = "8")]
     pub num: u32,
 }
@@ -1998,7 +1998,7 @@ pub struct Nfbddafeklg {
     #[prost(uint32, tag = "10")]
     pub level: u32,
     #[prost(uint32, tag = "1")]
-    pub hioldiglggj: u32,
+    pub shop_id: u32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -2052,7 +2052,7 @@ pub struct Iljglgikbod {
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct Lobkgmpbfgf {
     #[prost(uint32, tag = "6")]
-    pub olbbmfeknhj: u32,
+    pub goods_id: u32,
     #[prost(message, repeated, tag = "10")]
     pub moepnnldcof: ::prost::alloc::vec::Vec<Iljglgikbod>,
 }
@@ -2140,7 +2140,7 @@ pub struct Elfkigcifhk {
     #[prost(uint32, repeated, tag = "14")]
     pub flnafohcolj: ::prost::alloc::vec::Vec<u32>,
     #[prost(uint32, tag = "8")]
-    pub hioldiglggj: u32,
+    pub shop_id: u32,
     #[prost(uint32, tag = "13")]
     pub bkllbcifbmh: u32,
     #[prost(uint32, repeated, tag = "5")]
@@ -5412,7 +5412,7 @@ pub struct Oinklehkhed {
     #[prost(uint32, tag = "8")]
     pub nakamomhjck: u32,
     #[prost(uint32, tag = "2")]
-    pub kongbcnifjk: u32,
+    pub item_id: u32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -8574,7 +8574,7 @@ pub struct Ijgnacmdkmn {
     #[prost(uint32, tag = "12")]
     pub kgknhpdjmjg: u32,
     #[prost(uint32, tag = "11")]
-    pub kongbcnifjk: u32,
+    pub item_id: u32,
     #[prost(uint32, tag = "2")]
     pub nakamomhjck: u32,
 }
@@ -8601,7 +8601,7 @@ pub struct Gjmdeaplagf {
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct Jadgeopdcij {
     #[prost(uint32, tag = "13")]
-    pub kongbcnifjk: u32,
+    pub item_id: u32,
     #[prost(bool, tag = "6")]
     pub encfkebflnd: bool,
 }
@@ -8611,7 +8611,7 @@ pub struct Cnmfebeojbe {
     #[prost(bool, tag = "11")]
     pub encfkebflnd: bool,
     #[prost(uint32, tag = "3")]
-    pub kongbcnifjk: u32,
+    pub item_id: u32,
     #[prost(uint32, tag = "1")]
     pub retcode: u32,
 }
@@ -8619,7 +8619,7 @@ pub struct Cnmfebeojbe {
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct Ipghpogmkkn {
     #[prost(uint32, tag = "15")]
-    pub kongbcnifjk: u32,
+    pub item_id: u32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -9285,7 +9285,7 @@ pub struct ClientMailAttachmentItem {
     #[prost(uint32, tag = "12")]
     pub kpjkofoacgp: u32,
     #[prost(uint32, tag = "11")]
-    pub kongbcnifjk: u32,
+    pub item_id: u32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -9708,7 +9708,7 @@ pub struct Eefpegmkfnf {
     #[prost(uint32, tag = "1")]
     pub objnkjnnnfk: u32,
     #[prost(uint32, tag = "8")]
-    pub kongbcnifjk: u32,
+    pub item_id: u32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -9787,7 +9787,7 @@ pub struct Lhmobhdfpcf {
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct Jfiekefimpm {
     #[prost(uint32, tag = "5")]
-    pub kongbcnifjk: u32,
+    pub item_id: u32,
     #[prost(uint32, tag = "10")]
     pub objnkjnnnfk: u32,
 }
@@ -9797,7 +9797,7 @@ pub struct Iccekjfbmgh {
     #[prost(uint32, tag = "13")]
     pub objnkjnnnfk: u32,
     #[prost(uint32, tag = "3")]
-    pub kongbcnifjk: u32,
+    pub item_id: u32,
     #[prost(uint32, tag = "9")]
     pub retcode: u32,
 }
@@ -10118,7 +10118,7 @@ pub struct Hakdgogckmp {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct Bogjghfphae {
+pub struct FinishTalkMissionCsReq {
     #[prost(string, tag = "2")]
     pub foaeacjbdcc: ::prost::alloc::string::String,
     #[prost(message, repeated, tag = "5")]
@@ -10128,7 +10128,7 @@ pub struct Bogjghfphae {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct Ahkipalejcm {
+pub struct FinishTalkMissionScRsp {
     #[prost(uint32, tag = "3")]
     pub pjocnjdaigc: u32,
     #[prost(string, tag = "9")]
@@ -10601,7 +10601,7 @@ pub struct Infekcgkcoc {
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct Cjcpndcibnn {
     #[prost(uint32, tag = "10")]
-    pub hioldiglggj: u32,
+    pub shop_id: u32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -10786,9 +10786,9 @@ pub struct Milkjggfdnf {
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct Gepophghkna {
     #[prost(uint32, tag = "4")]
-    pub olbbmfeknhj: u32,
+    pub goods_id: u32,
     #[prost(uint32, tag = "12")]
-    pub hioldiglggj: u32,
+    pub shop_id: u32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -10796,9 +10796,9 @@ pub struct Lnachgbfglc {
     #[prost(uint32, tag = "15")]
     pub retcode: u32,
     #[prost(uint32, tag = "7")]
-    pub hioldiglggj: u32,
+    pub shop_id: u32,
     #[prost(uint32, tag = "13")]
-    pub olbbmfeknhj: u32,
+    pub goods_id: u32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -10904,7 +10904,7 @@ pub struct Bhehbnlneob {
     #[prost(uint32, tag = "6")]
     pub bacpfhicemj: u32,
     #[prost(uint32, tag = "8")]
-    pub kongbcnifjk: u32,
+    pub item_id: u32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -12009,7 +12009,7 @@ pub struct Kdclafikaog {
     #[prost(uint32, tag = "13")]
     pub gmknedgjbfb: u32,
     #[prost(uint32, tag = "1")]
-    pub kongbcnifjk: u32,
+    pub item_id: u32,
     #[prost(uint32, tag = "2")]
     pub nakamomhjck: u32,
 }
@@ -12017,13 +12017,13 @@ pub struct Kdclafikaog {
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct Galgphacilc {
     #[prost(uint32, tag = "11")]
-    pub kongbcnifjk: u32,
+    pub item_id: u32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct Kbncchgccfb {
     #[prost(uint32, tag = "6")]
-    pub kongbcnifjk: u32,
+    pub item_id: u32,
     #[prost(uint32, tag = "1")]
     pub retcode: u32,
     #[prost(message, optional, tag = "15")]
@@ -16961,7 +16961,7 @@ pub struct Aogfhbnbobo {
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct Gbjbapblmae {
     #[prost(uint32, tag = "9")]
-    pub kongbcnifjk: u32,
+    pub item_id: u32,
     #[prost(uint32, tag = "11")]
     pub nakamomhjck: u32,
 }
@@ -19262,15 +19262,15 @@ pub struct GetShopListScRsp {
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct BuyGoodsCsReq { //Fggleeelkcn
     #[prost(uint32, tag = "13")]
-    pub hioldiglggj: u32,
+    pub shop_id: u32,
     #[prost(uint32, tag = "5")]
     pub edahdalkobk: u32,
     #[prost(uint32, tag = "4")]
-    pub pdgjhkmmclo: u32,
+    pub goods_num: u32,
     #[prost(uint32, tag = "3")]
-    pub kongbcnifjk: u32,
+    pub item_id: u32,
     #[prost(uint32, tag = "6")]
-    pub olbbmfeknhj: u32,
+    pub goods_id: u32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -19290,7 +19290,7 @@ pub struct BuyGoodsScRsp {
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct Afbflnbhiem {
     #[prost(uint32, tag = "3")]
-    pub hioldiglggj: u32,
+    pub shop_id: u32,
     #[prost(uint32, tag = "7")]
     pub level: u32,
 }
@@ -19393,7 +19393,7 @@ pub struct Aegebifpbfe {
     #[prost(uint32, tag = "4")]
     pub unique_id: u32,
     #[prost(uint32, tag = "8")]
-    pub kongbcnifjk: u32,
+    pub item_id: u32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -19453,13 +19453,13 @@ pub struct Nnocmdlppoc {
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct Edabhfgdmde {
     #[prost(uint32, tag = "3")]
-    pub kongbcnifjk: u32,
+    pub item_id: u32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct Aohbkfaecbm {
     #[prost(uint32, tag = "13")]
-    pub kongbcnifjk: u32,
+    pub item_id: u32,
     #[prost(uint32, tag = "6")]
     pub retcode: u32,
 }
@@ -20147,7 +20147,7 @@ pub struct Ghbfmphplgc {
     #[prost(uint32, tag = "11")]
     pub gcldghmgmma: u32,
     #[prost(uint32, tag = "1")]
-    pub kongbcnifjk: u32,
+    pub item_id: u32,
     #[prost(uint32, tag = "4")]
     pub mmimgblecaa: u32,
     #[prost(int32, tag = "6")]
@@ -20210,7 +20210,7 @@ pub struct Fgmcpeomcld {
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct Ceboliofdan {
     #[prost(uint32, tag = "14")]
-    pub kongbcnifjk: u32,
+    pub item_id: u32,
     #[prost(int32, tag = "4")]
     pub ggfomnhibfn: i32,
     #[prost(uint32, tag = "6")]
@@ -20238,7 +20238,7 @@ pub struct Ochdgebopfl {
     #[prost(uint32, tag = "12")]
     pub mnboaolhcof: u32,
     #[prost(uint32, tag = "11")]
-    pub kongbcnifjk: u32,
+    pub item_id: u32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -20258,7 +20258,7 @@ pub struct Kjmcocgameb {
     #[prost(uint32, tag = "4")]
     pub mnboaolhcof: u32,
     #[prost(uint32, tag = "12")]
-    pub kongbcnifjk: u32,
+    pub item_id: u32,
     #[prost(uint32, tag = "7")]
     pub mmimgblecaa: u32,
     #[prost(int32, tag = "13")]
@@ -20334,7 +20334,7 @@ pub struct Gafgcpobkjj {
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct Dbblfgfpjjj {
     #[prost(uint32, tag = "9")]
-    pub kongbcnifjk: u32,
+    pub item_id: u32,
     #[prost(uint32, tag = "1")]
     pub mmimgblecaa: u32,
     #[prost(uint32, tag = "7")]
@@ -20444,7 +20444,7 @@ pub struct Dojppndknac {
     #[prost(uint32, tag = "3")]
     pub nakamomhjck: u32,
     #[prost(uint32, tag = "13")]
-    pub kongbcnifjk: u32,
+    pub item_id: u32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -20597,7 +20597,7 @@ pub struct Mplcjocdndl {
     #[prost(uint32, tag = "13")]
     pub dmhammiigmh: u32,
     #[prost(uint32, tag = "12")]
-    pub kongbcnifjk: u32,
+    pub item_id: u32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]

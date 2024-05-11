@@ -304,3 +304,18 @@ pub async fn on_group_state_change_cs_req(
         }
     ).await
 }
+
+pub async fn on_finish_talk_mission_cs_req(
+    session: &PlayerSession,
+    body: &FinishTalkMissionCsReq
+) -> Result<()> {
+    session.send(
+        CMD_FINISH_TALK_MISSION_SC_RSP, 
+        FinishTalkMissionScRsp {
+            cknnpogkead: body.cknnpogkead.clone(),
+            retcode: 0,
+            foaeacjbdcc: body.foaeacjbdcc.clone(),
+            pjocnjdaigc: body.pjocnjdaigc
+        }
+    ).await
+}

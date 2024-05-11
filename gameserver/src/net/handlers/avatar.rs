@@ -42,6 +42,7 @@ pub async fn on_dress_avatar_cs_req(
     session: &PlayerSession,
     body: &DressAvatarCsReq,
 ) -> Result<()> {
+    println!("{:?}", body);
     let inventory = &mut session.player_info_mut().inventory;
     safe_unwrap_result!(inventory.equip_lightcone(session, body.cmmegdchmlb, body.equipment_unique_id).await);
     session
@@ -89,7 +90,7 @@ pub async fn on_take_off_relic_cs_req(
     body: &TakeOffRelicCsReq,
 ) -> Result<()> {
     let inventory = &mut session.player_info_mut().inventory;
-    //safe_unwrap_result!(inventory.equip_relic(session, body.cmmegdchmlb, body.slot_list.iter().map(|sl| RelicParam { slot: *sl, relic_unique_id: 0 }).collect()).await); //todo: AFTER RELIC FIX
+    safe_unwrap_result!(inventory.equip_relic(session, body.cmmegdchmlb, body.slot_list.iter().map(|sl| RelicParam { slot: *sl, relic_unique_id: 0 }).collect()).await); //todo: AFTER RELIC FIX
     session
         .send(
             CMD_TAKE_OFF_RELIC_SC_RSP,

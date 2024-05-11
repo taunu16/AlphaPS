@@ -35,8 +35,10 @@ excel_parse! {
     BackgroundMusicConfig,
     Interact,
     StageConfig,
-    ChallengeMazeConfig,
+    //ChallengeMazeConfig,
     MainMissionConfig,
+    GachaBasicInfo,
+    ShopGoodsConfig,
 }
 
 lazy_static! {
