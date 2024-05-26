@@ -1,3 +1,4 @@
+# Outdated, use https://github.com/taunu16/FireflySR-Alpha
 # AlphaPS (based on [RobinSR](https://git.xeondev.com/reversedrooms/RobinSR/) and [RobinSR (amizing25)](https://github.com/amizing25/robinsr))
 
 A Server emulator for the game [`Honkai: Star Rail`](https://hsr.hoyoverse.com/en-us/)
